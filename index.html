@@ -2655,6 +2655,11 @@
     </div>
   </section>
 
+  <section class="section" style="text-align:center;padding-top:0">
+    <a href="#" class="btn btn-primary" onclick="downloadBookPDF();return false" style="font-size:0.95rem;padding:0.75rem 2rem;letter-spacing:0.08em">⬇ Download Full Book (PDF)</a>
+    <p style="margin-top:0.6rem;font-size:0.75rem;color:var(--text-muted)">Opens a print dialog — choose "Save as PDF" in your browser</p>
+  </section>
+
   <div class="quote-block">
     <p>"They measured my soul. I wasn't ready for what they found."</p>
   </div>
@@ -6511,6 +6516,122 @@ function renderEndSummary(chapter, suffix) {
     html += '<div class="stats-section-title" style="margin-top:1rem">New Items</div><p style="color:var(--text-muted);font-size:0.85rem;font-style:italic">No new items this chapter.</p>';
   }
   el.innerHTML = html;
+}
+
+function downloadBookPDF() {
+  const chapters = [
+    { id: 'ch1', title: 'Chapter 1 — Tetherpoint Academy' },
+    { id: 'ch2', title: 'Chapter 2 — The Weight of a Name' },
+    { id: 'ch3', title: 'Chapter 3 — Detention' },
+    { id: 'ch4', title: 'Chapter 4 — The Weight of a Shield' },
+    { id: 'ch5', title: 'Chapter 5 — The First Adventure' },
+    { id: 'ch6', title: 'Chapter 6 — Blood and Rank' },
+    { id: 'ch7', title: 'Chapter 7 — Detention' },
+    { id: 'ch8', title: 'Chapter 8 — Detention Part 2' },
+  ];
+
+  let body = '';
+  chapters.forEach(ch => {
+    const page = document.getElementById('page-' + ch.id);
+    if (!page) return;
+    const textEl = page.querySelector('.chapter-text');
+    if (!textEl) return;
+
+    const clone = textEl.cloneNode(true);
+
+    // Remove non-prose elements
+    clone.querySelectorAll('.system-msg, .mobile-dashboard, audio, [class*="collapsible"], .chapter-nav, .lore-tip, style, script').forEach(el => el.remove());
+
+    // Unwrap lore-term anchors — keep visible text only
+    clone.querySelectorAll('a.lore-term').forEach(a => {
+      const span = document.createElement('span');
+      // The visible label is the last text node inside the <a>
+      span.textContent = a.textContent;
+      a.replaceWith(span);
+    });
+
+    // Strip any remaining song embed divs (they have <audio> inside)
+    clone.querySelectorAll('div').forEach(div => {
+      if (div.querySelector('audio')) div.remove();
+    });
+
+    body += `<h2 class="ch-title">${ch.title}</h2>\n${clone.innerHTML}\n<div class="ch-break"></div>\n`;
+  });
+
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Born Good — Full Book</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 6.5in;
+    margin: 0 auto;
+    padding: 1in 0.75in;
+  }
+  h1.book-title {
+    font-family: 'Cinzel', serif;
+    font-size: 28pt;
+    text-align: center;
+    margin-bottom: 0.25in;
+    letter-spacing: 0.1em;
+  }
+  h1.book-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 11pt;
+    text-align: center;
+    color: #555;
+    margin-bottom: 0.1in;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .title-author {
+    font-family: 'Cinzel', serif;
+    font-size: 10pt;
+    text-align: center;
+    color: #777;
+    margin-bottom: 0.6in;
+  }
+  .ch-title {
+    font-family: 'Cinzel', serif;
+    font-size: 16pt;
+    margin-top: 0.5in;
+    margin-bottom: 0.25in;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.1in;
+  }
+  p { margin-bottom: 0.6em; text-indent: 1.5em; }
+  p:first-of-type { text-indent: 0; }
+  .ch-break {
+    page-break-after: always;
+    margin: 0.5in 0;
+    border-top: 1px solid #ccc;
+  }
+  .ch-break:last-child { page-break-after: avoid; border: none; }
+  a { color: inherit; text-decoration: none; }
+  @media print {
+    body { padding: 0; }
+    .ch-break { page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+<h1 class="book-title">Born Good</h1>
+<div class="book-subtitle">A Tetherpoint Academy Story</div>
+<div class="title-author">by Justin Plevinski, PhD</div>
+${body}
+</body>
+</html>`);
+  win.document.close();
+  setTimeout(() => win.print(), 800);
 }
 
 function showPage(id) {
