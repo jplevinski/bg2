@@ -2552,6 +2552,7 @@
         <a href="#" onclick="showPage('ch6');closeToc();return false">Chapter 6 — Blood and Rank</a>
         <a href="#" onclick="showPage('ch7');closeToc();return false">Chapter 7 — Detention Again</a>
         <a href="#" onclick="showPage('ch8');closeToc();return false">Chapter 8 — Detention Continued</a>
+        <a href="#" onclick="showPage('ch9');closeToc();return false">Chapter 9 — The Secret</a>
       </div>
     </li>
     <li><a href="#" onclick="showPage('characters');return false">Characters</a></li>
@@ -2651,6 +2652,10 @@
       <a href="#" class="chapter-card" onclick="showPage('ch8');return false">
         <h3>Chapter 8 — Detention Continued</h3>
         <p>A broken hand. A Shadowbind. And Borin's quiet dissection of every loyalty Elias has ever called his own.</p>
+      </a>
+      <a href="#" class="chapter-card" onclick="showPage('ch9');return false">
+        <h3>Chapter 9 — The Secret</h3>
+        <p>Varric pays a visit to the detention cell. The pendant activates. And Elias discovers a power he didn't choose — and may not be able to put down.</p>
       </a>
     </div>
   </section>
@@ -3290,10 +3295,10 @@
     <p class="dialogue">"<em>Kiddin'</em>, lad." The laugh came up out of him like rocks in a barrel, shaking the bars. He wiped an eye and squinted at his clipboard. "Elias Lumina, eh?"</p>
     <p>A pause. Long enough to have weather in it.</p>
     <p class="dialogue">"Huh."</p>
-    <p>My guts twisted. Here it came.</p>
+    <p>My guts twisted. Here it came. The spit. The whispers. The—</p>
     <p class="dialogue">"Interestin'," he muttered, and there was no disgust in it at all. Just an old man reading an old name. "<em>Another</em> Lumina."</p>
     <p><em>Another.</em></p>
-    <p>I opened my mouth — and he was already lumbering over, hauling a ring of keys heavy enough to beat a man to death with.</p>
+    <p>I opened my mouth — and he was already lumbering over, hauling a ring of keys heavy enough to beat a man to death with, which I suspected was not hypothetical.</p>
     <p class="dialogue">"Tell ya what, kid." The lock clanked. "This whole mess reeks of a setup."</p>
     <p>The iron door groaned open.</p>
     <p class="dialogue">"Name's <a class="lore-term" onclick="showPage('characters');return false" href="#"><span class="lore-tip"><span class="lt-name">Borin Grimhall</span><span class="lt-type">Ally — Detention Warden</span><span class="lt-desc">A mountain of a man who runs the detention block. Member of The Veil.</span><span class="lt-link">→ Read more</span></span>Borin Grimhall</a>." A hand the size of a dinner plate came at me. "Pleasure."</p>
@@ -3366,8 +3371,8 @@
     <p>I nearly choked on my own spit.</p>
     <p>The boy who punched me at the gates. Who pinned me down and used my face for a throne. Who greeted his oldest friend with a headlock and an insult. <em>That</em> was the soul the System had weighed and found to be an ideal representative of the kingdom's protectors.</p>
     <p>The ledger in the back of my skull didn't add a line. It added a page.</p>
-    <p>I scanned the hall through the crack, hunting for someone — anyone — whose face said what mine did.</p>
-    <p>Cheering. Applause.</p>
+    <p>I scanned the hall through the crack, hunting for someone — anyone — whose face said what mine did. One student, one instructor, one person present who had seen what I'd seen at the gate.</p>
+    <p>Cheering. Applause. Kip, somewhere in the crowd, probably clapping hardest of all.</p>
     <p>Nobody batted an eye.</p>
     <p>And that — not the spit, not the snow, not the cell — was the first genuinely frightening thing Tetherpoint Academy showed me. Not that cruelty existed here. That the System had <em>audited</em> it, and stamped it a lion.</p>
 
@@ -4464,6 +4469,30 @@
     <p class="dialogue">"Some grow up and spit it out."</p>
     <p>His eyes dragged over me, slow, taking a measurement I couldn't see the units of.</p>
     <p class="dialogue">"Most just learn to call the taste <em>truth</em>."</p>
+
+    <div class="stat-block">
+      <div class="name">Elias Lumina</div>
+      <div class="meta">Level: 3 | Class: Tank (Ravager) | Faction: Unassigned</div>
+      <br>
+      <div class="stat-grid">
+        <div class="stat-item"><span class="stat-label">Strength</span><span class="stat-value">8</span></div>
+        <div class="stat-item"><span class="stat-label">Agility</span><span class="stat-value">10</span></div>
+        <div class="stat-item"><span class="stat-label">Vitality</span><span class="stat-value">10</span></div>
+        <div class="stat-item"><span class="stat-label">Intelligence</span><span class="stat-value">11</span></div>
+        <div class="stat-item"><span class="stat-label">Wisdom</span><span class="stat-value">12</span></div>
+        <div class="stat-item"><span class="stat-label">Charisma</span><span class="stat-value">10</span></div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-label-row">Soul Balance Stats (Hidden)</div>
+      <div class="stat-grid">
+        <div class="stat-item"><span class="stat-label">Mercy</span><span class="stat-value">84</span></div>
+        <div class="stat-item"><span class="stat-label">Conviction</span><span class="stat-value">85</span></div>
+        <div class="stat-item"><span class="stat-label">Resentment</span><span class="stat-value">51</span></div>
+        <div class="stat-item"><span class="stat-label">Connection</span><span class="stat-value">80</span></div>
+        <div class="stat-item"><span class="stat-label">Hope</span><span class="stat-value">68</span></div>
+        <div class="stat-item"><span class="stat-label">Identity</span><span class="stat-value">91</span></div>
+      </div>
+    </div>
   </div>
 
   <div class="mobile-dashboard">
@@ -4528,6 +4557,7 @@
   <div class="chapter-nav">
     <a href="#" class="btn" onclick="showPage('ch7');return false">← Chapter 7</a>
     <a href="#" class="btn" onclick="showPage('home');return false">Home</a>
+    <a href="#" class="btn btn-primary" onclick="showPage('ch9');return false">Chapter 9 →</a>
   </div>
   </div><!-- /chapter-main -->
 
@@ -4584,6 +4614,244 @@
         </button>
         <div class="collapsible-body"><div class="collapsible-body-inner">
           <div id="abilities-ch8-sb"></div>
+        </div></div>
+      </div>
+    </div>
+  </aside>
+  </div><!-- /chapter-layout -->
+</div>
+
+<!-- ════════════════════ CHAPTER 9 ════════════════════ -->
+<div id="page-ch9" class="chapter-page">
+  <div class="chapter-title-block">
+    <div class="chapter-num">Chapter Nine</div>
+    <h2>The Secret</h2>
+  </div>
+  <div class="chapter-layout">
+  <div class="chapter-main">
+  <div class="chapter-text">
+    <p class="dialogue">"Tits and barley, barley and hops — hops and whiskey till the singin' stops."</p>
+    <p><a class="lore-term" onclick="showPage('characters');return false" href="#"><span class="lore-tip"><span class="lt-name">Borin Grimhall</span><span class="lt-type">Detention Warden — Tetherpoint Academy</span><span class="lt-desc">A mountain of a man who runs the detention block. The only person who doesn't lie to Elias's face.</span><span class="lt-link">→ Read more</span></span>Borin</a> came down the stairs singing it low and off-key, a wooden tray balanced on one enormous palm, and the tune was cheerful. Stupidly cheerful. The kind of cheerful that had no business anywhere near damp stone and iron at whatever gray hour this was — which, I'd decided somewhere in the night, was exactly the point. Everything in this place was calibrated to remind you that your misery was routine. Even the music was institutional.</p>
+    <p>I hadn't spoken since the shadowbind released. Somewhere past midnight I'd made a formal decision about that, sitting in the dark with my jaw still humming and my ruined hand keeping time with my pulse: if silence was the last thing left that was mine to give or withhold, I would withhold it. Let the old bastard sing to himself. Let him wonder.</p>
+    <p>He set the tray of lukewarm porridge through the slot without dropping a beat.</p>
+    <p class="dialogue">"Mr. Lumina. Cat got yer tongue lately?"</p>
+    <p>I stared at the wall like it owed me money.</p>
+    <p>And something got out of him — a short, involuntary sound from deep in the chest, half a chuckle, caught and swallowed before it could finish being one. By the time my head whipped around, his face had smoothed back into that unreadable professional mask, and the only surviving evidence was a small smirk at the corner of his mouth. Maybe. If it had ever been there at all.</p>
+    <p><em>He knows exactly why I'm not talking,</em> I thought. <em>He gets his rocks off silencing students. Probably loves an empty block where no one can watch him power-trip.</em></p>
+    <p>I want to be honest about this part, looking back, because it matters later: I had no proof of any of that. What I had was a man humming a drinking song at breakfast, half a laugh, and the twitch of a beard. But my certainty had stopped waiting for proof somewhere around the second detention. Now it simply arrived, fully dressed, and told me what I was looking at.</p>
+    <p><em>Why is everyone going after me? What did I ever do? I busted my ass for eleven years just to get here, and for—</em></p>
+    <p class="dialogue">"<em>Fuck you!</em>" It tore out of me before I'd voted on it, cracking the whole night's silence in half. "When the <em>fuck</em> am I getting out of here?"</p>
+    <p>I was at the bars before I'd decided to stand, both hands on the iron, shaking them with everything my splinted hand could still contribute.</p>
+    <p>They didn't budge. They didn't even rattle. Iron doesn't care how much you mean it.</p>
+    <p>Borin watched me do it the way you watch weather — mildly interesting, entirely survivable — and that, more than any laugh could have, was what set my teeth grinding. <em>React,</em> I wanted to scream at him. <em>Give me something real to be angry at.</em></p>
+    <p class="dialogue">"Seriously?" My voice cracked on it, humiliatingly, landing somewhere between a shout and something much younger. "You're just going to stand there?"</p>
+    <p class="dialogue">"Oh, Mr. Lumina." He said it almost gently. Almost. "We got no out-date for ya."</p>
+    <p>The words didn't land right away. I stood there with my mouth open, waiting for the part where he was joking.</p>
+    <p>He tapped one stubby finger against the clipboard hanging off the bars — didn't hand it over, just angled it so I could read the line he meant. Crisp, fresh script across the top of the parchment:</p>
+    <p><em>Insubordination resulting in near-mortal harm of fellow trainees.</em></p>
+    <p>Near-mortal harm. That wasn't what happened. Three days ago the charge had been a party wipe that nearly happened; now it was harm I'd nearly caused. Nobody had rewritten it in front of me. The record was inflating on its own, in the dark, the way records do — the institution quietly drafting a monster in my name.</p>
+    <p>Except—</p>
+    <p>Kip on his knees, coughing dark crimson into the grass. Telilah screaming a sound I'd never heard a person make.</p>
+    <p>The memory surfaced on its own, uninvited, sliding in under my ribs like a blade finding the gap in a guard — and just as fast, I found the door and shut it behind. <em>I won that fight. I saved them. If I hadn't stepped up, we'd all be dead.</em> The argument was airtight. I'd built it carefully.</p>
+    <p>The cold weight in my gut didn't care about the argument. It kept sinking anyway.</p>
+    <p>And then the other thing arrived, worse, in pictures instead of words: Group 3 forming up in the courtyard right now, this morning, without me. Some other body slotted into the tank line. Someone else taking the hits, the XP, the loot, the loyalty — everyone's boots pointed out toward the gate while mine pointed at a stone wall, possibly forever.</p>
+    <p>The bars had gone freezing under my hands. I let go and stepped back into the shadow of the cell, and the floor seemed to tilt a degree under me, the way floors do when the arithmetic of your life changes while you're standing on them.</p>
+    <p class="dialogue">"Why me?" It came out at the floor, raw and hollow. Smaller than I wanted him to hear. "Why am I getting targeted?"</p>
+    <p class="dialogue">"Eh. Quit yer whinin'." Flat. Worn smooth. Said the way you say a thing for the hundredth time, not the first. "Yer lucky they didn't take yer head, or expel ye outright." He pulled open a ledger on his desk, already elsewhere. "Count yer blessin's, little Lumina."</p>
+    <p>Then heels sounded on the stone stairway — a sharp, arrogant click, descending.</p>
+
+    <p class="scene-break">◇ ◇ ◇</p>
+
+    <p>Around the bend came a man draped in the over-tailored crimson of <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-the-flame').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The Flame</span><span class="lt-type">Faction — One of the Four</span><span class="lt-desc">Warriors, duelists, and battle-mages who thrive in direct combat.</span><span class="lt-link">→ Read more</span></span>The Flame</a>, and I knew the walk before I saw the face. Nobody else in this academy moved like the floor should be grateful.</p>
+    <p>Archmage <a class="lore-term" onclick="showPage('characters');return false" href="#"><span class="lore-tip"><span class="lt-name">Archmage Varric Pyre</span><span class="lt-type">Instructor — Elementalist Extraordinary</span><span class="lt-desc">Master of ice and fire. Member of The Flame. Targets Elias with open hostility.</span><span class="lt-link">→ Read more</span></span>Varric Pyre</a>.</p>
+    <p class="dialogue">"Well, well. Look here." His gaze slid across the bars and over me the way a buyer's slides over defective livestock — cataloguing flaws, calculating salvage. "Mr. Elias Lumina. You really are a special breed, aren't you." He let the word <em>breed</em> sit there, deliberate as a placed stone. "Two detentions in your first three days at the academy. I don't recall anyone managing so pathetic a milestone. Not even others of your gutter-born ilk."</p>
+    <p>He didn't so much as glance at the desk. Just flicked two fingers, the way you'd wave off a fly.</p>
+    <p class="dialogue">"Borin, my old friend. Leave me with the trash."</p>
+    <p>Borin rose and bowed — low, lower than I'd have thought that mountain could fold — and cleared out with heavy, hurried thuds, boots taking the stairs two at a time. At the landing he paused. Half a beat, no more, his head angled back a degree, not far enough to be looking at anything.</p>
+    <p>Then he was gone, and I was alone with the snake.</p>
+    <p><em>Old friend.</em> Of course. No wonder the Veil thug and the Flame archmage got along — the two of them running this place like a private playground for breaking teenagers, taking shifts. It fit so cleanly I didn't examine it. Certainty had stopped waiting for proof, remember.</p>
+    <p class="dialogue">"Mr. Lumina." Varric strolled right up to the ironwork, smiling broadly. "Want to know a secret?"</p>
+    <p>I gave him nothing. Just the glare — steady, level, while somewhere behind it a thing with my voice calmly mapped the geometry of tearing his throat open through the bars and repainting his pristine robes from the inside. The image arrived complete and unhurried, the way they'd started to. I didn't flinch from it this time. I filed it.</p>
+    <p class="dialogue">"Nothing? Just a glare." He sighed, theatrically unimpressed. "You should understand something, boy. I am the one who <em>owns</em> you here. Not Borin. Not the Emporium. Not whatever gutter-gods they pray to in Ravenscroft. This is my school — and you are nothing but dirt on my floorboards."</p>
+    <p>I scoffed, turned my back on him, and walked to the cot. Sat. Put my boots up against the wall, one over the other, and studied the ceiling like it was the more interesting of the two things in the room. Whatever performance he'd come down those stairs to collect, he could go home hungry. His first detention had been unadulterated bullshit — punishment for scowling, for existing, for a surname — and I had no intention of dancing for the second.</p>
+    <p class="dialogue">"Might makes right, young Lumina." His voice dropped into a register I hadn't heard from him before — cold, unhurried, stripped of the podium. "That is the secret of this entire pathetic institution."</p>
+    <p>Then I heard it. A faint, low-pitched winding, rising — the sound of air being pulled somewhere air isn't supposed to go, a vacuum inhaling — and the heat hit my back like an opened forge.</p>
+    <p class="dialogue">"I think we — well." A pause I could hear the smile inside. "I mean <em>you</em> — are done breathing my air."</p>
+    <p>I spun off the cot in time to watch him unleash it.</p>
+    <p>The elemental came through the bars like they were a suggestion — pure predatory flame, iron meaning nothing to it, its face a jagged grin of white-hot embers assembling and reassembling as it moved. It looked <em>delighted</em>. Then it lunged, and the world went orange.</p>
+    <p>The heat hit like falling masonry. It blistered the air out of my lungs before I could spend it screaming — skin scorching, a blinding sting ripping across my face, the reek of my own hair singeing. My health bar plunged into freefall at the edge of vision, a [Burning] debuff stacking itself in tidy, clinical rows while my brain cooked toward boiling inside my skull.</p>
+    <p><em>He's actually executing me —</em> the thought arrived with absurd calm, the calm of the already-dead — <em>the archmage of Tetherpoint Academy is executing a first-year in a detention cell and no one is going to—</em></p>
+    <p class="dialogue">"Lumina!" Varric's bark cut through the roar, irritated, like I was failing a quiz. "Put on the pendant, you idiot!"</p>
+    <p><em>The what—</em></p>
+    <p>And through the panic, half a thought lit and died like the silver text on day one: <em>he knows.</em> Nobody knows about the pendant. Nobody but—</p>
+    <p>Survival strangled pride and finished the motion for me. I clawed the satchel open, ripped the <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-luminus-pendant').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Luminus Pendant</span><span class="lt-type">Legacy Item — Active</span><span class="lt-desc">A Maw Shard pendant from Uncle Daemeon. Absorbs elemental threats. Legacy access: granted.</span><span class="lt-link">→ Read more</span></span>pendant</a> loose, and forced the cord over my head with fingers I couldn't feel.</p>
+    <p>The moment the crystal touched my chest, the world buckled.</p>
+    <p>The heat didn't stop. It was <em>dragged</em> — savagely, backward, out of the air and out of my skin and out of the room, the elemental's grin warping into a shriek as its whole burning body stretched, funneled, spiraled down into the crystal like floodwater forced through a drain. The pull of it hummed in my sternum. Then a snap.</p>
+    <p>Silence. Smoke. The smell of my own singed hair, and a heavy glass vial shattering against the stone at my feet, splashing thick blue light across my boots.</p>
+    <p>A healing potion. He hadn't even bothered to hand it to me.</p>
+    <p>Before the cooling relief finished crawling over my burns, a chime sounded — clinical, sharp, directly inside my skull, in that cold installed voice I hadn't heard since the portal:</p>
+    <div class="system-msg">[LEGACY ACCESS: GRANTED]<br>[Fire Elemental — Level 10 — absorbed.]<br>[XP awarded: +1,000]<br>[Secondary Class unlocked: SIPHON MAGE]<br>[Siphon Mage — Level 2]<br>[Siphon Mage — Level 3]<br>[Siphon Mage — Level 4]</div>
+    <p>And beneath all of it — for half a heartbeat — a line of faint silver letters, flickering like a dying candle, gone before my eyes could close around it.</p>
+    <p>Exactly like day one. Exactly like the message the System had shown me once, and taken back, and filed somewhere I wasn't cleared to look.</p>
+    <p>I stood in the wreckage of my own execution with power flooding my veins like spring melt through a cracked dam — the burns forgotten, the terror forgotten, everything forgotten except the raw voltage of it, and the crystal pulsing against my sternum like a second heart that hadn't yet decided whose.</p>
+    <p>Outside the bars, Varric dusted a fleck of ash from his robes with two fingers. His expression had gone smooth. Bored. A craftsman surveying an adequate join.</p>
+    <p class="dialogue">"Or perhaps," he said mildly, "that was the secret."</p>
+    <p>He turned and started up the stairs, robes whispering against the stone. Three steps. Four. Then he paused, and looked back at me with the mild air of a man remembering an errand — and his eyes went not to my face but to my chest, to the crystal settling against it.</p>
+    <p class="dialogue">"One last thing, Lumina." A beat. "Don't ever take off that pendant."</p>
+    <p>Then he was gone, heels clicking up into the dark, and I was alone with the thing he'd just chained to me without once touching it.</p>
+
+    <p class="scene-break">◇ ◇ ◇</p>
+
+    <p>My hand went to the clasp before I'd finished deciding to — pure spite, pure animal contrarianism, <em>you don't get to own what I wear</em> — and my fingers found the cord.</p>
+    <p>And stopped.</p>
+    <p>The crystal was warm. Not the fire's warmth; the other kind — the exact temperature of the calm it had fed me two nights ago through the fabric of my pocket. And underneath the warmth, faint as a pulse felt through a wall, something turned over. Shifted its weight. Settled — the way a beast settles into a den it has decided, after long consideration, to keep.</p>
+    <p>I let go of the clasp.</p>
+    <p><em>Fine,</em> I told myself. <em>Fine.</em> I wasn't going to take it off anyway. It was mine — my inheritance, my blood, the first real power anyone in this cesspit had shown me instead of beaten into me. Keeping it on was my choice. Mine.</p>
+    <p>I believed that for years, actually.</p>
+    <p>I'd like to tell you the exact moment I stopped.</p>
+
+    <div class="stat-block">
+      <div class="name">Elias Lumina</div>
+      <div class="meta">Level: 3 | Class: Tank (Ravager) | Secondary Class: Siphon Mage — Level 4 | Faction: The Veil ⟦SEALED⟧</div>
+      <br>
+      <div class="stat-grid">
+        <div class="stat-item"><span class="stat-label">Strength</span><span class="stat-value">8</span></div>
+        <div class="stat-item"><span class="stat-label">Agility</span><span class="stat-value">10</span></div>
+        <div class="stat-item"><span class="stat-label">Vitality</span><span class="stat-value">10</span></div>
+        <div class="stat-item"><span class="stat-label">Intelligence</span><span class="stat-value">13</span></div>
+        <div class="stat-item"><span class="stat-label">Wisdom</span><span class="stat-value">13</span></div>
+        <div class="stat-item"><span class="stat-label">Charisma</span><span class="stat-value">10</span></div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-label-row">Soul Balance Stats (Hidden)</div>
+      <div class="stat-grid">
+        <div class="stat-item"><span class="stat-label">Mercy</span><span class="stat-value">81</span></div>
+        <div class="stat-item"><span class="stat-label">Conviction</span><span class="stat-value">87</span></div>
+        <div class="stat-item"><span class="stat-label">Resentment</span><span class="stat-value">61</span></div>
+        <div class="stat-item"><span class="stat-label">Connection</span><span class="stat-value">75</span></div>
+        <div class="stat-item"><span class="stat-label">Hope</span><span class="stat-value">72</span></div>
+        <div class="stat-item"><span class="stat-label">Identity</span><span class="stat-value">86</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-dashboard">
+    <div class="collapsible" onclick="this.classList.toggle('open')">
+      <button class="collapsible-toggle">
+        <div><h3>End of Chapter 9 — Stats</h3></div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="collapsible-body"><div class="collapsible-body-inner">
+        <div class="resource-bars" id="resource-bars-ch9"></div>
+        <div class="stats-section-title">Core Stats</div>
+        <div class="stats-grid" id="core-stats-ch9"></div>
+        <div class="stats-section-title">Soul Balance (Hidden)</div>
+        <div class="stats-grid" id="soul-stats-ch9"></div>
+      </div></div>
+    </div>
+    <div class="collapsible" onclick="this.classList.toggle('open')">
+      <button class="collapsible-toggle">
+        <div><h3>End of Chapter 9 — Inventory</h3></div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="collapsible-body"><div class="collapsible-body-inner">
+        <div class="inv-wrapper" id="inv-ch9" style="margin:0;border:none;padding:0">
+          <div class="inv-header">
+            <h3>Inventory</h3>
+            <div class="currency">
+              <span><i class="coin coin-gold"></i> 5</span>
+              <span><i class="coin coin-silver"></i> 50</span>
+              <span><i class="coin coin-copper"></i> 8</span>
+            </div>
+          </div>
+          <div class="inv-tabs">
+            <button class="active" onclick="event.stopPropagation();switchInvTab('ch9','equipment')">Equipment</button>
+            <button onclick="event.stopPropagation();switchInvTab('ch9','items')">Items</button>
+            <button onclick="event.stopPropagation();switchInvTab('ch9','potions')">Potions</button>
+          </div>
+          <div class="inv-hint">Tap an item to learn more</div>
+          <div class="inv-grid" id="inv-grid-ch9"></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="collapsible" onclick="this.classList.toggle('open')">
+      <button class="collapsible-toggle">
+        <div><h3>End of Chapter 9 — Abilities</h3></div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="collapsible-body"><div class="collapsible-body-inner">
+        <div id="abilities-ch9"></div>
+      </div></div>
+    </div>
+    <div class="collapsible" onclick="this.classList.toggle('open')">
+      <button class="collapsible-toggle">
+        <div><h3>End of Chapter 9 — Summary</h3><span class="spoiler-hint">Contains end-of-chapter spoilers</span></div>
+        <span class="chevron">▼</span>
+      </button>
+      <div class="collapsible-body"><div class="collapsible-body-inner">
+        <div id="end-summary-ch9"></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#" class="btn" onclick="showPage('ch8');return false">← Chapter 8</a>
+    <a href="#" class="btn" onclick="showPage('home');return false">Home</a>
+  </div>
+  </div><!-- /chapter-main -->
+
+  <!-- Sticky sidebar (desktop ≥1024px) -->
+  <aside class="chapter-sidebar" id="sidebar-ch9">
+    <div class="sidebar-inner">
+      <div class="sidebar-portrait">
+        <img src="images/elias-lumina.png" alt="Elias Lumina">
+        <div class="portrait-name">Elias Lumina</div>
+      </div>
+      <p class="sidebar-note">These reflect the stats and the inventory at the start of the chapter.</p>
+      <div class="collapsible" onclick="this.classList.toggle('open')">
+        <button class="collapsible-toggle">
+          <div><h3>Stats</h3></div>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="collapsible-body"><div class="collapsible-body-inner">
+          <div class="resource-bars" id="resource-bars-ch9-sb"></div>
+          <div class="stats-section-title">Core Stats</div>
+          <div class="stats-grid" id="core-stats-ch9-sb"></div>
+          <div class="stats-section-title">Soul Balance</div>
+          <div class="stats-grid" id="soul-stats-ch9-sb"></div>
+        </div></div>
+      </div>
+      <div class="collapsible" onclick="this.classList.toggle('open')">
+        <button class="collapsible-toggle">
+          <div><h3>Inventory</h3></div>
+        </button>
+        <div class="collapsible-body"><div class="collapsible-body-inner">
+          <div class="inv-wrapper" id="inv-ch9-sb" style="margin:0;border:none;padding:0">
+            <div class="inv-header">
+              <h3>Inventory</h3>
+              <div class="currency">
+                <span><i class="coin coin-gold"></i> 5</span>
+                <span><i class="coin coin-silver"></i> 50</span>
+                <span><i class="coin coin-copper"></i> 8</span>
+              </div>
+            </div>
+            <div class="inv-tabs">
+              <button class="active" onclick="event.stopPropagation();switchInvTab('ch9-sb','equipment')">Equipment</button>
+              <button onclick="event.stopPropagation();switchInvTab('ch9-sb','items')">Items</button>
+              <button onclick="event.stopPropagation();switchInvTab('ch9-sb','potions')">Potions</button>
+            </div>
+            <div class="inv-hint">Tap an item to learn more</div>
+            <div class="inv-grid" id="inv-grid-ch9-sb"></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="collapsible" onclick="this.classList.toggle('open')">
+        <button class="collapsible-toggle">
+          <div><h3>Abilities</h3></div>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="collapsible-body"><div class="collapsible-body-inner">
+          <div id="abilities-ch9-sb"></div>
         </div></div>
       </div>
     </div>
