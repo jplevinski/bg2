@@ -2662,7 +2662,7 @@
   </section>
 
   <section class="section" style="text-align:center;padding-top:0">
-    <a href="#" class="btn btn-primary" onclick="downloadBookPDF();return false" style="font-size:0.95rem;padding:0.75rem 2rem;letter-spacing:0.08em">⬇ Download Full Book (PDF)</a>
+    <a href="#" class="btn btn-primary" onclick="viewFullBook();return false" style="font-size:0.95rem;padding:0.75rem 2rem;letter-spacing:0.08em">📖 View Full Book</a>
     <p style="margin-top:0.6rem;font-size:0.75rem;color:var(--text-muted)">Opens a print dialog — choose "Save as PDF" in your browser</p>
   </section>
 
@@ -6872,24 +6872,15 @@ function renderEndSummary(chapter, suffix) {
   el.innerHTML = html;
 }
 
-function downloadBookPDF() {
-  const chapters = [
-    { id: 'ch1', title: 'Chapter 1 — Tetherpoint Academy' },
-    { id: 'ch2', title: 'Chapter 2 — The Weight of a Name' },
-    { id: 'ch3', title: 'Chapter 3 — Detention' },
-    { id: 'ch4', title: 'Chapter 4 — The Weight of a Shield' },
-    { id: 'ch5', title: 'Chapter 5 — The First Adventure' },
-    { id: 'ch6', title: 'Chapter 6 — Blood and Rank' },
-    { id: 'ch7', title: 'Chapter 7 — Detention' },
-    { id: 'ch8', title: 'Chapter 8 — Detention Part 2' },
-  ];
-
+function viewFullBook() {
+  // Dynamically collect all chapter pages in DOM order
   let body = '';
-  chapters.forEach(ch => {
-    const page = document.getElementById('page-' + ch.id);
-    if (!page) return;
+  document.querySelectorAll('[id^="page-ch"]').forEach(page => {
     const textEl = page.querySelector('.chapter-text');
     if (!textEl) return;
+    const chapterNum = page.querySelector('.chapter-num');
+    const h2 = page.querySelector('h2');
+    const titleText = (chapterNum ? chapterNum.textContent.trim() + ' — ' : '') + (h2 ? h2.textContent.trim() : '');
 
     const clone = textEl.cloneNode(true);
 
@@ -6899,17 +6890,16 @@ function downloadBookPDF() {
     // Unwrap lore-term anchors — keep visible text only
     clone.querySelectorAll('a.lore-term').forEach(a => {
       const span = document.createElement('span');
-      // The visible label is the last text node inside the <a>
       span.textContent = a.textContent;
       a.replaceWith(span);
     });
 
-    // Strip any remaining song embed divs (they have <audio> inside)
+    // Strip song embed divs (contain <audio>)
     clone.querySelectorAll('div').forEach(div => {
       if (div.querySelector('audio')) div.remove();
     });
 
-    body += `<h2 class="ch-title">${ch.title}</h2>\n${clone.innerHTML}\n<div class="ch-break"></div>\n`;
+    body += `<h2 class="ch-title">${titleText}</h2>\n${clone.innerHTML}\n<div class="ch-break"></div>\n`;
   });
 
   const win = window.open('', '_blank');
@@ -6924,8 +6914,8 @@ function downloadBookPDF() {
   body {
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 12pt;
-    line-height: 1.8;
-    color: #1a1a1a;
+    line-height: 1.9;
+    color: #111;
     background: #fff;
     max-width: 6.5in;
     margin: 0 auto;
@@ -6935,14 +6925,14 @@ function downloadBookPDF() {
     font-family: 'Cinzel', serif;
     font-size: 28pt;
     text-align: center;
-    margin-bottom: 0.25in;
-    letter-spacing: 0.1em;
+    margin-bottom: 0.2in;
+    letter-spacing: 0.08em;
   }
-  h1.book-subtitle {
+  .book-subtitle {
     font-family: 'Cinzel', serif;
     font-size: 11pt;
     text-align: center;
-    color: #555;
+    color: #444;
     margin-bottom: 0.1in;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -6951,29 +6941,42 @@ function downloadBookPDF() {
     font-family: 'Cinzel', serif;
     font-size: 10pt;
     text-align: center;
-    color: #777;
+    color: #666;
     margin-bottom: 0.6in;
   }
-  .ch-title {
+  .print-hint {
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    text-align: center;
+    color: #888;
+    margin-bottom: 0.4in;
+    font-style: italic;
+  }
+  h2.ch-title {
     font-family: 'Cinzel', serif;
-    font-size: 16pt;
+    font-size: 15pt;
     margin-top: 0.5in;
     margin-bottom: 0.25in;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
     padding-bottom: 0.1in;
+    color: #111;
   }
-  p { margin-bottom: 0.6em; text-indent: 1.5em; }
-  p:first-of-type { text-indent: 0; }
+  p { margin-bottom: 0.5em; text-indent: 1.5em; }
+  p:first-of-type, p.scene-break { text-indent: 0; }
+  p.scene-break { text-align: center; color: #555; margin: 0.4em 0; }
+  p.dialogue { text-indent: 1.5em; }
+  em { font-style: italic; }
+  strong { font-weight: 600; }
   .ch-break {
     page-break-after: always;
     margin: 0.5in 0;
     border-top: 1px solid #ccc;
   }
-  .ch-break:last-child { page-break-after: avoid; border: none; }
+  .ch-break:last-child { display: none; }
   a { color: inherit; text-decoration: none; }
   @media print {
-    body { padding: 0; }
-    .ch-break { page-break-after: always; }
+    .print-hint { display: none; }
+    .ch-break { page-break-after: always; border: none; margin: 0; }
   }
 </style>
 </head>
@@ -6981,11 +6984,11 @@ function downloadBookPDF() {
 <h1 class="book-title">Born Good</h1>
 <div class="book-subtitle">A Tetherpoint Academy Story</div>
 <div class="title-author">by Justin Plevinski, PhD</div>
+<p class="print-hint">To save as PDF: use your browser's Print function (Ctrl+P / ⌘+P) and choose "Save as PDF".</p>
 ${body}
 </body>
 </html>`);
   win.document.close();
-  setTimeout(() => win.print(), 800);
 }
 
 function showPage(id) {
