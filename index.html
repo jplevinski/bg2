@@ -6673,20 +6673,20 @@ document.addEventListener('keydown', function(e) {
 
 const STATS = {
   core: [
-    { name: 'Strength', ch1: 6, ch2: 6, ch3: 6, ch4: 6, ch5: 7, ch6: 10, ch7: 10, ch8: 10, max: 20 },
-    { name: 'Agility', ch1: 7, ch2: 7, ch3: 7, ch4: 7, ch5: 9, ch6: 11, ch7: 11, ch8: 11, max: 20 },
-    { name: 'Vitality', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 10, ch6: 13, ch7: 13, ch8: 13, max: 20 },
-    { name: 'Intelligence', ch1: 9, ch2: 9, ch3: 9, ch4: 9, ch5: 9, ch6: 9, ch7: 9, ch8: 9, max: 20 },
-    { name: 'Wisdom', ch1: 10, ch2: 10, ch3: 10, ch4: 10, ch5: 10, ch6: 10, ch7: 10, ch8: 10, max: 20 },
-    { name: 'Charisma', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 8, ch6: 8, ch7: 8, ch8: 8, max: 20 },
+    { name: 'Strength', ch1: 6, ch2: 6, ch3: 6, ch4: 6, ch5: 7, ch6: 10, ch7: 10, ch8: 10, ch9: 14, max: 20 },
+    { name: 'Agility', ch1: 7, ch2: 7, ch3: 7, ch4: 7, ch5: 9, ch6: 11, ch7: 11, ch8: 11, ch9: 15, max: 20 },
+    { name: 'Vitality', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 10, ch6: 13, ch7: 13, ch8: 13, ch9: 17, max: 20 },
+    { name: 'Intelligence', ch1: 9, ch2: 9, ch3: 9, ch4: 9, ch5: 9, ch6: 9, ch7: 9, ch8: 9, ch9: 20, max: 20 },
+    { name: 'Wisdom', ch1: 10, ch2: 10, ch3: 10, ch4: 10, ch5: 10, ch6: 10, ch7: 10, ch8: 10, ch9: 18, max: 20 },
+    { name: 'Charisma', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 8, ch6: 8, ch7: 8, ch8: 8, ch9: 12, max: 20 },
   ],
   soul: [
-    { name: 'Mercy', ch1: 94, ch2: 88, ch3: 88, ch4: 82, ch5: 80, ch6: 72, ch7: 65, ch8: 62, max: 100 },
-    { name: 'Conviction', ch1: 72, ch2: 78, ch3: 82, ch4: 86, ch5: 89, ch6: 93, ch7: 96, ch8: 93, max: 100 },
-    { name: 'Resentment', ch1: 4, ch2: 27, ch3: 42, ch4: 55, ch5: 63, ch6: 74, ch7: 83, ch8: 91, max: 100 },
-    { name: 'Connection', ch1: 91, ch2: 84, ch3: 85, ch4: 80, ch5: 78, ch6: 75, ch7: 70, ch8: 66, max: 100 },
-    { name: 'Hope', ch1: 96, ch2: 87, ch3: 75, ch4: 68, ch5: 64, ch6: 58, ch7: 50, ch8: 44, max: 100 },
-    { name: 'Identity', ch1: 100, ch2: 96, ch3: 96, ch4: 93, ch5: 90, ch6: 88, ch7: 84, ch8: 79, max: 100 },
+    { name: 'Mercy', ch1: 94, ch2: 88, ch3: 88, ch4: 82, ch5: 80, ch6: 72, ch7: 65, ch8: 62, ch9: 81, max: 100 },
+    { name: 'Conviction', ch1: 72, ch2: 78, ch3: 82, ch4: 86, ch5: 89, ch6: 93, ch7: 96, ch8: 93, ch9: 87, max: 100 },
+    { name: 'Resentment', ch1: 4, ch2: 27, ch3: 42, ch4: 55, ch5: 63, ch6: 74, ch7: 83, ch8: 91, ch9: 61, max: 100 },
+    { name: 'Connection', ch1: 91, ch2: 84, ch3: 85, ch4: 80, ch5: 78, ch6: 75, ch7: 70, ch8: 66, ch9: 75, max: 100 },
+    { name: 'Hope', ch1: 96, ch2: 87, ch3: 75, ch4: 68, ch5: 64, ch6: 58, ch7: 50, ch8: 44, ch9: 72, max: 100 },
+    { name: 'Identity', ch1: 100, ch2: 96, ch3: 96, ch4: 93, ch5: 90, ch6: 88, ch7: 84, ch8: 79, ch9: 86, max: 100 },
   ]
 };
 
@@ -6699,6 +6699,7 @@ const HP_MP = {
   ch6: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
   ch7: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
   ch8: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
+  ch9: { hp: 260, maxHp: 260, rage: 100, maxRage: 100 },
 };
 
 const ABILITIES = {
@@ -6734,6 +6735,14 @@ const ABILITIES = {
     { icon: '👟', name: 'Fast Feet', type: 'Passive — Job Lv.1', desc: 'Your natural composition alters the baseline parameters of your current role. Increases Dodge Chance by 5% per Job Level.' },
     { icon: '🦘', name: 'Rage Jump', type: 'Active — Rage Subclass', desc: 'Channel fury into a powerful leap toward a target. Deals impact damage on landing and briefly staggers nearby enemies.' },
     { icon: '🐂', name: 'Charge', type: 'Active — Rage Subclass', desc: 'Rush forward in a straight line, slamming into the first enemy hit. Deals bonus damage based on distance traveled and can knock targets back.' },
+  ],
+  ch9: [
+    { icon: '🛡️', name: 'Block', type: 'Active — Shield', desc: 'Raise your shield to intercept incoming attacks. Reduces damage based on shield quality and Strength.' },
+    { icon: '🔨', name: 'Smash', type: 'Active — Mace', desc: 'A heavy overhead strike that deals bonus damage. Can stagger enemies on critical hits.' },
+    { icon: '👟', name: 'Fast Feet', type: 'Passive — Job Lv.1', desc: 'Your natural composition alters the baseline parameters of your current role. Increases Dodge Chance by 5% per Job Level.' },
+    { icon: '🦘', name: 'Rage Jump', type: 'Active — Rage Subclass', desc: 'Channel fury into a powerful leap toward a target. Deals impact damage on landing and briefly staggers nearby enemies.' },
+    { icon: '🐂', name: 'Charge', type: 'Active — Rage Subclass', desc: 'Rush forward in a straight line, slamming into the first enemy hit. Deals bonus damage based on distance traveled and can knock targets back.' },
+    { icon: '🌀', name: 'Siphon', type: 'Active — Siphon Mage Lv.4', desc: 'Absorb an incoming elemental attack and convert its energy into raw power. Heals HP and generates Rage based on damage absorbed. Effectiveness scales with Intelligence.' },
   ],
 };
 
@@ -7069,6 +7078,7 @@ renderStats(5, 'ch5');
 renderStats(6, 'ch6');
 renderStats(7, 'ch7');
 renderStats(8, 'ch8');
+renderStats(9, 'ch9');
 // Beginning-of-chapter stats (sidebar)
 renderStats(1, 'ch1-sb');
 renderStats(1, 'ch2-sb');
@@ -7078,6 +7088,7 @@ renderStats(4, 'ch5-sb');
 renderStats(5, 'ch6-sb');
 renderStats(6, 'ch7-sb');
 renderStats(7, 'ch8-sb');
+renderStats(8, 'ch9-sb');
 
 const INVENTORY = {
   ch1: {
@@ -7232,13 +7243,31 @@ const INVENTORY = {
       { icon: '✉️', name: 'Letter from Uncle Daemeon', type: 'Quest Item', desc: 'A letter written in silver ink. Daemeon urges Elias to join The Veil and discover the truth of their heritage. Most of what the world says about him are lies — or so he claims.', stats: 'Cannot be discarded' },
     ],
     potions: []
+  },
+  ch9: {
+    equipment: [
+      { icon: '👕', name: 'Academy Uniform — Shirt', type: 'Armor — Chest', desc: 'Scorched and singed from the fire elemental\'s attack. Still holding together, barely.', stats: 'No stat bonuses' },
+      { icon: '👖', name: 'Academy Uniform — Trousers', type: 'Armor — Legs', desc: 'Dark gray trousers, mud-caked and ripped. Survived better than the shirt.', stats: 'No stat bonuses' },
+      { icon: '🥾', name: 'Academy Uniform — Boots', type: 'Armor — Feet', desc: 'Standard leather boots. Scorched at the toes from the elemental encounter.', stats: 'No stat bonuses' },
+      { icon: '🧥', name: 'Academy Uniform — Cloak', type: 'Armor — Back', desc: 'A charcoal-gray cloak with the Tetherpoint crest. Heavily singed — the hem is gone entirely.', stats: 'No stat bonuses' },
+      { icon: '🎒', name: 'Canvas Satchel', type: 'Accessory — Bag', desc: 'A weather-beaten bag. The leather is heat-warped on one side from the elemental blast.', stats: 'No stat bonuses' },
+      { icon: '🔮', name: 'Luminus Pendant', type: 'Accessory — Neck (Active)', desc: 'Now worn openly around Elias\'s neck. The Maw Shard has absorbed a Level 10 Fire Elemental and pulsed four rapid Siphon Mage level-ups into its bearer. Legacy access granted. Cannot be removed — or so he tells himself.', stats: 'Legacy Access: GRANTED | Siphon Mage Secondary Class unlocked | +INT, +WIS per level' },
+      { icon: '🛡️', name: 'Trainee\'s Shield', type: 'Off-Hand — Shield', desc: 'A battered wooden shield bearing dents, goblin claw marks, and now scorch marks from the elemental.', stats: '+5 Defense | Gains [Block] Ability' },
+      { icon: '🔨', name: 'Trainee\'s Mace', type: 'Weapon — One-Handed', desc: 'A simple iron mace. The mace hand is splinted — usable but painful. The mace itself survived the fire.', stats: '+2 Attack, +3 Defense | Gains [Smash] Ability' },
+    ],
+    items: [
+      { icon: '📜', name: 'Academy Admission Papers', type: 'Document', desc: 'Official papers confirming Elias Lumina\'s enrollment in Tetherpoint Academy, Class 777 — The Golden Cohort.', stats: 'Cannot be discarded' },
+      { icon: '🪙', name: 'Father\'s Lucky Coin', type: 'Keepsake', desc: 'A worn copper coin from Tether, given by Elias\'s father on the day he left Ravenscroft. "For when you need reminding where you come from."', stats: 'No stat bonuses' },
+      { icon: '✉️', name: 'Letter from Uncle Daemeon', type: 'Quest Item', desc: 'A letter written in silver ink. The truth of its promises is proving harder to dismiss than expected.', stats: 'Cannot be discarded' },
+    ],
+    potions: []
   }
 };
 
 const SLOT_COUNT = 12;
 
-const BEGIN_INV_MAP = { ch1: 'ch1', ch2: 'ch1', ch3: 'ch2', ch4: 'ch3', ch5: 'ch4', ch6: 'ch5', ch7: 'ch6', ch8: 'ch7' };
-const END_INV_MAP = { ch1: 'ch1', ch2: 'ch2', ch3: 'ch3', ch4: 'ch4', ch5: 'ch5', ch6: 'ch6', ch7: 'ch7', ch8: 'ch7' };
+const BEGIN_INV_MAP = { ch1: 'ch1', ch2: 'ch1', ch3: 'ch2', ch4: 'ch3', ch5: 'ch4', ch6: 'ch5', ch7: 'ch6', ch8: 'ch7', ch9: 'ch8' };
+const END_INV_MAP = { ch1: 'ch1', ch2: 'ch2', ch3: 'ch3', ch4: 'ch4', ch5: 'ch5', ch6: 'ch6', ch7: 'ch7', ch8: 'ch7', ch9: 'ch9' };
 function getInvDataKey(chId) {
   const base = chId.replace('-sb', '');
   const isSidebar = chId.endsWith('-sb');
@@ -7317,6 +7346,8 @@ renderInventory('ch7', 'equipment');
 renderInventory('ch7-sb', 'equipment');
 renderInventory('ch8', 'equipment');
 renderInventory('ch8-sb', 'equipment');
+renderInventory('ch9', 'equipment');
+renderInventory('ch9-sb', 'equipment');
 
 // Abilities
 // End-of-chapter abilities (mobile dashboard)
@@ -7328,6 +7359,7 @@ renderAbilities(5, 'ch5');
 renderAbilities(6, 'ch6');
 renderAbilities(7, 'ch7');
 renderAbilities(8, 'ch8');
+renderAbilities(9, 'ch9');
 // Beginning-of-chapter abilities (sidebar)
 renderAbilities(1, 'ch1-sb');
 renderAbilities(1, 'ch2-sb');
@@ -7337,6 +7369,7 @@ renderAbilities(4, 'ch5-sb');
 renderAbilities(5, 'ch6-sb');
 renderAbilities(6, 'ch7-sb');
 renderAbilities(7, 'ch8-sb');
+renderAbilities(8, 'ch9-sb');
 
 // End of chapter summaries (after INVENTORY is defined)
 renderEndSummary(1, 'ch1');
@@ -7347,6 +7380,7 @@ renderEndSummary(5, 'ch5');
 renderEndSummary(6, 'ch6');
 renderEndSummary(7, 'ch7');
 renderEndSummary(8, 'ch8');
+renderEndSummary(9, 'ch9');
 
 // Soul stat change reasons (for tooltip on hover)
 const SOUL_REASONS = {
