@@ -2566,6 +2566,7 @@
         <a href="#" onclick="showPage('races');closeWorldMenu();return false">Races</a>
         <a href="#" onclick="showPage('bestiary');closeWorldMenu();return false">Bestiary</a>
         <a href="#" onclick="showPage('stats');closeWorldMenu();return false">Stats Guide</a>
+        <a href="#" onclick="showPage('formulas');closeWorldMenu();return false">Formulas</a>
       </div>
     </li>
     <li class="toc-dropdown">
@@ -6238,6 +6239,54 @@
   </section>
 </div>
 
+<!-- ════════════════════ FORMULAS ════════════════════ -->
+<div id="page-formulas" class="chapter-page">
+  <div class="chapter-title-block">
+    <div class="chapter-num">The Adventurer's System</div>
+    <h2>Formulas</h2>
+  </div>
+
+  <section class="section">
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto">The System calculates an adventurer's resources from their core stats. These formulas govern all adventurers in Valerguard — from first-years to battle-hardened veterans.</p>
+
+    <div class="stats-wrapper">
+      <div class="stats-section-title">Resource Formulas</div>
+
+      <div style="display:grid;gap:1.2rem;margin-top:1.2rem">
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.5rem">HP — Hit Points</h4>
+          <p style="font-family:'Courier New',monospace;font-size:1.05rem;color:var(--text-primary);margin-bottom:0.6rem">(STR + VIT × 2) × 3</p>
+          <p style="font-size:0.88rem;color:var(--text-muted)">Represents raw physical durability. Vitality carries the greater weight — endurance and resilience matter more than brute force when it comes to surviving damage. Strength contributes as a secondary factor, reflecting how muscle and fortitude work together.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.5rem">MP — Mana Points</h4>
+          <p style="font-family:'Courier New',monospace;font-size:1.05rem;color:var(--text-primary);margin-bottom:0.6rem">(WIS + INT × 2) × 3</p>
+          <p style="font-size:0.88rem;color:var(--text-muted)">Represents magical capacity. Intelligence is the dominant factor — it governs raw mana generation and spellcraft potential. Wisdom shapes how that mana is stored and regenerated, acting as a reservoir for what Intelligence produces.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.5rem">Rage — Ravager Resource</h4>
+          <p style="font-family:'Courier New',monospace;font-size:1.05rem;color:var(--text-primary);margin-bottom:0.6rem">Fixed pool — generated through combat</p>
+          <p style="font-size:0.88rem;color:var(--text-muted)">Rage is not derived from a stat formula. It is built exclusively through battle — taking hits, landing strikes, and witnessing allies fall. A Ravager begins each encounter at zero and must earn their resource through the fight itself. The pool maximum is set by class rank, not attribute scores.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="stats-wrapper" style="margin-top:2rem">
+      <div class="stats-section-title">Notes</div>
+      <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-top:0.8rem">
+        <p>• Adventurers with both a primary and secondary class may possess multiple resource types simultaneously. Elias Lumina is currently the only known example — his Tank (Ravager) primary class generates Rage, while the Siphon Mage secondary class unlocked a dormant MP pool.</p>
+        <p style="margin-top:0.6rem">• All formulas reflect the base calculation at the time stats are recorded. Equipment bonuses, temporary buffs, and class passives may alter the final displayed values.</p>
+        <p style="margin-top:0.6rem">• Soul Balance Stats do not feed into any known resource formula. Their mechanical effects on resource pools — if any — remain undocumented by the System.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
 <!-- ════════════════════ BESTIARY ════════════════════ -->
 <div id="page-bestiary" class="chapter-page">
   <div class="chapter-title-block">
@@ -6668,15 +6717,15 @@ const STATS = {
 };
 
 const HP_MP = {
-  ch1: { hp: 100, maxHp: 100, mp: 50, maxMp: 50 },
-  ch2: { hp: 100, maxHp: 100, mp: 48, maxMp: 50 },
-  ch3: { hp: 100, maxHp: 100, mp: 48, maxMp: 50 },
-  ch4: { hp: 100, maxHp: 100, mp: 48, maxMp: 50 },
-  ch5: { hp: 150, maxHp: 150, mp: 48, maxMp: 50 },
-  ch6: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
-  ch7: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
-  ch8: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
-  ch9: { hp: 260, maxHp: 260, rage: 100, maxRage: 100, mp: 50, maxMp: 50 },
+  ch1: { hp: 66, maxHp: 66, mp: 84, maxMp: 84 },
+  ch2: { hp: 66, maxHp: 66, mp: 84, maxMp: 84 },
+  ch3: { hp: 66, maxHp: 66, mp: 84, maxMp: 84 },
+  ch4: { hp: 66, maxHp: 66, mp: 84, maxMp: 84 },
+  ch5: { hp: 81, maxHp: 81, mp: 84, maxMp: 84 },
+  ch6: { hp: 108, maxHp: 108, rage: 100, maxRage: 100 },
+  ch7: { hp: 108, maxHp: 108, rage: 100, maxRage: 100 },
+  ch8: { hp: 108, maxHp: 108, rage: 100, maxRage: 100 },
+  ch9: { hp: 144, maxHp: 144, rage: 100, maxRage: 100, mp: 174, maxMp: 174 },
 };
 
 const ABILITIES = {
