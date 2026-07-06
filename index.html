@@ -4710,29 +4710,6 @@
     <p>I believed that for years, actually.</p>
     <p>I'd like to tell you the exact moment I stopped.</p>
 
-    <div class="stat-block">
-      <div class="name">Elias Lumina</div>
-      <div class="meta">Level: 3 | Class: Tank (Ravager) | Secondary Class: Siphon Mage — Level 4 | Faction: The Veil ⟦SEALED⟧</div>
-      <br>
-      <div class="stat-grid">
-        <div class="stat-item"><span class="stat-label">Strength</span><span class="stat-value">8</span></div>
-        <div class="stat-item"><span class="stat-label">Agility</span><span class="stat-value">10</span></div>
-        <div class="stat-item"><span class="stat-label">Vitality</span><span class="stat-value">10</span></div>
-        <div class="stat-item"><span class="stat-label">Intelligence</span><span class="stat-value">13</span></div>
-        <div class="stat-item"><span class="stat-label">Wisdom</span><span class="stat-value">13</span></div>
-        <div class="stat-item"><span class="stat-label">Charisma</span><span class="stat-value">10</span></div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-label-row">Soul Balance Stats (Hidden)</div>
-      <div class="stat-grid">
-        <div class="stat-item"><span class="stat-label">Mercy</span><span class="stat-value">81</span></div>
-        <div class="stat-item"><span class="stat-label">Conviction</span><span class="stat-value">87</span></div>
-        <div class="stat-item"><span class="stat-label">Resentment</span><span class="stat-value">61</span></div>
-        <div class="stat-item"><span class="stat-label">Connection</span><span class="stat-value">75</span></div>
-        <div class="stat-item"><span class="stat-label">Hope</span><span class="stat-value">72</span></div>
-        <div class="stat-item"><span class="stat-label">Identity</span><span class="stat-value">86</span></div>
-      </div>
-    </div>
   </div>
 
   <div class="mobile-dashboard">
@@ -6699,7 +6676,7 @@ const HP_MP = {
   ch6: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
   ch7: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
   ch8: { hp: 200, maxHp: 200, rage: 100, maxRage: 100 },
-  ch9: { hp: 260, maxHp: 260, rage: 100, maxRage: 100 },
+  ch9: { hp: 260, maxHp: 260, rage: 100, maxRage: 100, mp: 50, maxMp: 50 },
 };
 
 const ABILITIES = {
@@ -6752,12 +6729,16 @@ function renderStats(chapter, suffix) {
   if (hpMpEl) {
     var r = HP_MP['ch' + chapter] || { hp: 100, maxHp: 100, mp: 50, maxMp: 50 };
     var secondBar = '';
+    var thirdBar = '';
     if (r.rage !== undefined) {
       secondBar = '<div class="resource-bar-row"><span class="resource-bar-label">Rage</span><div class="resource-bar-bg"><div class="resource-bar-fill rage" style="width:' + (r.rage / r.maxRage * 100) + '%;background:linear-gradient(90deg,#8b0000,#ff4444)"></div></div><span class="resource-bar-val">' + r.rage + ' / ' + r.maxRage + '</span></div>';
+      if (r.mp !== undefined) {
+        thirdBar = '<div class="resource-bar-row"><span class="resource-bar-label">MP</span><div class="resource-bar-bg"><div class="resource-bar-fill mp" style="width:' + (r.mp / r.maxMp * 100) + '%"></div></div><span class="resource-bar-val">' + r.mp + ' / ' + r.maxMp + '</span></div>';
+      }
     } else {
       secondBar = '<div class="resource-bar-row"><span class="resource-bar-label">MP</span><div class="resource-bar-bg"><div class="resource-bar-fill mp" style="width:' + (r.mp / r.maxMp * 100) + '%"></div></div><span class="resource-bar-val">' + r.mp + ' / ' + r.maxMp + '</span></div>';
     }
-    hpMpEl.innerHTML = '<div class="resource-bar-row"><span class="resource-bar-label">HP</span><div class="resource-bar-bg"><div class="resource-bar-fill hp" style="width:' + (r.hp / r.maxHp * 100) + '%"></div></div><span class="resource-bar-val">' + r.hp + ' / ' + r.maxHp + '</span></div>' + secondBar;
+    hpMpEl.innerHTML = '<div class="resource-bar-row"><span class="resource-bar-label">HP</span><div class="resource-bar-bg"><div class="resource-bar-fill hp" style="width:' + (r.hp / r.maxHp * 100) + '%"></div></div><span class="resource-bar-val">' + r.hp + ' / ' + r.maxHp + '</span></div>' + secondBar + thirdBar;
   }
   ['core', 'soul'].forEach(type => {
     const el = document.getElementById(`${type}-stats-${suffix}`);
