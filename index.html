@@ -6276,11 +6276,16 @@
     </div>
 
     <div class="stats-wrapper" style="margin-top:2rem">
-      <div class="stats-section-title">Notes</div>
-      <div style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-top:0.8rem">
-        <p>• Adventurers with both a primary and secondary class may possess multiple resource types simultaneously. Elias Lumina is currently the only known example — his Tank (Ravager) primary class generates Rage, while the Siphon Mage secondary class unlocked a dormant MP pool.</p>
-        <p style="margin-top:0.6rem">• All formulas reflect the base calculation at the time stats are recorded. Equipment bonuses, temporary buffs, and class passives may alter the final displayed values.</p>
-        <p style="margin-top:0.6rem">• Soul Balance Stats do not feed into any known resource formula. Their mechanical effects on resource pools — if any — remain undocumented by the System.</p>
+      <div class="collapsible" onclick="this.classList.toggle('open')">
+        <button class="collapsible-toggle">
+          <div><h3 style="font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)">Notes <span style="color:#c0392b;font-size:0.75rem;margin-left:0.5rem">⚠ Spoilers</span></h3></div>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="collapsible-body"><div class="collapsible-body-inner" style="font-size:0.88rem;color:var(--text-muted);line-height:1.7">
+          <p>• Adventurers with both a primary and secondary class may possess multiple resource types simultaneously. Elias Lumina is currently the only known example — his Tank (Ravager) primary class generates Rage, while the Siphon Mage secondary class unlocked a dormant MP pool.</p>
+          <p style="margin-top:0.6rem">• All formulas reflect the base calculation at the time stats are recorded. Equipment bonuses, temporary buffs, and class passives may alter the final displayed values.</p>
+          <p style="margin-top:0.6rem">• Soul Balance Stats do not feed into any known resource formula. Their mechanical effects on resource pools — if any — remain undocumented by the System.</p>
+        </div></div>
       </div>
     </div>
 
