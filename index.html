@@ -6207,76 +6207,83 @@
   <section class="section">
     <div style="max-width:700px;margin:0 auto">
 
-      <div style="background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.25);border-radius:10px;padding:1rem 1.4rem;margin-bottom:2.5rem;font-size:0.85rem;color:var(--text-muted);line-height:1.6">
+      <div style="background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.25);border-radius:10px;padding:1rem 1.4rem;margin-bottom:2rem;font-size:0.85rem;color:var(--text-muted);line-height:1.6">
         <span style="font-family:'Cinzel',serif;color:var(--gold);font-size:0.8rem;letter-spacing:0.05em">⚠ Note</span><br>
-        Lore entries expand on the history, factions, artifacts, and hidden truths of Valerguard. Some entries contain <strong style="color:var(--gold)">spoilers</strong> for the main story. Entries are ordered chronologically by era.
+        Lore entries expand on the history, factions, artifacts, and hidden truths of Valerguard. Some entries contain <strong style="color:var(--gold)">spoilers</strong> for the main story.
+      </div>
+
+      <!-- Theme jump links -->
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem">
+        <a href="#lore-theme-origins" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--gold-dim);text-decoration:none;border:1px solid rgba(184,154,91,.25);border-radius:20px;padding:0.35rem 0.85rem;transition:border-color .15s,color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.55)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)';this.style.color='var(--gold-dim)'">Origins &amp; Myths</a>
+        <a href="#lore-theme-factions" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--gold-dim);text-decoration:none;border:1px solid rgba(184,154,91,.25);border-radius:20px;padding:0.35rem 0.85rem;transition:border-color .15s,color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.55)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)';this.style.color='var(--gold-dim)'">Factions &amp; Orders</a>
+        <a href="#lore-theme-history" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--gold-dim);text-decoration:none;border:1px solid rgba(184,154,91,.25);border-radius:20px;padding:0.35rem 0.85rem;transition:border-color .15s,color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.55)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)';this.style.color='var(--gold-dim)'">History &amp; Events</a>
+        <a href="#lore-theme-people" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--gold-dim);text-decoration:none;border:1px solid rgba(184,154,91,.25);border-radius:20px;padding:0.35rem 0.85rem;transition:border-color .15s,color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.55)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)';this.style.color='var(--gold-dim)'">People &amp; Legends</a>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:0.8rem">
 
-        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0">
-          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">PRE-CATASTROPHE</div>
+        <!-- ORIGINS & MYTHS -->
+        <div id="lore-theme-origins" style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">ORIGINS &amp; MYTHS</div>
           <a href="#" onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="display:flex;align-items:center;gap:0.6rem">
                 <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Lunarian Exodus</span>
                 <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:var(--text-muted);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:0.15rem 0.45rem">SPOILERS</span>
               </div>
-              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Ancient Myth · Pre-Catastrophe · ~2,500 years before the Catastrophe</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Ancient Myth · ~2,500 years before the Catastrophe</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-          <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
-              <div style="display:flex;align-items:center;gap:0.6rem">
-                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Cult of Luna</span>
-                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:#c0392b;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:4px;padding:0.15rem 0.45rem">⚠ MAJOR SPOILERS</span>
-              </div>
-              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Lunar Covenant · Pre-Catastrophe · ~2,000 years before the Catastrophe</div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Catastrophe</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Cataclysm · Year -3 · The event that ended the old world</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
         </div>
 
-        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
-          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">THE CATASTROPHE</div>
-          <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+        <!-- FACTIONS & ORDERS -->
+        <div id="lore-theme-factions" style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">FACTIONS &amp; ORDERS</div>
+          <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
-              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Catastrophe</div>
-              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year -3 · The event that ended the old world</div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Cult of Luna</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:#c0392b;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:4px;padding:0.15rem 0.45rem">⚠ MAJOR SPOILERS</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Lunar Covenant · ~2,000 years before the Catastrophe</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-          <a href="#" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Consensus of the Fifteen</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Governing Council · Year 0 · The founding of Valerguard and the Four Factions</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+        </div>
+
+        <!-- HISTORY & EVENTS -->
+        <div id="lore-theme-history" style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">HISTORY &amp; EVENTS</div>
+          <a href="#" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Dark Age</div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Years -3 to 0 · Famine, collapse, and the first Adventurers</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-        </div>
-
-        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
-          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">POST-CATASTROPHE</div>
-          <a href="#" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
-            <div>
-              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Consensus of the Fifteen</div>
-              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 0 · The founding of Valerguard and the Four Factions</div>
-            </div>
-            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
-          </a>
-          <a href="#" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Ecosystem of Chaos</div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 2 onward · Monsters, broken seals, and The Maw</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-        </div>
-
-        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
-          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">MODERN ERA</div>
-          <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="display:flex;align-items:center;gap:0.6rem">
                 <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">Daemeon Lumina's Discovery</span>
@@ -6286,17 +6293,18 @@
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-          <a href="#" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+        </div>
+
+        <!-- PEOPLE & LEGENDS -->
+        <div id="lore-theme-people" style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">PEOPLE &amp; LEGENDS</div>
+          <a href="#" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Golden Cohort</div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 777 — Present Day · Tetherpoint Academy, Class 777</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-        </div>
-
-        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
-          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">CULTURE &amp; LEGEND</div>
           <a href="#" id="ale-chuggers" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">🍺 The Ale Chuggers</div>
