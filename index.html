@@ -7177,7 +7177,7 @@
       <!-- RUSTLEFOOT GOBLINS -->
       <div class="beast-card" id="beast-rustlefoot-goblins">
         <div class="beast-header">
-          <img src="images/rustlefoot-goblins.jpg" alt="Rustlefoot Goblins" class="beast-portrait" onclick="document.getElementById('beast-lightbox-img').src=this.src;document.getElementById('beast-lightbox').classList.add('open')" style="cursor:pointer">
+          <img src="images/rustlefoot-goblins.jpg" alt="Rustlefoot Goblins" class="beast-portrait" onclick="beastLightboxOpen('image',this.src)" style="cursor:pointer">
           <div class="beast-title-block">
             <h3>Rustlefoot Goblins</h3>
             <div class="beast-type">Creature — Enemy</div>
@@ -7226,7 +7226,7 @@
       <!-- SNATCHER GOBLINS -->
       <div class="beast-card" id="beast-snatcher-goblins">
         <div class="beast-header">
-          <img src="images/snatcher-goblin.jpg" alt="Snatcher Goblin" class="beast-portrait" onclick="document.getElementById('beast-lightbox-img').src=this.src;document.getElementById('beast-lightbox').classList.add('open')" style="cursor:pointer">
+          <img src="images/snatcher-goblin.jpg" alt="Snatcher Goblin" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/SnatcherGoblin.mp4')" style="cursor:pointer">
           <div class="beast-title-block">
             <h3>Snatcher Goblins</h3>
             <div class="beast-type">Creature — Enemy</div>
@@ -7235,10 +7235,6 @@
         </div>
         <div class="beast-body">
           <p>A more evolved and considerably more dangerous strain of goblin found in canyon country, sheer cliff faces, and ruined vertical architecture. Lean and long-limbed with adhesive, splayed digits and glassy black eyes suited for low-light spatial tracking, Snatcher Goblins are pack hunters defined by a single, terrifying trait: they treat walls and ceilings as floor. They bypass fortified chokepoints entirely by routing over, around, and upside-down. Their thorn-woven snare nets are carried like tools — deployed precisely, not thrown wildly — and the moment a target is locked down, the pack converges for a coordinated burst. They are not powerful individually. They are not meant to be fought one at a time.</p>
-          <div style="margin:1.2rem 0 0.4rem">
-            <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.12em;color:var(--text-muted);margin-bottom:0.5rem">◈ FIELD FOOTAGE</div>
-            <video src="images/snatcher-goblin.mp4" controls loop muted playsinline style="width:100%;border-radius:8px;border:1px solid rgba(184,154,91,.15);display:block;background:#000"></video>
-          </div>
           <div class="beast-stats-grid">
             <div class="beast-stat-block">
               <h4>Average Stats</h4>
@@ -7286,7 +7282,7 @@
       <!-- MUDSKIPPER -->
       <div class="beast-card" id="beast-mudskipper">
         <div class="beast-header">
-          <img src="images/mudskipper.jpg" alt="Mudskipper" class="beast-portrait" onclick="document.getElementById('beast-lightbox-img').src=this.src;document.getElementById('beast-lightbox').classList.add('open')" style="cursor:pointer">
+          <img src="images/mudskipper.jpg" alt="Mudskipper" class="beast-portrait" onclick="beastLightboxOpen('image',this.src)" style="cursor:pointer">
           <div class="beast-title-block">
             <h3>Mudskipper</h3>
             <div class="beast-type">Creature — Pack Beast</div>
@@ -7344,7 +7340,7 @@
       <!-- SHIVER-BEAK ROOSTER -->
       <div class="beast-card" id="beast-shiver-beak-rooster">
         <div class="beast-header">
-          <img src="images/shiver-beak-rooster.jpg" alt="Shiver-Beak Rooster" class="beast-portrait" onclick="document.getElementById('beast-lightbox-img').src=this.src;document.getElementById('beast-lightbox').classList.add('open')" style="cursor:pointer">
+          <img src="images/shiver-beak-rooster.jpg" alt="Shiver-Beak Rooster" class="beast-portrait" onclick="beastLightboxOpen('image',this.src)" style="cursor:pointer">
           <div class="beast-title-block">
             <h3>Shiver-Beak Rooster</h3>
             <div class="beast-type">Creature — Magical Beast</div>
@@ -7386,7 +7382,7 @@
       <!-- MIMIC -->
       <div class="beast-card" id="beast-mimic">
         <div class="beast-header">
-          <img src="images/mimic.jpg" alt="Mimic" class="beast-portrait" onclick="document.getElementById('beast-lightbox-img').src=this.src;document.getElementById('beast-lightbox').classList.add('open')" style="cursor:pointer">
+          <img src="images/mimic.jpg" alt="Mimic" class="beast-portrait" onclick="beastLightboxOpen('image',this.src)" style="cursor:pointer">
           <div class="beast-title-block">
             <h3>Mimic</h3>
             <div class="beast-type">Creature — Dungeon Monster</div>
@@ -7452,9 +7448,38 @@
 </footer>
 
 <!-- ════════════════════ BESTIARY LIGHTBOX ════════════════════ -->
-<div class="stat-lightbox" id="beast-lightbox" onclick="this.classList.remove('open')">
-  <img id="beast-lightbox-img" src="" alt="Creature — Full Size">
+<div class="stat-lightbox" id="beast-lightbox" onclick="if(event.target===this)beastLightboxClose()">
+  <img id="beast-lightbox-img" src="" alt="Creature — Full Size" style="display:none">
+  <video id="beast-lightbox-video" controls autoplay loop style="display:none;max-width:90vw;max-height:85vh;border-radius:8px;outline:none"></video>
+  <button onclick="beastLightboxClose()" style="position:fixed;top:1.2rem;right:1.4rem;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.6rem;cursor:pointer;line-height:1">✕</button>
 </div>
+<script>
+function beastLightboxOpen(type, src) {
+  var lb = document.getElementById('beast-lightbox');
+  var img = document.getElementById('beast-lightbox-img');
+  var vid = document.getElementById('beast-lightbox-video');
+  if (type === 'video') {
+    img.style.display = 'none';
+    vid.style.display = 'block';
+    vid.src = src;
+    vid.play();
+  } else {
+    vid.style.display = 'none';
+    vid.pause();
+    vid.src = '';
+    img.style.display = 'block';
+    img.src = src;
+  }
+  lb.classList.add('open');
+}
+function beastLightboxClose() {
+  var lb = document.getElementById('beast-lightbox');
+  var vid = document.getElementById('beast-lightbox-video');
+  vid.pause();
+  vid.src = '';
+  lb.classList.remove('open');
+}
+</script>
 
 <!-- ════════════════════ SOUNDTRACK OVERLAY ════════════════════ -->
 <div class="soundtrack-overlay" id="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
