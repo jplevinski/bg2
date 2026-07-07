@@ -2250,6 +2250,22 @@
       .lore-timeline { padding-left: 2rem; }
       .lore-era::before { left: -2rem; }
     }
+    .tl-simple { max-width: 800px; margin: 0 auto; padding-left: 3rem; position: relative; }
+    .tl-simple::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(184,154,91,.15)); }
+    .tl-item { position: relative; padding: 1rem 0; border-bottom: 1px solid rgba(184,154,91,.06); }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-item::before { content: ''; position: absolute; left: -3rem; top: 50%; transform: translateY(-50%) translateX(-5px); width: 10px; height: 10px; border-radius: 50%; background: rgba(184,154,91,.4); border: 2px solid var(--bg-deep); transition: background .2s; }
+    .tl-item:hover::before { background: var(--gold); box-shadow: 0 0 10px rgba(184,154,91,.5); }
+    .tl-era-divider { padding: 1.4rem 0 0.4rem; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; border-bottom: none; }
+    .tl-era-divider::before { display: none; }
+    .tl-item-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 0.15rem; }
+    .tl-item-row { display: flex; align-items: center; gap: 0.8rem; }
+    .tl-item-name { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold); cursor: pointer; }
+    .tl-item-hint { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.4rem; display: none; line-height: 1.6; }
+    .tl-item:hover .tl-item-hint { display: block; }
+    .tl-item-hint a { color: var(--gold-dim); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.05em; }
+    .tl-item-hint a:hover { color: var(--gold); }
+    @media (max-width: 600px) { .tl-simple { padding-left: 2rem; } .tl-item::before { left: -2rem; } }
     .lore-map-wrap {
       margin: 2rem 0;
       text-align: center;
@@ -6222,6 +6238,81 @@
           </a>
         </div>
 
+        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">THE CATASTROPHE</div>
+          <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Catastrophe</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year -3 · The event that ended the old world</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Dark Age</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Years -3 to 0 · Famine, collapse, and the first Adventurers</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+        </div>
+
+        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">POST-CATASTROPHE</div>
+          <a href="#" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Consensus of the Fifteen</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 0 · The founding of Valerguard and the Four Factions</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Ecosystem of Chaos</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 2 onward · Monsters, broken seals, and The Maw</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+        </div>
+
+        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">MODERN ERA</div>
+          <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">Daemeon Lumina's Discovery</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:var(--text-muted);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:0.15rem 0.45rem">SPOILERS</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 753 · The Soul Balance made visible</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Golden Cohort</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 777 — Present Day · Tetherpoint Academy, Class 777</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+        </div>
+
+        <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0;margin-top:0.8rem">
+          <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">CULTURE &amp; LEGEND</div>
+          <a href="#" id="ale-chuggers" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">🍺 The Ale Chuggers</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year ~1039 · Bardic band · Tavern folk &amp; ballads</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" id="nexus-the-elf" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">🌲 Nexus the Elf</div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Era Unknown · Solo artist · Rap &amp; Hip-Hop</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -6436,6 +6527,147 @@
   </div>
 </div>
 
+<!-- Lore Overlay: The Catastrophe -->
+<div id="lore-overlay-the-catastrophe" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — THE CATASTROPHE ERA</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Catastrophe</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Year -3</strong> — The arcane detonation that ended the old world</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>Eight hundred years ago, mortal civilization stood at its apex. It did not fall to conquest or invasion. It fell to a single mimic's greed.</p>
+      <p>Driven by an anomalous surge of instinct, a mimic committed a cosmic taboo: it detached and stole a Dungeon Core from deep beneath the earth. This particular core was no ordinary anchor — it was a direct vessel for Maelora, the God of Chaos.</p>
+      <p>As the Mimic roamed the surface, the stolen core became a violent magical siphon, gorging on ambient mana and environmental energy in an exponential feedback loop. The creature's body could not contain it. The result was a 300-megaton arcane detonation that shattered reality itself.</p>
+      <div class="lore-callout"><h4>The Toll</h4><p>One-third of the population of modern-day Valerguard was instantly eradicated by the shockwave, thermal radiation, and mana-storms that followed.</p></div>
+      <div class="lore-callout"><h4>The Maw of Chaos</h4><p>The blast instantly vaporized the geographic, cultural, and political capital of the ancient world. The massive crater left behind was swallowed by the ocean, forming The Maw — the churning, black aquatic scar that bounds modern Valerguard.</p></div>
+      <div class="lore-callout"><h4>System Defiance Core Rating</h4><p>Mimics are the only creatures assigned a System Defiance Core Rating — a classification that exists outside the standard hierarchy entirely. Because a mimic's nature is to absorb and lock away physical anchors of the world, the System literally cannot calculate their threat ceiling. Any mimic in the modern era represents an existential structural glitch capable of collapsing the current Containment Architecture.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Dark Age -->
+<div id="lore-overlay-the-dark-age" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-the-dark-age').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — THE CATASTROPHE ERA</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Dark Age</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Years -3 to 0</strong> — Famine, collapse, and the birth of the first Adventurers</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>The explosion was only the beginning. A toxic cloud of pulverized rock, soot, and fractured mana blotted out the sun entirely, plunging the world into freezing darkness and ecological freefall.</p>
+      <div class="lore-callout"><h4>The Great Starvation</h4><p>With agriculture destroyed overnight, 90% of the surviving population was lost to famine, societal collapse, and resource wars in the years that followed.</p></div>
+      <p>But amidst the ash, something new emerged. Raw mana solidified into dense, irradiated remnants known as Catastrophe Crystals. While the masses starved, a rare 10% of survivors discovered these glowing shards scattered through the wreckage.</p>
+      <p>Touching a Crystal triggered a flash of <em>Great Understanding</em> — a forced evolutionary leap that anchored the world's chaotic energy into a structured framework. This was the birth of the System Interface — and the world's very first Adventurers.</p>
+      <p>These early magic-wielders were the only thing standing between the remnants of humanity and total extinction. They became hunters, defenders, and eventually the architects of the new world.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Consensus of the Fifteen -->
+<div id="lore-overlay-consensus-of-fifteen" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — POST-CATASTROPHE</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Consensus of the Fifteen</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Year 0</strong> — The founding of Valerguard and the Four Factions</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>In the absolute depth of the third winter of darkness, with humanity on the brink of extinction, the 15 Original Magi — the premier magic-wielders to emerge from the Catastrophe — gathered in the ruins to forge a treaty that would save what remained of the species.</p>
+      <p>The newly awakened magic users had sorted themselves into four groups based entirely on the character and resonance of their souls.</p>
+      <div class="lore-faction-grid">
+        <div class="lore-faction-item"><h4>The Shield</h4><div class="lore-faction-subtitle">The Lion</div><p>Formed by those whose souls resonated with an unyielding, protective instinct. In the Dark Age, they stood on the front lines against starvation and madness.</p></div>
+        <div class="lore-faction-item"><h4>The Flame</h4><div class="lore-faction-subtitle">The Phoenix</div><p>Formed by those whose souls burned with ambition, courage, and the drive to rebuild through struggle. Warriors, duelists, and innovators who believed greatness was earned, not given.</p></div>
+        <div class="lore-faction-item"><h4>The Grove</h4><div class="lore-faction-subtitle">The World Tree</div><p>Formed by those whose souls resonated with compassion, healing, and interconnectedness. They became the healers and caretakers who nursed civilization back to health.</p></div>
+        <div class="lore-faction-item"><h4>The Veil</h4><div class="lore-faction-subtitle">The Hooded Eye</div><p>Formed by those whose souls gravitated toward secrecy, survival, and the taboo aspects of Chaos magic. They realized that to preserve humanity, someone had to wield the hidden knives in the dark.</p></div>
+      </div>
+      <p>The Fifteen themselves did not join any faction. Instead, they formed the Wizards Emporium — a fifth body dedicated to studying the Catastrophe Crystals, codifying the System's mechanics, and mastering the structural manipulation of the soul. To this day the Emporium stands apart from the Four Factions, serving as the neutral authority that performs Soul Enchantments on every admitted student.</p>
+      <p>Together, the Five established the governing structure that endures to this day: all kingdom-wide decisions require a 4/5 supermajority among the five bodies. To mark humanity's triumph over cosmic destruction, the Fifteen discarded the old world's calendar, established the kingdom of Valerguard, and declared Year 0.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Ecosystem of Chaos -->
+<div id="lore-overlay-ecosystem-of-chaos" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — POST-CATASTROPHE</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Ecosystem of Chaos</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Year 2 onward</strong> — Broken dungeon seals, surface monsters, and The Maw</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>The atmosphere cleared in Year 2, but the world beneath it was unrecognizable. Before the Catastrophe, the mortal world and the monster world were strictly separated. Dangerous creatures were bound by ancient laws to deep, subterranean Dungeons where they could be contained or cleared by early hunters.</p>
+      <p>The 300-megaton blast cracked the seals of the world's dungeon networks, releasing a flood of raw mana across the surface. This is why modern Valerguard is plagued by roaming monsters — beasts that were never meant to breathe surface air, now hunting freely across the kingdom's wild frontiers, ruins, and coastlines.</p>
+      <div class="lore-callout"><h4>The Intelligence Shift</h4><p>Near The Maw, creatures have absorbed centuries of concentrated ambient magic. They don't hunt by instinct — they strategize, form hierarchies, and possess a deep understanding of the System itself. For 777 years, Valerguard's finest Adventurers have been deployed to the borders of The Maw just to keep its horrors contained.</p></div>
+      <p>The Dungeons themselves were not destroyed — only cracked. They remain beneath the earth, leaking monsters and mana alike. Adventurers who enter them today do so knowing the seals no longer guarantee their containment. The deeper levels have never been fully cleared by any known party.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: Daemeon Lumina's Discovery -->
+<div id="lore-overlay-daemeon-lumina" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — MODERN ERA · SPOILERS</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">Daemeon Lumina's Discovery</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Year 753</strong> — The Soul Balance made visible</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>While studying under The Veil, Daemeon Lumina made a breakthrough that would change everything — and ruin his name forever. Through years of forbidden research into the soul's deeper architecture, he discovered how to make the Soul Balance visible within the System Interface.</p>
+      <p>The Soul Balance — Mercy, Conviction, Resentment, Connection, Hope, Identity — had always existed within every living person, but the System had never displayed it. Daemeon found that individuals with specific bloodlines could be attuned to see these hidden stats, and that with a Maw Shard — a crystallized fragment of chaos energy from the Catastrophe itself — those same bloodlines could channel power directly from the Soul Bar.</p>
+      <p>The implications were staggering. If emotions could be measured, they could be manipulated. If the Soul Bar could be channeled, it could be weaponized.</p>
+      <div class="lore-callout"><h4>The Official Version</h4><p>The public story is that The Veil corrupted Daemeon Lumina and that he nearly destroyed Valerguard. His name became poison — spoken only in whispers, scrubbed from family histories, and used as a cautionary tale about the dangers of forbidden research.</p></div>
+      <p style="font-style:italic;color:var(--text-muted)">The truth, as always, is more complicated.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Golden Cohort -->
+<div id="lore-overlay-golden-cohort" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-golden-cohort').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — MODERN ERA</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Golden Cohort</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem"><strong style="color:var(--text-primary)">Year 777 — Present Day</strong> — Tetherpoint Academy opens its gates to Class 777</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>Exactly 777 years since the Consensus, Tetherpoint Academy opens its gates to Class 777: The Golden Cohort.</p>
+      <p>To the kingdom, this milestone is a symbol of institutional pride, noble legacy, and triumph over ancient chaos. The number 777 carries deep resonance in Valerguard's numerological tradition — triple completion, the alignment of beginning and survival and continuation into something new.</p>
+      <p>Academy leadership declared the incoming class the luckiest of numbers. Banners went up across the kingdom. Families paid fortunes for placement. The celebration was genuine, and loud, and very visible.</p>
+      <div class="lore-callout"><h4>What the Kingdom Doesn't Know</h4><p>Underneath the golden spires and public celebrations, the raw metrics of the original System still watch from the shadows — waiting for the timeline to align. 777 years is not only a milestone. In certain older frameworks of measurement, it is a threshold.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Ale Chuggers -->
+<div id="lore-overlay-ale-chuggers" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — CULTURE &amp; LEGEND</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">🍺 The Ale Chuggers</h2>
+    <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem">Bardic Band — Tavern Folk &amp; Ballads — Year ~1039</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>Roughly 77 years after the passing of Elias Lumina — who lived to the remarkable age of 199 — a rowdy, ale-soaked minstrel group crawled out of Mellonwood's seediest tavern and into the cultural consciousness of the kingdom. The Ale Chuggers specialize in recounting the lives of infamous adventurers — especially those whose names still spark bar fights.</p>
+      <p>Their sound is unmistakable: raw, stomping rhythms driven by battered lute, cracked drum, and an occasional off-key horn that nobody has the heart (or courage) to silence. Their lyrics blend humor, tragedy, and biting commentary on the Four Factions with a recklessness that would get lesser performers imprisoned.</p>
+      <div class="lore-callout" style="border-color:rgba(184,154,91,.35)"><h4>Known Setlist</h4><p style="font-style:italic;color:var(--text-muted);line-height:1.8">"The Lumina Shadow" · "Terrible Mercy" · "Gate Through the Veil" · "The Ballad of the Broken" · "Burden of a Name"</p><p style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted)">Their renditions of the Elias Lumina saga shift depending on the audience and how many rounds have been bought — painting him as everything from tragic hero to soul-corrupted villain.</p></div>
+      <div class="lore-callout" style="border-color:rgba(184,154,91,.35)"><h4>Faction Reputation</h4><p style="margin-bottom:0.4rem"><span style="color:var(--gold)">The Flame:</span> <span style="color:var(--text-muted)">Beloved. Flame sympathizers adore their irreverence and buy them rounds all night.</span></p><p style="margin-bottom:0.4rem"><span style="color:var(--gold)">The Grove:</span> <span style="color:var(--text-muted)">Tolerated. Barely. The Elders consider them "spiritually unrefined."</span></p><p style="margin-bottom:0.4rem"><span style="color:var(--gold)">The Shield:</span> <span style="color:var(--text-muted)">Actively discouraged. Wardens view their Veil-friendly verses as borderline sedition.</span></p><p><span style="color:var(--gold)">The Veil:</span> <span style="color:var(--text-muted)">Supposedly pays them well for "accurate" renditions. Neither party confirms this.</span></p></div>
+      <div class="lore-callout" style="border-color:rgba(184,154,91,.35)"><h4>Notable Members</h4><p style="margin-bottom:0.4rem"><strong style="color:var(--gold)">Gruff Barrelbelly</strong> <span style="color:var(--text-muted)">— Lead singer and lyricist. A former adventurer with suspiciously accurate knowledge of forbidden lore and a voice like gravel being dragged through a thunderstorm.</span></p><p><strong style="color:var(--gold)">Lila Quickfingers</strong> <span style="color:var(--text-muted)">— Lute and sarcasm. Her fingers move faster than her patience, and both are legendary.</span></p></div>
+      <a href="#" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.remove('open');document.getElementById('soundtrack-overlay').classList.add('open');return false" style="display:inline-block;margin-top:0.5rem;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-decoration:none;border:1px solid rgba(184,154,91,.3);padding:0.5rem 1.4rem;border-radius:8px;background:rgba(184,154,91,.1)" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.1)'">🎵 Listen Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: Nexus the Elf -->
+<div id="lore-overlay-nexus-the-elf" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — CULTURE &amp; LEGEND</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">🌲 Nexus the Elf</h2>
+    <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem">Solo Artist — Rap &amp; Hip-Hop — Era Unknown</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>Nexus the Elf appeared from nowhere — no origin story, no introduction, just a magic beat maker and a voice that could outpace anyone alive. Where others stumble over syllables, he strings them together like he's reading from a scroll that writes itself.</p>
+      <p>What drives him isn't fame or coin. It's Valerguard itself — its wars, its forgotten heroes, its buried secrets and convenient lies. He has made it his purpose to tell the kingdom's story the way it actually happened, verse by verse, in a style no historian would dare and no bard could match. Some call it irreverent. He calls it the truth with a better beat.</p>
+      <p>No one in Valerguard can say with certainty where Nexus the Elf comes from, or how an elf came to spend so much time wandering the Deep Caverns. His music has begun surfacing in the strangest places — scrawled on cavern walls in charcoal, hummed by miners who swear they've never heard it before, traded hand to hand on cheap wax cylinders smuggled up from beneath High Breen.</p>
+      <div class="lore-callout" style="border-color:rgba(184,154,91,.35)"><h4>Known Setlist</h4><p style="font-style:italic;color:var(--text-muted);line-height:1.8">"Siphon Mage" · "Next Phase"</p><p style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted)">Each new track surfaces without warning, usually after a stretch of unexplained disappearances near whatever cavern system it seems to describe.</p></div>
+      <a href="#" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.remove('open');document.getElementById('soundtrack-overlay').classList.add('open');return false" style="display:inline-block;margin-top:0.5rem;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-decoration:none;border:1px solid rgba(184,154,91,.3);padding:0.5rem 1.4rem;border-radius:8px;background:rgba(184,154,91,.1)" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.1)'">🎵 Listen Now</a>
+    </div>
+  </div>
+</div>
+
 <!-- ════════════════════ WORLD LORE ════════════════════ -->
 <div id="page-timeline" class="chapter-page">
   <div class="chapter-title-block">
@@ -6445,164 +6677,84 @@
 
   <section class="section">
     <p style="text-align:center;color:var(--text-muted);margin-bottom:2.5rem;max-width:650px;margin-left:auto;margin-right:auto">The world didn't end because of a dark lord or an army of demons. It ended because a dungeon monster got greedy.</p>
+    <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-bottom:2.5rem">Hover over an event for a summary. Click for the full entry in <a href="#" onclick="showPage('lore');return false" style="color:var(--gold-dim);text-decoration:none;border-bottom:1px dotted var(--gold-dim)">Lore</a>.</p>
 
-    <div class="lore-timeline">
+    <div class="tl-simple">
 
-      <div class="lore-era">
-        <div class="lore-era-label">Year -3</div>
-        <h3>The Catastrophe</h3>
-        <p>Eight hundred years ago, mortal civilization stood at its apex. It did not fall to conquest or invasion. It fell to a single <a class="lore-term" onclick="showPage('bestiary');document.getElementById('beast-mimic').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Mimic</span><span class="lt-type">Creature — Dungeon Monster</span><span class="lt-desc">The baseline dungeon creature whose cosmic theft triggered the Catastrophe.</span><span class="lt-link">→ Read more</span></span>Mimic</a>'s greed.</p>
-        <p>Driven by an anomalous surge of instinct, this creature committed a cosmic taboo: it detached and stole a <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-dungeon-core').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Dungeon Core</span><span class="lt-type">Magical Object</span><span class="lt-desc">Living magical anchors that bind monsters to their dungeons. This one was a vessel for Maelora, the God of Chaos.</span><span class="lt-link">→ Read more</span></span>Dungeon Core</a> from deep beneath the earth. This particular core was no ordinary anchor — it was a direct vessel for <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-god-of-chaos').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Maelora — The God of Chaos</span><span class="lt-type">Deity</span><span class="lt-desc">The Divine Principle of Discord. An ancient, volatile deity whose chaotic energy triggered the Great Blunder.</span><span class="lt-link">→ Read more</span></span>Maelora, the God of Chaos</a>.</p>
-        <p>As the Mimic roamed the surface, the stolen core became a violent magical siphon, gorging on ambient mana and environmental energy in an exponential feedback loop. The creature's body could not contain it.</p>
-        <p>The result was a 300-megaton arcane detonation that shattered reality itself.</p>
+      <div class="tl-item tl-era-divider">PRE-CATASTROPHE</div>
 
-        <div class="lore-callout">
-          <h4>System Defiance Core Rating</h4>
-          <p>While standard monsters are classified by the Wizards Emporium into threat levels ranging from Level 1 to 10, mimics are the only creatures assigned a <strong>System Defiance Core Rating</strong> — a separate classification that exists outside the standard hierarchy entirely. Because a mimic's nature is to absorb and lock away the physical anchors of the world — Dungeon Cores, Catastrophe Crystals, legacy artifacts — the System literally cannot calculate their threat ceiling. Any time a mimic appears in the modern era, it represents an existential structural glitch capable of collapsing the current Containment Architecture if it gets its jaws around a high-tier legacy item.</p>
-        </div>
-
-        <div class="lore-callout">
-          <h4>The Maw of Chaos</h4>
-          <p>The blast instantly vaporized the geographic, cultural, and political capital of the ancient world. The massive crater left behind was swallowed by the ocean, forming <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-the-maw').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The Maw</span><span class="lt-type">Location — Oceanic Scar</span><span class="lt-desc">The churning, black aquatic crater at ground zero of the Catastrophe. Home to the most dangerous creatures alive.</span><span class="lt-link">→ Read more</span></span>The Maw</a> — the churning, black aquatic scar that bounds modern Valerguard.</p>
-        </div>
-
-        <div class="lore-callout">
-          <h4>The Toll</h4>
-          <p>One-third of the population of modern day Valerguard was instantly eradicated by the shockwave, thermal radiation, and mana-storms that followed.</p>
-        </div>
+      <div class="tl-item">
+        <div class="tl-item-label">~2,500 years before the Catastrophe</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-lunar-exodus').classList.add('open')">The Lunarian Exodus</span></div>
+        <div class="tl-item-hint">Beings from Luna are said to have descended to Valerguard and surrendered their immortality to take on human form, disappearing quietly into the mortal population. Five competing accounts survive — none confirmed, none dismissed. <a href="#" onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.add('open');return false">→ Full entry (Spoilers)</a></div>
       </div>
 
-      <div class="lore-era">
-        <div class="lore-era-label">Years -3 to 0</div>
-        <h3>The Dark Age</h3>
-        <p>The explosion was only the beginning. A toxic cloud of pulverized rock, soot, and fractured mana blotted out the sun entirely, plunging the world into freezing darkness and ecological freefall.</p>
-
-        <div class="lore-callout">
-          <h4>The Great Starvation</h4>
-          <p>With agriculture destroyed overnight, 90% of the surviving population was lost to famine, societal collapse, and resource wars in the years that followed.</p>
-        </div>
-
-        <p>But amidst the ash, something new emerged. Raw mana solidified into dense, irradiated remnants known as <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-catastrophe-crystals').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Catastrophe Crystals</span><span class="lt-type">Magical Object</span><span class="lt-desc">Irradiated mana shards that granted the first Adventurers their power through a flash of Great Understanding.</span><span class="lt-link">→ Read more</span></span>Catastrophe Crystals</a>. While the masses starved, a rare 10% of survivors discovered these glowing shards scattered through the wreckage.</p>
-        <p>Touching a Crystal triggered a flash of <em>Great Understanding</em> — a forced evolutionary leap that anchored the world's chaotic energy into a structured framework. This was the birth of the <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-soul-enchantment').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Soul Enchantment</span><span class="lt-type">Magical Process</span><span class="lt-desc">The ritual that transforms students into Adventurers with stats, levels, and abilities.</span><span class="lt-link">→ Read more</span></span>System Interface</a> — and the world's very first Adventurers.</p>
+      <div class="tl-item">
+        <div class="tl-item-label">~2,000 years before the Catastrophe</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open')">The Cult of Luna</span></div>
+        <div class="tl-item-hint">A civilization within a civilization — priesthood, forge order, warrior caste, and bloodline archive — built around the remnants of ancient Lunar Magic. Most know it only as a dead heresy. <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false">→ Full entry (Major Spoilers)</a></div>
       </div>
 
-      <div class="lore-era">
-        <div class="lore-era-label">Year 0</div>
-        <h3>The Consensus of the Fifteen</h3>
-        <p>In the absolute depth of the third winter of darkness, with humanity on the brink of extinction, the <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-fifteen-magi').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The 15 Original Magi</span><span class="lt-type">Historical Figures</span><span class="lt-desc">The premier magic-wielders who forged the Original Consensus, established the Four Factions, and founded the Wizards Emporium.</span><span class="lt-link">→ Read more</span></span>15 Original Magi</a> — the premier magic-wielders to emerge from the catastrophe — gathered in the ruins to forge a treaty that would save what remained of the species.</p>
-        <p>In the aftermath of The Catastrophe, 1% of surviving humanity discovered crystallized remnants of the detonation that imbued them with magic. These newly awakened magic users sorted themselves into four factions based entirely on the character and resonance of their souls.</p>
+      <div class="tl-item tl-era-divider">THE CATASTROPHE</div>
 
-        <div class="lore-faction-grid">
-          <div class="lore-faction-item">
-            <h4>The Shield</h4>
-            <div class="lore-faction-subtitle">The Lion</div>
-            <p>Formed by those whose souls resonated with an unyielding, protective instinct. In the Dark Age, they used their awakened Strength and Vitality to stand on the front lines against starvation and madness.</p>
-          </div>
-          <div class="lore-faction-item">
-            <h4>The Flame</h4>
-            <div class="lore-faction-subtitle">The Phoenix</div>
-            <p>Formed by those whose souls burned with ambition, courage, and the drive to rebuild through struggle. Warriors, duelists, and innovators who believed greatness was earned, not given.</p>
-          </div>
-          <div class="lore-faction-item">
-            <h4>The Grove</h4>
-            <div class="lore-faction-subtitle">The World Tree</div>
-            <p>Formed by those whose souls resonated with compassion, healing, and the interconnectedness of all living things. They became the healers, scholars, and caretakers who nursed the remnants of civilization back to health.</p>
-          </div>
-          <div class="lore-faction-item">
-            <h4>The Veil</h4>
-            <div class="lore-faction-subtitle">The Hooded Eye</div>
-            <p>Formed by those whose souls gravitated toward secrecy, survival, and the taboo aspects of Chaos magic. They realized that to preserve humanity, someone had to wield the hidden knives in the dark.</p>
-          </div>
-        </div>
-
-        <p>The Fifteen themselves did not join any faction. Instead, they formed the <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-wizards-emporium').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The Wizards Emporium</span><span class="lt-type">Organization</span><span class="lt-desc">Founded by the 15 Original Magi to study the Crystals, codify the System, and perform Soul Enchantments.</span><span class="lt-link">→ Read more</span></span>Wizards Emporium</a> — a fifth body dedicated to studying the Catastrophe Crystals, codifying the System's mechanics, and mastering the structural manipulation of the soul. To this day, the Emporium stands apart from the Four Factions, serving as the neutral authority that performs Soul Enchantments on every admitted student.</p>
-
-        <p>Together, the Four Factions and the Wizards Emporium established the governing structure that endures to this day: all country-wide decisions require a vote among the five bodies, with a 4/5 supermajority needed to pass. Each faction uses its own internal system to determine how to cast its vote. Local decisions, meanwhile, fall to the most powerful adventurers in the area — their word carrying the weight of law by sheer force of capability.</p>
-
-        <p>To mark humanity's triumph over cosmic destruction, the Fifteen discarded the old world's calendar, established the kingdom of <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-valerguard').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Valerguard</span><span class="lt-type">Kingdom</span><span class="lt-desc">The kingdom in which the story takes place, founded at Year 0 after the Catastrophe.</span><span class="lt-link">→ Read more</span></span>Valerguard</a>, and declared Year 0.</p>
+      <div class="tl-item">
+        <div class="tl-item-label">Year -3</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open')">The Catastrophe</span></div>
+        <div class="tl-item-hint">A mimic stole a Dungeon Core that served as a vessel for Maelora, the God of Chaos — triggering a 300-megaton arcane detonation that instantly killed one-third of the world's population and shattered civilization. <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false">→ Full entry</a></div>
       </div>
 
-      <div class="lore-era">
-        <div class="lore-era-label">Year 2 onward</div>
-        <h3>The Ecosystem of Chaos</h3>
-        <p>The atmosphere cleared in Year 2, but the world beneath it was unrecognizable.</p>
-        <p>Before the Catastrophe, the mortal world and the monster world were strictly separated. Dangerous creatures were bound by ancient laws to deep, subterranean <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-dungeons').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Dungeons</span><span class="lt-type">Subterranean Structures</span><span class="lt-desc">Ancient underground networks where monsters were contained. The Catastrophe cracked their seals forever.</span><span class="lt-link">→ Read more</span></span>Dungeons</a> where they could be contained or cleared by early hunters.</p>
-        <p>The 300-megaton blast cracked the seals of the world's dungeon networks, releasing a flood of raw mana across the surface. This is why modern Valerguard is plagued by roaming monsters — beasts that were never meant to breathe surface air, now hunting freely across the kingdom's wild frontiers, ruins, and coastlines.</p>
-
-        <div class="lore-callout">
-          <h4>The Intelligence Shift</h4>
-          <p>Near <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-the-maw').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The Maw</span><span class="lt-type">Location — Oceanic Scar</span><span class="lt-desc">The churning, black aquatic crater at ground zero of the Catastrophe.</span><span class="lt-link">→ Read more</span></span>The Maw</a>, creatures have absorbed centuries of concentrated ambient magic. They don't hunt by instinct — they strategize, form hierarchies, and possess a deep understanding of the System itself. For 777 years, Valerguard's finest Adventurers have been deployed to the borders of The Maw just to keep its horrors contained.</p>
-        </div>
+      <div class="tl-item">
+        <div class="tl-item-label">Years -3 to 0</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open')">The Dark Age</span></div>
+        <div class="tl-item-hint">Fractured mana blotted out the sun, destroying agriculture and sending 90% of survivors into famine and collapse. In the wreckage, Catastrophe Crystals emerged — and with them, the world's first Adventurers. <a href="#" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open');return false">→ Full entry</a></div>
       </div>
 
-      <div class="lore-era">
-        <div class="lore-era-label">Year 753</div>
-        <h3>Daemeon Lumina's Discovery</h3>
-        <p>While studying under The Veil, Daemeon Lumina made a breakthrough that would change everything — and ruin his name forever. Through years of forbidden research into the soul's deeper architecture, he discovered how to make the Soul Balance visible within the System Interface.</p>
-        <p>The Soul Balance — Mercy, Conviction, Resentment, Connection, Hope, Identity — had always existed within every living person, but the System had never displayed it. Daemeon found that individuals with specific bloodlines could be attuned to see these hidden stats, and that with a Maw Shard — a crystallized fragment of chaos energy from the Catastrophe itself — those same bloodlines could channel power directly from the Soul Bar.</p>
-        <p>The implications were staggering. If emotions could be measured, they could be manipulated. If the Soul Bar could be channeled, it could be weaponized. The public story is that The Veil corrupted Daemeon Lumina and that he nearly destroyed Valerguard. His name became poison — spoken only in whispers, scrubbed from family histories, and used as a cautionary tale about the dangers of The Veil's forbidden research.</p>
-        <p>The truth, as always, is more complicated.</p>
+      <div class="tl-item tl-era-divider">POST-CATASTROPHE</div>
+
+      <div class="tl-item">
+        <div class="tl-item-label">Year 0</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open')">The Consensus of the Fifteen</span></div>
+        <div class="tl-item-hint">The fifteen most powerful surviving magic-wielders gathered to forge the treaty that established the Four Factions, the Wizards Emporium, and the kingdom of Valerguard — declaring Year 0. <a href="#" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open');return false">→ Full entry</a></div>
       </div>
 
-      <div class="lore-era">
-        <div class="lore-era-label">Year 777 — Present Day</div>
-        <h3>The Golden Cohort</h3>
-        <p>Exactly 777 years since the Consensus, <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-tetherpoint').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Tetherpoint Academy</span><span class="lt-type">Location — Academy</span><span class="lt-desc">The premier adventurer academy in Valerguard, founded during the Age of Ashes.</span><span class="lt-link">→ Read more</span></span>Tetherpoint Academy</a> opens its gates to <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-golden-cohort').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">Class 777 — The Golden Cohort</span><span class="lt-type">Student Body</span><span class="lt-desc">Elias's incoming class, declared by Varric to be the luckiest of numbers.</span><span class="lt-link">→ Read more</span></span>Class 777: The Golden Cohort</a>.</p>
-        <p>To the kingdom, this milestone is a symbol of institutional pride, noble legacy, and triumph over ancient chaos. But underneath the golden spires and public celebrations, the raw metrics of the original System still watch from the shadows — waiting for the timeline to align.</p>
+      <div class="tl-item">
+        <div class="tl-item-label">Year 2 onward</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open')">The Ecosystem of Chaos</span></div>
+        <div class="tl-item-hint">The Catastrophe's blast cracked dungeon seals worldwide, flooding the surface with monsters never meant to breathe open air. Near The Maw, centuries of ambient magic turned these creatures into strategic, System-aware threats. <a href="#" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open');return false">→ Full entry</a></div>
       </div>
 
-      <div class="lore-era" id="ale-chuggers">
-        <div class="lore-era-label">Year ~1039</div>
-        <h3>🍺 The Ale Chuggers</h3>
-        <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem">Bardic Band — Popular Tavern Troupe</div>
+      <div class="tl-item tl-era-divider">MODERN ERA</div>
 
-        <p>Roughly 77 years after the passing of Elias Lumina — who lived to the remarkable age of 199 — a rowdy, ale-soaked minstrel group crawled out of Mellonwood's seediest tavern and into the cultural consciousness of the kingdom. The Ale Chuggers specialize in recounting the lives of infamous adventurers — especially those whose names still spark bar fights.</p>
-
-        <p>Their sound is unmistakable: raw, stomping rhythms driven by battered lute, cracked drum, and an occasional off-key horn that nobody has the heart (or courage) to silence. Their lyrics blend humor, tragedy, and biting commentary on the Four Factions with a recklessness that would get lesser performers imprisoned.</p>
-
-        <div class="lore-callout" style="border-color:rgba(184,154,91,.35)">
-          <h4>Known Setlist</h4>
-          <p style="margin:0;font-style:italic;color:var(--text-muted);line-height:1.8">"The Lumina Shadow" · "Terrible Mercy" · "Gate Through the Veil" · "The Ballad of the Broken" · "Burden of a Name"</p>
-          <p style="margin:0.5rem 0 0;font-size:0.8rem;color:var(--text-muted)">Their renditions of the Elias Lumina saga shift depending on the audience and how many rounds have been bought — painting him as everything from tragic hero to soul-corrupted villain.</p>
-        </div>
-
-        <div class="lore-callout" style="border-color:rgba(184,154,91,.35)">
-          <h4>Reputation</h4>
-          <p style="margin:0 0 0.4rem"><span style="color:var(--gold)">The Flame:</span> <span style="color:var(--text-muted)">Beloved. Flame sympathizers adore their irreverence and buy them rounds all night.</span></p>
-          <p style="margin:0 0 0.4rem"><span style="color:var(--gold)">The Grove:</span> <span style="color:var(--text-muted)">Tolerated. Barely. The Elders consider them "spiritually unrefined."</span></p>
-          <p style="margin:0 0 0.4rem"><span style="color:var(--gold)">The Shield:</span> <span style="color:var(--text-muted)">Actively discouraged. Wardens view their Veil-friendly verses as borderline sedition.</span></p>
-          <p style="margin:0"><span style="color:var(--gold)">The Veil:</span> <span style="color:var(--text-muted)">Supposedly pays them well for "accurate" renditions. Neither party confirms this.</span></p>
-        </div>
-
-        <div class="lore-callout" style="border-color:rgba(184,154,91,.35)">
-          <h4>Notable Members</h4>
-          <p style="margin:0 0 0.4rem"><strong style="color:var(--gold)">Gruff Barrelbelly</strong> <span style="color:var(--text-muted)">— Lead singer and lyricist. A former adventurer with a suspiciously accurate knowledge of forbidden lore and a voice like gravel being dragged through a thunderstorm.</span></p>
-          <p style="margin:0"><strong style="color:var(--gold)">Lila Quickfingers</strong> <span style="color:var(--text-muted)">— Lute and sarcasm. Her fingers move faster than her patience, and both are legendary.</span></p>
-        </div>
-        <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.add('open');return false" style="display:inline-block;margin-top:1rem;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-decoration:none;border:1px solid rgba(184,154,91,.3);padding:0.5rem 1.4rem;border-radius:8px;transition:all .2s;background:rgba(184,154,91,.1)" onmouseover="this.style.background='rgba(184,154,91,.25)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(184,154,91,.1)';this.style.borderColor='rgba(184,154,91,.3)'">🎵 Listen Now</a>
+      <div class="tl-item">
+        <div class="tl-item-label">Year 753</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open')">Daemeon Lumina's Discovery</span></div>
+        <div class="tl-item-hint">While studying under The Veil, Daemeon Lumina discovered how to make the Soul Balance visible within the System Interface — and how certain bloodlines could channel power directly from their soul stats. <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false">→ Full entry (Spoilers)</a></div>
       </div>
 
-      <div class="lore-era" id="nexus-the-elf">
-        <div class="lore-era-label">Era: Unknown — Surfaced in the Deep Caverns</div>
-        <h3>🌲 Nexus the Elf</h3>
-        <div style="font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1rem">Solo Artist — Subterranean Ambient</div>
+      <div class="tl-item">
+        <div class="tl-item-label">Year 777 — Present Day</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open')">The Golden Cohort</span></div>
+        <div class="tl-item-hint">Exactly 777 years after the Consensus, Tetherpoint Academy opens its gates to Class 777. To the kingdom, a milestone of pride. Beneath the celebration, older systems quietly align. <a href="#" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open');return false">→ Full entry</a></div>
+      </div>
 
-        <p>No one in Valerguard can say with certainty where Nexus the Elf comes from, or how an elf came to spend so much time wandering the Deep Caverns alone with only a lute and a half-broken hand drum for company. What is certain is that his music has begun surfacing in the strangest places — scrawled on cavern walls in charcoal, hummed by miners who swear they've never heard it before, traded hand to hand on cheap wax cylinders smuggled up from the tunnels beneath High Breen.</p>
+      <div class="tl-item tl-era-divider">CULTURE &amp; LEGEND</div>
 
-        <p>Where The Ale Chuggers are loud, brash, and built for a packed tavern floor, Nexus the Elf's sound is patient and strange — long, droning melodies that seem to follow the slow rhythm of something growing in the dark. Listeners describe the experience as unsettling in a way they can't quite name, as though the songs were written from the perspective of something that has all the time in the world and is in no hurry to use it.</p>
+      <div class="tl-item">
+        <div class="tl-item-label">Year ~1039</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open')">🍺 The Ale Chuggers</span></div>
+        <div class="tl-item-hint">Roughly 77 years after the death of Elias Lumina, a rowdy bardic group crawled out of Mellonwood's seediest tavern to become Valerguard's most controversial minstrel act — known for retelling the Lumina saga in ways that spark bar fights and secret Veil payments. <a href="#" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open');return false">→ Full entry</a></div>
+      </div>
 
-        <div class="lore-callout" style="border-color:rgba(184,154,91,.35)">
-          <h4>Known Setlist</h4>
-          <p style="margin:0;font-style:italic;color:var(--text-muted);line-height:1.8">"Next Phase"</p>
-          <p style="margin:0.5rem 0 0;font-size:0.8rem;color:var(--text-muted)">Each new track surfaces without warning, usually after a stretch of unexplained disappearances near whatever cavern system it seems to describe.</p>
-        </div>
-
-        <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.add('open');return false" style="display:inline-block;margin-top:1rem;font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em;text-decoration:none;border:1px solid rgba(184,154,91,.3);padding:0.5rem 1.4rem;border-radius:8px;transition:all .2s;background:rgba(184,154,91,.1)" onmouseover="this.style.background='rgba(184,154,91,.25)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(184,154,91,.1)';this.style.borderColor='rgba(184,154,91,.3)'">🎵 Listen Now</a>
+      <div class="tl-item">
+        <div class="tl-item-label">Era Unknown</div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.add('open')">🌲 Nexus the Elf</span></div>
+        <div class="tl-item-hint">No one knows where Nexus the Elf comes from or how an elf came to wander the Deep Caverns with only a beat maker and a voice that could outpace anyone alive. His tracks keep surfacing in places they shouldn't. <a href="#" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.add('open');return false">→ Full entry</a></div>
       </div>
 
     </div>
   </section>
 </div>
+
 
 <!-- ════════════════════ RACES ════════════════════ -->
 <div id="page-races" class="chapter-page">
@@ -7202,7 +7354,7 @@
     <div class="soundtrack-bio">
       A rowdy, ale-soaked minstrel group known across Mellonwood and the outer taverns of Tether for their bawdy ballads, stomping rhythms, and willingness to sing the unpopular truths. Formed roughly 77 years after the passing of Elias Lumina, they specialize in recounting the lives of infamous adventurers — especially those whose names still spark bar fights. Led by <strong style="color:var(--gold)">Gruff Barrelbelly</strong> (vocals, forbidden lore) and <strong style="color:var(--gold)">Lila Quickfingers</strong> (lute, sarcasm).
       <br><br>
-      <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.remove('open');showPage('timeline');setTimeout(function(){document.getElementById('ale-chuggers').scrollIntoView({behavior:'smooth',block:'center'})},100);return false" style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--gold-dim);letter-spacing:0.1em">→ Full lore entry</a>
+      <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.remove('open');document.getElementById('lore-overlay-ale-chuggers').classList.add('open');return false" style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--gold-dim);letter-spacing:0.1em">→ Full lore entry</a>
     </div>
 
     <div class="soundtrack-track">
@@ -7253,7 +7405,7 @@
         <br><br>
         What drives him isn't fame or coin. It's Valerguard itself — its wars, its forgotten heroes, its buried secrets and convenient lies. He has made it his purpose to tell the kingdom's story the way it actually happened, verse by verse, in a style no historian would dare and no bard could match. Some call it irreverent. He calls it the truth with a better beat.
         <br><br>
-        <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.remove('open');showPage('timeline');setTimeout(function(){document.getElementById('nexus-the-elf').scrollIntoView({behavior:'smooth',block:'center'})},100);return false" style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--gold-dim);letter-spacing:0.1em">→ Full lore entry</a>
+        <a href="#" onclick="document.getElementById('soundtrack-overlay').classList.remove('open');document.getElementById('lore-overlay-nexus-the-elf').classList.add('open');return false" style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--gold-dim);letter-spacing:0.1em">→ Full lore entry</a>
       </div>
       <div class="st-name">♫ Next Phase</div>
       <div class="st-location" onclick="document.getElementById('soundtrack-overlay').classList.remove('open');showPage('glintjaw-ch4');return false">📍 Perspectives — Glintjaw Ch.4</div>
