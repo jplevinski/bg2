@@ -6473,8 +6473,23 @@
 <div class="soundtrack-overlay" id="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="soundtrack-panel">
     <button class="soundtrack-close" onclick="document.getElementById('soundtrack-overlay').classList.remove('open')">&times;</button>
-    <div class="soundtrack-title">🍺 The Ale Chuggers</div>
-    <div class="soundtrack-subtitle">Official Soundtrack</div>
+    <div class="soundtrack-title">Official Soundtrack</div>
+    <div class="soundtrack-subtitle">Music of Valerguard</div>
+
+    <div style="display:flex;gap:0.75rem;margin:1rem 0 1.5rem;flex-wrap:wrap">
+      <a href="#" onclick="document.getElementById('st-artist-ale').scrollIntoView({behavior:'smooth',block:'start'});return false" style="flex:1;min-width:120px;text-align:center;padding:0.75rem 0.5rem;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.25);border-radius:8px;text-decoration:none;transition:background .2s" onmouseover="this.style.background='rgba(184,154,91,.18)'" onmouseout="this.style.background='rgba(184,154,91,.08)'">
+        <div style="font-size:1.3rem;margin-bottom:0.3rem">🍺</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.05em">The Ale Chuggers</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.2rem;font-style:italic">Tavern Folk / Ballads</div>
+      </a>
+      <a href="#" onclick="document.getElementById('st-artist-nexus').scrollIntoView({behavior:'smooth',block:'start'});return false" style="flex:1;min-width:120px;text-align:center;padding:0.75rem 0.5rem;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.25);border-radius:8px;text-decoration:none;transition:background .2s" onmouseover="this.style.background='rgba(184,154,91,.18)'" onmouseout="this.style.background='rgba(184,154,91,.08)'">
+        <div style="font-size:1.3rem;margin-bottom:0.3rem">🌲</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.75rem;color:var(--gold);letter-spacing:0.05em">Nexus the Elf</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.2rem;font-style:italic">Rap / Hip-Hop</div>
+      </a>
+    </div>
+
+    <div id="st-artist-ale" style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--gold-dim);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem">🍺 The Ale Chuggers</div>
     <div class="soundtrack-bio">
       A rowdy, ale-soaked minstrel group known across Mellonwood and the outer taverns of Tether for their bawdy ballads, stomping rhythms, and willingness to sing the unpopular truths. Formed roughly 77 years after the passing of Elias Lumina, they specialize in recounting the lives of infamous adventurers — especially those whose names still spark bar fights. Led by <strong style="color:var(--gold)">Gruff Barrelbelly</strong> (vocals, forbidden lore) and <strong style="color:var(--gold)">Lila Quickfingers</strong> (lute, sarcasm).
       <br><br>
@@ -6523,7 +6538,7 @@
       <audio controls preload="none"><source src="https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/The%20Wait%20Trap%20by%20The%20Ale%20Chuggers.mp3" type="audio/mpeg"></audio>
     </div>
 
-    <div class="soundtrack-track" style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(184,154,91,.2)">
+    <div id="st-artist-nexus" class="soundtrack-track" style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(184,154,91,.2)">
       <div style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--gold-dim);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem">🌲 Nexus the Elf</div>
       <div class="soundtrack-bio" style="margin-bottom:1rem">Nexus the Elf appeared from nowhere — no origin story, no introduction, just a magic beat maker and a voice that could outpace anyone alive. Where others stumble over syllables, he strings them together like he's reading from a scroll that writes itself.
         <br><br>
