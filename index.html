@@ -6200,9 +6200,12 @@
 
         <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0">
           <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">PRE-CATASTROPHE</div>
-          <a href="#" onclick="document.getElementById('lore-overlay-cult-of-luna').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="if(confirm('⚠ Major Spoilers\n\nThis entry contains significant revelations about the Lumina bloodline and events central to the main story.\n\nContinue?')){document.getElementById('lore-overlay-cult-of-luna').classList.add('open')}return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
-              <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Cult of Luna</div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Cult of Luna</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:#c0392b;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:4px;padding:0.15rem 0.45rem">⚠ MAJOR SPOILERS</span>
+              </div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Lunar Covenant · Pre-Catastrophe · ~2,000 years before the Catastrophe</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
