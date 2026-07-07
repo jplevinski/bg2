@@ -2567,7 +2567,7 @@
         <a href="#" onclick="showPage('races');closeWorldMenu();return false">Races</a>
         <a href="#" onclick="showPage('bestiary');closeWorldMenu();return false">Bestiary</a>
         <a href="#" onclick="showPage('stats');closeWorldMenu();return false">Stats Guide</a>
-        <a href="#" onclick="showPage('formulas');closeWorldMenu();return false">Formulas</a>
+        <a href="#" onclick="showPage('formulas');closeWorldMenu();return false">Battle Mechanics</a>
       </div>
     </li>
     <li class="toc-dropdown">
@@ -6438,11 +6438,11 @@
 <div id="page-formulas" class="chapter-page">
   <div class="chapter-title-block">
     <div class="chapter-num">The Adventurer's System</div>
-    <h2>Formulas</h2>
+    <h2>Battle Mechanics</h2>
   </div>
 
   <section class="section">
-    <p style="text-align:center;color:var(--text-muted);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto">The System calculates an adventurer's resources from their core stats. These formulas govern all adventurers in Valerguard — from first-years to battle-hardened veterans.</p>
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto">The System governs every aspect of combat in Valerguard — from how resources are calculated to how damage is categorized and applied. Understanding these mechanics is the difference between surviving a fight and not.</p>
 
     <div class="stats-wrapper">
       <div class="stats-section-title">Resource Formulas</div>
@@ -6481,6 +6481,80 @@
           <p style="margin-top:0.6rem">• All formulas reflect the base calculation at the time stats are recorded. Equipment bonuses, temporary buffs, and class passives may alter the final displayed values.</p>
           <p style="margin-top:0.6rem">• Soul Balance Stats do not feed into any known resource formula. Their mechanical effects on resource pools — if any — remain undocumented by the System.</p>
         </div></div>
+      </div>
+    </div>
+
+    <div class="stats-wrapper" style="margin-top:2rem">
+      <div class="stats-section-title">Damage Types</div>
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.6rem;margin-bottom:1.2rem">All damage dealt in Valerguard falls into one of three categories. Resistances, vulnerabilities, and class abilities are indexed against these types — knowing what you're up against determines how you survive it.</p>
+
+      <div style="display:grid;gap:1.2rem">
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.8rem">⚔️ Melee</h4>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">Physical damage delivered at close range. Governed primarily by Strength. Resisted by armor, shields, and Vitality-based passives.</p>
+          <div style="display:grid;gap:0.5rem">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🪨 Bludgeoned</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Blunt impact — maces, hammers, fists. Bypasses light armor. Can stagger.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🗡️ Stab</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Puncture damage — daggers, spears, rapiers. High critical potential. Finds gaps in plate.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">⚔️ Slice</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Cutting damage — swords, axes, claws. Causes Bleed on vulnerable targets.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.8rem">✨ Magic</h4>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">Elemental and arcane damage delivered through spellcraft. Governed by Intelligence. Resisted by Wisdom-based defenses, faction-specific wards, and certain legacy items.</p>
+          <div style="display:grid;gap:0.5rem">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🔥 Fire</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Burning. Deals damage over time. Countered by water resistance.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">💧 Water</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Slow or Freeze. Reduces Agility. Amplifies Lightning damage when active.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🌿 Earth</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Root. Immobilizes targets. Effective against aerial or fast-moving enemies.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🌑 Shadow</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Fear or Blind. Drains Soul Balance stats. Favored by The Veil.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">☀️ Light</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Stun or Reveal. Counters Shadow damage. Amplified by high Mercy.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🧪 Poison</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Applies Poison. Deals damage over time and reduces healing received. Cannot be burned off.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.2rem">
+          <h4 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.8rem">🏹 Ranged</h4>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">Physical damage delivered at distance. Governed by Agility. Resisted by cover, shields, and high Agility dodge chance.</p>
+          <div style="display:grid;gap:0.5rem">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">🏹 Piercing</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Arrows, bolts, thrown blades. High penetration against light armor. Causes Bleed on crits.</span>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:0.6rem 0.9rem;display:flex;justify-content:space-between;align-items:center">
+              <span style="font-family:'Cinzel',serif;font-size:0.8rem;color:var(--text-primary)">💥 Blunt Force</span>
+              <span style="font-size:0.78rem;color:var(--text-muted)">Thrown rocks, sling ammunition, Artificer grenades. Can stagger or knock back. Area-of-effect potential.</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
