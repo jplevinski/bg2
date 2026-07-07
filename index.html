@@ -6200,6 +6200,16 @@
 
         <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0">
           <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">PRE-CATASTROPHE</div>
+          <a href="#" onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Lunarian Exodus</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:var(--text-muted);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:0.15rem 0.45rem">SPOILERS</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Ancient Myth · Pre-Catastrophe · ~2,500 years before the Catastrophe</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
           <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="display:flex;align-items:center;gap:0.6rem">
@@ -6215,6 +6225,82 @@
       </div>
     </div>
   </section>
+</div>
+
+<!-- Spoiler confirm: Lunarian Exodus -->
+<div id="spoiler-confirm-lunar-exodus" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:420px;text-align:center" onclick="event.stopPropagation()">
+    <div style="font-size:2rem;margin-bottom:0.8rem">☽</div>
+    <div style="font-family:'Cinzel',serif;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.12em;margin-bottom:0.6rem">SPOILERS</div>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:1rem;font-size:1.1rem">The Lunarian Exodus</h3>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.8rem">This entry touches on the ancient origins of certain bloodlines in Valerguard. It is best read after the available chapters.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center">
+      <button onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
+      <button onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.remove('open');document.getElementById('lore-overlay-lunar-exodus').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: Lunarian Exodus -->
+<div id="lore-overlay-lunar-exodus" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-lunar-exodus').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — PRE-CATASTROPHE</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Lunarian Exodus</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem;line-height:1.6">
+      <span style="margin-right:1.2rem"><strong style="color:var(--text-primary)">Classification:</strong> Ancient myth / disputed historical event</span>
+      <span><strong style="color:var(--text-primary)">Era:</strong> ~2,500 years before the Catastrophe</span>
+    </div>
+
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:0 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">Overview</h3>
+      <p>Approximately 2,500 years before the Catastrophe, a group of beings from Luna — the Lunarians — are said to have descended to Valerguard and surrendered their immortality to take on human form. They did not arrive as conquerors or missionaries. They arrived quietly, mixed with the mortal population, and over generations became indistinguishable from ordinary humans — except for certain gifts that persisted in the blood.</p>
+      <p>Most people in Valerguard have never heard of the Lunarian Exodus. It does not appear in academy-approved histories. It is not taught in any recognized institution. What little survives of it exists in fragmented cult records, suppressed genealogies, and the oral traditions of a handful of families who have largely stopped telling the story themselves.</p>
+      <p>Those who have heard of it know it primarily as the founding myth of the Cult of Luna — a creation story that members of that order used to explain their bloodlines, their magic, and their claim to a lunar inheritance. Most who encounter it in this context treat it the same way they treat all cult mythology: as a fairytale. A flattering origin story invented by a religious group to make itself feel chosen.</p>
+      <p style="font-style:italic;color:var(--text-muted)">It is possible they are right. It is also possible they are not.</p>
+
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Five Accounts</h3>
+      <p>No single version of the Exodus survives intact. What remains are five competing accounts, each preserved by a different tradition, each offering a different reason why the Lunarians came — and why they gave up what they were.</p>
+
+      <div style="display:grid;gap:1rem;margin:1.2rem 0">
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.88rem;color:var(--gold);margin-bottom:0.5rem">I — The Exile</div>
+          <p style="margin:0;font-size:0.85rem;color:var(--text);line-height:1.7">According to the oldest surviving fragment, the Lunarians did not choose to come. They were cast out — exiled from Luna by those who held power there, for a transgression that the records do not name. Mortality was not a gift they sought. It was the punishment levied against them: stripped of their deathlessness and sent to a world that would eventually consume them. Those who hold this account point to the Lunarians' quiet disappearance into the general population as evidence — not of peaceful integration, but of people who could not afford to be found.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.88rem;color:var(--gold);margin-bottom:0.5rem">II — The Bargain</div>
+          <p style="margin:0;font-size:0.85rem;color:var(--text);line-height:1.7">A second account, preserved in Cult of Luna ceremonial texts, holds that the Exodus was a deliberate exchange. The Lunarians came to Valerguard to fulfill an agreement with a divine force — the nature and identity of the other party left deliberately vague in surviving records. In exchange for taking on mortality and anchoring themselves in the mortal world, they were permitted to bring something with them: knowledge, tools, or an artifact that would only work in mortal hands. What they brought, and why it required their transformation, is not explained.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.88rem;color:var(--gold);margin-bottom:0.5rem">III — The Flight</div>
+          <p style="margin:0;font-size:0.85rem;color:var(--text);line-height:1.7">A third tradition holds that the Lunarians fled. Not exile — flight. Something happened on Luna that made remaining there impossible or unbearable, and Valerguard was simply the nearest viable destination. The transformation from immortal to mortal was not chosen for philosophical or diplomatic reasons; it was a necessary cost of crossing. Whatever method existed for a Lunarian to take on human form required surrendering the thing that made them Lunarian. They paid it because the alternative was worse. This account is the most troubling, because it implies that whatever drove them out may still exist.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.88rem;color:var(--gold);margin-bottom:0.5rem">IV — The Mercy</div>
+          <p style="margin:0;font-size:0.85rem;color:var(--text);line-height:1.7">The most romanticized version, preserved in fragments of pre-Catastrophe poetry, describes the Lunarians as beings who watched the mortal world from above for ages and were undone by what they saw. Not repulsed — drawn. Valerguard was young and violent and finite, and to beings who had lived in perfect stillness since before memory, something in that brief, burning existence became unbearable to merely observe. They chose to descend. They chose to become mortal. They traded eternity for the ability to be present in a world that actually changed. This version is the one most often dismissed as a fairytale, because it is the most beautiful.</p>
+        </div>
+
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem">
+          <div style="font-family:'Cinzel',serif;font-size:0.88rem;color:var(--gold);margin-bottom:0.5rem">V — The Seeding</div>
+          <p style="margin:0;font-size:0.85rem;color:var(--text);line-height:1.7">The fifth account is the least poetic and the most disturbing. It holds that the Lunarians did not come for themselves at all. They came because they were sent — not punished, not persuaded, but deployed. Some larger intelligence or governing body on Luna identified Valerguard as a world that would eventually require intervention, and the Lunarians were placed within its population to ensure that when the critical moment arrived, something with lunar knowledge and lunar capability would already be present. The transformation into mortals was not a cost. It was a feature. It made them undetectable. Whether this account implies the Lunarians were aware of their purpose, or simply instruments who never knew what they were, is unclear.</p>
+        </div>
+
+      </div>
+
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">What They Left Behind</h3>
+      <p>Regardless of which account is true — or whether any of them are — the descendants of the Lunarians carried something forward. Lunar Magic persisted in certain bloodlines long after its origins were forgotten. The ability to work with living crystal, to siphon and redirect magical energy, to anchor souls and resist corruption — these gifts did not emerge naturally in Valerguard. They were inherited.</p>
+      <p>The Cult of Luna formed, in part, around families who still carried these traits and recognized what they meant. They preserved the Exodus as their founding myth not because it was provable, but because it was the only explanation that fit what they were.</p>
+      <p style="font-style:italic;color:var(--text-muted)">Most people who hear the story smile and move on. They have no reason to believe that immortal beings from the moon chose to become mortal and live quietly among them for thousands of years.</p>
+      <p style="font-style:italic;color:var(--text-muted)">They are probably right.</p>
+      <p style="font-style:italic;color:var(--gold-dim)">Probably.</p>
+
+    </div>
+  </div>
 </div>
 
 <!-- Spoiler confirm: Cult of Luna -->
