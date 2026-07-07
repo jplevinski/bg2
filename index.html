@@ -6200,7 +6200,7 @@
 
         <div style="background:var(--bg-mid);border:1px solid rgba(184,154,91,.12);border-radius:10px;padding:0.2rem 0">
           <div style="padding:0.6rem 1.2rem;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.1em;border-bottom:1px solid rgba(184,154,91,.08)">PRE-CATASTROPHE</div>
-          <a href="#" onclick="if(confirm('⚠ Major Spoilers\n\nThis entry contains significant revelations about the Lumina bloodline and events central to the main story.\n\nContinue?')){document.getElementById('lore-overlay-cult-of-luna').classList.add('open')}return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="display:flex;align-items:center;gap:0.6rem">
                 <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Cult of Luna</span>
@@ -6215,6 +6215,20 @@
       </div>
     </div>
   </section>
+</div>
+
+<!-- Spoiler confirm: Cult of Luna -->
+<div id="spoiler-confirm-cult-of-luna" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:420px;text-align:center" onclick="event.stopPropagation()">
+    <div style="font-size:2rem;margin-bottom:0.8rem">☽</div>
+    <div style="font-family:'Cinzel',serif;color:#c0392b;font-size:0.75rem;letter-spacing:0.12em;margin-bottom:0.6rem">⚠ MAJOR SPOILERS</div>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:1rem;font-size:1.1rem">The Cult of Luna</h3>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.8rem">This entry contains significant revelations about the Lumina bloodline and events central to the main story. It is best read after completing the available chapters.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center">
+      <button onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
+      <button onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.remove('open');document.getElementById('lore-overlay-cult-of-luna').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
+    </div>
+  </div>
 </div>
 
 <!-- Lore Overlay: Cult of Luna -->
