@@ -700,6 +700,33 @@
       padding: 1.5rem 1.8rem 1rem;
       align-items: flex-start;
     }
+    .beast-portrait-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .beast-portrait-wrap::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: rgba(255,255,255,.9);
+      background: rgba(0,0,0,.35);
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity .2s;
+      pointer-events: none;
+    }
+    .beast-portrait-wrap:hover::after { opacity: 1; }
+    .beast-portrait-wrap:hover .beast-portrait {
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(184,154,91,.4);
+    }
     .beast-portrait {
       width: 140px;
       height: 140px;
@@ -712,9 +739,7 @@
       transition: transform .2s, border-color .2s, box-shadow .2s;
     }
     .beast-portrait:hover {
-      transform: scale(1.08);
-      border-color: var(--gold);
-      box-shadow: 0 0 24px rgba(184,154,91,.4);
+      transform: scale(1.04);
     }
     .beast-title-block { flex: 1; min-width: 0; }
     .beast-title-block h3 {
@@ -832,6 +857,7 @@
     }
     @media (max-width: 600px) {
       .beast-header { flex-direction: column; align-items: center; text-align: center; }
+      .beast-portrait-wrap { width: 120px; height: 120px; }
       .beast-portrait { width: 120px; height: 120px; }
       .beast-stats-grid { grid-template-columns: 1fr; }
     }
@@ -7177,7 +7203,9 @@
       <!-- RUSTLEFOOT GOBLINS -->
       <div class="beast-card" id="beast-rustlefoot-goblins">
         <div class="beast-header">
-          <img src="images/rustlefoot-goblins.jpg" alt="Rustlefoot Goblins" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Have_him_lunge_at_a_Level_ad.mp4')" style="cursor:pointer">
+          <div class="beast-portrait-wrap" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Have_him_lunge_at_a_Level_ad.mp4')">
+            <img src="images/rustlefoot-goblins.jpg" alt="Rustlefoot Goblins" class="beast-portrait">
+          </div>
           <div class="beast-title-block">
             <h3>Rustlefoot Goblins</h3>
             <div class="beast-type">Creature — Enemy</div>
@@ -7226,7 +7254,9 @@
       <!-- SNATCHER GOBLINS -->
       <div class="beast-card" id="beast-snatcher-goblins">
         <div class="beast-header">
-          <img src="images/snatcher-goblin.jpg" alt="Snatcher Goblin" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/SnatcherGoblin.mp4')" style="cursor:pointer">
+          <div class="beast-portrait-wrap" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/SnatcherGoblin.mp4')">
+            <img src="images/snatcher-goblin.jpg" alt="Snatcher Goblin" class="beast-portrait">
+          </div>
           <div class="beast-title-block">
             <h3>Snatcher Goblins</h3>
             <div class="beast-type">Creature — Enemy</div>
@@ -7282,7 +7312,9 @@
       <!-- MUDSKIPPER -->
       <div class="beast-card" id="beast-mudskipper">
         <div class="beast-header">
-          <img src="images/mudskipper.jpg" alt="Mudskipper" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Mudskipper.mp4')" style="cursor:pointer">
+          <div class="beast-portrait-wrap" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Mudskipper.mp4')">
+            <img src="images/mudskipper.jpg" alt="Mudskipper" class="beast-portrait">
+          </div>
           <div class="beast-title-block">
             <h3>Mudskipper</h3>
             <div class="beast-type">Creature — Pack Beast</div>
@@ -7340,7 +7372,9 @@
       <!-- SHIVER-BEAK ROOSTER -->
       <div class="beast-card" id="beast-shiver-beak-rooster">
         <div class="beast-header">
-          <img src="images/shiver-beak-rooster.jpg" alt="Shiver-Beak Rooster" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Shiver-beak-rooster.mp4')" style="cursor:pointer">
+          <div class="beast-portrait-wrap" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Shiver-beak-rooster.mp4')">
+            <img src="images/shiver-beak-rooster.jpg" alt="Shiver-Beak Rooster" class="beast-portrait">
+          </div>
           <div class="beast-title-block">
             <h3>Shiver-Beak Rooster</h3>
             <div class="beast-type">Creature — Magical Beast</div>
@@ -7382,7 +7416,9 @@
       <!-- MIMIC -->
       <div class="beast-card" id="beast-mimic">
         <div class="beast-header">
-          <img src="images/mimic.jpg" alt="Mimic" class="beast-portrait" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Mimic_approaches_a_shiny_piece.mp4')" style="cursor:pointer">
+          <div class="beast-portrait-wrap" onclick="beastLightboxOpen('video','https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/Mimic_approaches_a_shiny_piece.mp4')">
+            <img src="images/mimic.jpg" alt="Mimic" class="beast-portrait">
+          </div>
           <div class="beast-title-block">
             <h3>Mimic</h3>
             <div class="beast-type">Creature — Dungeon Monster</div>
