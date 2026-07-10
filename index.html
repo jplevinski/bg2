@@ -2583,10 +2583,10 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#" onclick="showPage('home');return false">Home</a></li>
-    <li><a href="#" onclick="openChaptersOverlay();return false">Chapters</a></li>
+    <li><a href="#" onclick="openChaptersOverlay(event);return false">Chapters</a></li>
     <li><a href="#" onclick="showPage('characters');return false">Characters</a></li>
-    <li><a href="#" onclick="openWorldOverlay();return false">World</a></li>
-    <li><a href="#" onclick="openPerspOverlay();return false">Perspectives</a></li>
+    <li><a href="#" onclick="openWorldOverlay(event);return false">World</a></li>
+    <li><a href="#" onclick="openPerspOverlay(event);return false">Perspectives</a></li>
     <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">☀</button></li>
     <li class="font-size-dropdown">
       <button class="theme-toggle" onclick="toggleFontMenu(event)" id="font-size-btn" title="Font size">A</button>
@@ -8830,7 +8830,7 @@ function showPage(id) {
 }
 
 // TOC dropdown
-function closeAllMenus() { closeToc(); closeChaptersOverlay(); closeWorldOverlay(); closePerspOverlay(); }
+function closeAllMenus() { closeToc(); }
 function toggleToc(e) {
   e.stopPropagation();
   var el = document.getElementById('toc-menu');
@@ -8840,7 +8840,8 @@ function closeToc() {
   var el = document.getElementById('toc-menu');
   if (el) el.classList.remove('open');
 }
-function openChaptersOverlay() {
+function openChaptersOverlay(e) {
+  if (e) e.stopPropagation();
   document.getElementById('chapters-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -8848,7 +8849,8 @@ function closeChaptersOverlay() {
   document.getElementById('chapters-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-function openWorldOverlay() {
+function openWorldOverlay(e) {
+  if (e) e.stopPropagation();
   document.getElementById('world-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -8856,7 +8858,8 @@ function closeWorldOverlay() {
   document.getElementById('world-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-function openPerspOverlay() {
+function openPerspOverlay(e) {
+  if (e) e.stopPropagation();
   document.getElementById('persp-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
