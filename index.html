@@ -2585,27 +2585,8 @@
     <li><a href="#" onclick="showPage('home');return false">Home</a></li>
     <li><a href="#" onclick="showPage('home');setTimeout(function(){document.getElementById('home-chapters-section').scrollIntoView({behavior:'smooth',block:'start'});},50);return false">Chapters</a></li>
     <li><a href="#" onclick="showPage('characters');return false">Characters</a></li>
-    <li class="toc-dropdown">
-      <button class="toc-toggle" onclick="toggleWorldMenu(event)">World</button>
-      <div class="toc-menu" id="world-menu">
-        <a href="#" onclick="showPage('encyclopedia');closeWorldMenu();return false">Encyclopedia</a>
-        <a href="#" onclick="showPage('geography');closeWorldMenu();return false">Geography</a>
-        <a href="#" onclick="showPage('lore');closeWorldMenu();return false">Lore</a>
-        <a href="#" onclick="showPage('timeline');closeWorldMenu();return false">Timeline</a>
-        <a href="#" onclick="showPage('factions');closeWorldMenu();return false">Factions</a>
-        <a href="#" onclick="showPage('races');closeWorldMenu();return false">Races</a>
-        <a href="#" onclick="showPage('bestiary');closeWorldMenu();return false">Bestiary</a>
-        <a href="#" onclick="showPage('stats');closeWorldMenu();return false">Stats Guide</a>
-        <a href="#" onclick="showPage('formulas');closeWorldMenu();return false">Battle Mechanics</a>
-      </div>
-    </li>
-    <li class="toc-dropdown">
-      <button class="toc-toggle" onclick="togglePerspMenu(event)">Perspectives</button>
-      <div class="toc-menu" id="persp-menu">
-        <a href="#" onclick="showPage('cassian-notes');closePerspMenu();return false">Cassian's Field Notes</a>
-        <a href="#" onclick="showPage('glintjaw');closePerspMenu();return false">The Story of Glintjaw</a>
-      </div>
-    </li>
+    <li><a href="#" onclick="openWorldOverlay();return false">World</a></li>
+    <li><a href="#" onclick="openPerspOverlay();return false">Perspectives</a></li>
     <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">☀</button></li>
     <li class="font-size-dropdown">
       <button class="theme-toggle" onclick="toggleFontMenu(event)" id="font-size-btn" title="Font size">A</button>
@@ -2617,6 +2598,81 @@
     </li>
   </ul>
 </nav>
+
+<!-- ════════════════════ WORLD OVERLAY ════════════════════ -->
+<div class="soundtrack-overlay" id="world-overlay" onclick="if(event.target===this)closeWorldOverlay()">
+  <div class="soundtrack-panel">
+    <button class="soundtrack-close" onclick="closeWorldOverlay()">&times;</button>
+    <div class="soundtrack-title">World of Valerguard</div>
+    <div class="soundtrack-subtitle">Explore the lore, history, and systems</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:1.5rem">
+      <a href="#" onclick="showPage('encyclopedia');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">📖</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Encyclopedia</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Creatures, classes, factions &amp; terms</div>
+      </a>
+      <a href="#" onclick="showPage('geography');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">🗺️</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Geography</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Interactive map of Valerguard</div>
+      </a>
+      <a href="#" onclick="showPage('lore');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">🌌</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Lore</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Myths, origins &amp; hidden truths</div>
+      </a>
+      <a href="#" onclick="showPage('timeline');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">📜</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Timeline</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">History of Valerguard</div>
+      </a>
+      <a href="#" onclick="showPage('factions');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">⚔️</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Factions</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">The four great orders</div>
+      </a>
+      <a href="#" onclick="showPage('races');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">🧝</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Races</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Peoples of Valerguard</div>
+      </a>
+      <a href="#" onclick="showPage('bestiary');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">🐉</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Bestiary</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Creatures of the realm</div>
+      </a>
+      <a href="#" onclick="showPage('stats');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">📊</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Stats Guide</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">How attributes work</div>
+      </a>
+      <a href="#" onclick="showPage('formulas');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">⚙️</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Battle Mechanics</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Combat formulas &amp; systems</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ PERSPECTIVES OVERLAY ════════════════════ -->
+<div class="soundtrack-overlay" id="persp-overlay" onclick="if(event.target===this)closePerspOverlay()">
+  <div class="soundtrack-panel">
+    <button class="soundtrack-close" onclick="closePerspOverlay()">&times;</button>
+    <div class="soundtrack-title">Other Perspectives</div>
+    <div class="soundtrack-subtitle">Stories told from outside Elias's eyes</div>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem">
+      <a href="#" onclick="showPage('cassian-notes');closePerspOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold);margin-bottom:0.3rem">📋 Cassian's Field Notes</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6">Private tactical journal of Cassian Drake — his unfiltered assessments of Cohort 777, written for his eyes only.</div>
+      </a>
+      <a href="#" onclick="showPage('glintjaw');closePerspOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold);margin-bottom:0.3rem">📦 The Story of Glintjaw</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6">Eight hundred years before Elias, a worthless little chest changed the world forever. The origin story of Valerguard's most dangerous mimic.</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════ HOME ════════════════════ -->
 <div id="page-home" class="chapter-page active">
@@ -8731,21 +8787,21 @@ function toggleToc(e) {
 function closeToc() {
   document.getElementById('toc-menu').classList.remove('open');
 }
-function toggleWorldMenu(e) {
-  e.stopPropagation();
-  closeToc(); closePerspMenu();
-  document.getElementById('world-menu').classList.toggle('open');
+function openWorldOverlay() {
+  document.getElementById('world-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closeWorldMenu() {
-  document.getElementById('world-menu').classList.remove('open');
+function closeWorldOverlay() {
+  document.getElementById('world-overlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
-function togglePerspMenu(e) {
-  e.stopPropagation();
-  closeToc(); closeWorldMenu();
-  document.getElementById('persp-menu').classList.toggle('open');
+function openPerspOverlay() {
+  document.getElementById('persp-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closePerspMenu() {
-  document.getElementById('persp-menu').classList.remove('open');
+function closePerspOverlay() {
+  document.getElementById('persp-overlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 document.addEventListener('click', closeAllMenus);
 
