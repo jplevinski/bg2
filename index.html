@@ -8816,6 +8816,11 @@ function showPage(id) {
   window.scrollTo(0, 0);
   closeAllMenus();
   closeHamburger();
+  ['chapters-overlay','world-overlay','persp-overlay'].forEach(function(oid){
+    var el = document.getElementById(oid);
+    if (el) { el.classList.remove('open'); }
+  });
+  document.body.style.overflow = '';
   if (id === 'encyclopedia' && currentEncyTab !== 'all') switchEncyTab('all');
   // Close mobile sidebar
   document.querySelectorAll('.chapter-sidebar').forEach(s => s.classList.remove('mobile-open'));
