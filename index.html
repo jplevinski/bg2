@@ -2583,24 +2583,7 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#" onclick="showPage('home');return false">Home</a></li>
-    <li class="toc-dropdown">
-      <button class="toc-toggle" onclick="toggleToc(event)">Chapters</button>
-      <div class="toc-menu" id="toc-menu">
-        <div class="toc-arc">Arc 1 — Arrival</div>
-        <a href="#" onclick="showPage('ch1');closeToc();return false">Chapter 1 — Tetherpoint Academy</a>
-        <a href="#" onclick="showPage('ch2');closeToc();return false">Chapter 2 — The Weight of a Name</a>
-        <a href="#" onclick="showPage('ch3');closeToc();return false">Chapter 3 — Detention</a>
-        <a href="#" onclick="showPage('ch4');closeToc();return false">Chapter 4 — The Weight of a Shield</a>
-        <a href="#" onclick="showPage('ch5');closeToc();return false">Chapter 5 — The First Adventure</a>
-        <a href="#" onclick="showPage('ch6');closeToc();return false">Chapter 6 — Blood and Rank</a>
-        <a href="#" onclick="showPage('ch7');closeToc();return false">Chapter 7 — Detention Again</a>
-        <a href="#" onclick="showPage('ch8');closeToc();return false">Chapter 8 — Detention Continued</a>
-        <a href="#" onclick="showPage('ch9');closeToc();return false">Chapter 9 — The Secret</a>
-        <a href="#" onclick="showPage('ch10');closeToc();return false">Chapter 10 — Best Team Ever</a>
-        <a href="#" onclick="showPage('ch11');closeToc();return false">Chapter 11 — Squad Cohesion</a>
-        <a href="#" onclick="showPage('ch12');closeToc();return false">Chapter 12 — Personal Leave</a>
-      </div>
-    </li>
+    <li><a href="#" onclick="showPage('home');setTimeout(function(){document.getElementById('home-chapters-section').scrollIntoView({behavior:'smooth',block:'start'});},50);return false">Chapters</a></li>
     <li><a href="#" onclick="showPage('characters');return false">Characters</a></li>
     <li class="toc-dropdown">
       <button class="toc-toggle" onclick="toggleWorldMenu(event)">World</button>
@@ -2667,7 +2650,7 @@
     <a href="#" class="btn btn-primary" onclick="showPage('ch1');return false">Read Now</a>
   </section>
 
-  <section class="section-wide">
+  <section class="section-wide" id="home-chapters-section">
     <div class="chapter-grid">
       <a href="#" class="chapter-card" onclick="showPage('ch1');return false">
         <h3>Chapter 1 — Tetherpoint Academy</h3>
