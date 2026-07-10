@@ -2583,7 +2583,7 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#" onclick="showPage('home');return false">Home</a></li>
-    <li><a href="#" onclick="showPage('home');setTimeout(function(){document.getElementById('home-chapters-section').scrollIntoView({behavior:'smooth',block:'start'});},50);return false">Chapters</a></li>
+    <li><a href="#" onclick="openChaptersOverlay();return false">Chapters</a></li>
     <li><a href="#" onclick="showPage('characters');return false">Characters</a></li>
     <li><a href="#" onclick="openWorldOverlay();return false">World</a></li>
     <li><a href="#" onclick="openPerspOverlay();return false">Perspectives</a></li>
@@ -2598,6 +2598,53 @@
     </li>
   </ul>
 </nav>
+
+<!-- ════════════════════ CHAPTERS OVERLAY ════════════════════ -->
+<div class="soundtrack-overlay" id="chapters-overlay" onclick="if(event.target===this)closeChaptersOverlay()">
+  <div class="soundtrack-panel">
+    <button class="soundtrack-close" onclick="closeChaptersOverlay()">&times;</button>
+    <div class="soundtrack-title">Chapters</div>
+    <div class="soundtrack-subtitle">Arc 1 — Arrival</div>
+    <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1.2rem">
+      <a href="#" onclick="showPage('ch1');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 1 — Tetherpoint Academy</div>
+      </a>
+      <a href="#" onclick="showPage('ch2');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 2 — The Weight of a Name</div>
+      </a>
+      <a href="#" onclick="showPage('ch3');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 3 — Detention</div>
+      </a>
+      <a href="#" onclick="showPage('ch4');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 4 — The Weight of a Shield</div>
+      </a>
+      <a href="#" onclick="showPage('ch5');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 5 — The First Adventure</div>
+      </a>
+      <a href="#" onclick="showPage('ch6');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 6 — Blood and Rank</div>
+      </a>
+      <a href="#" onclick="showPage('ch7');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 7 — Detention Again</div>
+      </a>
+      <a href="#" onclick="showPage('ch8');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 8 — Detention Continued</div>
+      </a>
+      <a href="#" onclick="showPage('ch9');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 9 — The Secret</div>
+      </a>
+      <a href="#" onclick="showPage('ch10');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 10 — Best Team Ever</div>
+      </a>
+      <a href="#" onclick="showPage('ch11');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 11 — Squad Cohesion</div>
+      </a>
+      <a href="#" onclick="showPage('ch12');closeChaptersOverlay();return false" style="display:block;background:rgba(184,154,91,.06);border:1px solid rgba(184,154,91,.15);border-radius:8px;padding:0.85rem 1.1rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.4)'" onmouseout="this.style.background='rgba(184,154,91,.06)';this.style.borderColor='rgba(184,154,91,.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:0.82rem;color:var(--gold)">Chapter 12 — Personal Leave</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ════════════════════ WORLD OVERLAY ════════════════════ -->
 <div class="soundtrack-overlay" id="world-overlay" onclick="if(event.target===this)closeWorldOverlay()">
@@ -8786,6 +8833,14 @@ function toggleToc(e) {
 }
 function closeToc() {
   document.getElementById('toc-menu').classList.remove('open');
+}
+function openChaptersOverlay() {
+  document.getElementById('chapters-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeChaptersOverlay() {
+  document.getElementById('chapters-overlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 function openWorldOverlay() {
   document.getElementById('world-overlay').classList.add('open');
