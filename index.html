@@ -8833,11 +8833,12 @@ function showPage(id) {
 function closeAllMenus() { closeToc(); closeChaptersOverlay(); closeWorldOverlay(); closePerspOverlay(); }
 function toggleToc(e) {
   e.stopPropagation();
-  closeWorldMenu(); closePerspMenu();
-  document.getElementById('toc-menu').classList.toggle('open');
+  var el = document.getElementById('toc-menu');
+  if (el) el.classList.toggle('open');
 }
 function closeToc() {
-  document.getElementById('toc-menu').classList.remove('open');
+  var el = document.getElementById('toc-menu');
+  if (el) el.classList.remove('open');
 }
 function openChaptersOverlay() {
   document.getElementById('chapters-overlay').classList.add('open');
