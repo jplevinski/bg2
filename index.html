@@ -1114,6 +1114,28 @@
       border-radius: 10px;
     }
     .chapter-media video { border-radius: 10px; }
+    .chapter-video-trigger {
+      position: relative;
+      cursor: pointer;
+      display: block;
+      line-height: 0;
+    }
+    .chapter-video-trigger img { width: 100%; display: block; border-radius: 10px; }
+    .chapter-video-trigger::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      color: rgba(255,255,255,.92);
+      background: rgba(0,0,0,.28);
+      text-shadow: 0 2px 12px rgba(0,0,0,.6);
+      transition: background .2s;
+      pointer-events: none;
+    }
+    .chapter-video-trigger:hover::after { background: rgba(0,0,0,.45); }
     .chapter-media .media-caption {
       font-family: 'Cinzel', serif;
       font-size: 0.7rem;
@@ -2921,10 +2943,9 @@
     <p>A portal. The <a class="lore-term" onclick="showPage('encyclopedia');document.getElementById('ency-academy-gate').scrollIntoView({behavior:'smooth',block:'center'});return false" href="#"><span class="lore-tip"><span class="lt-name">The Academy Gate</span><span class="lt-type">Magical Structure</span><span class="lt-desc">A portal arch that transforms those who pass through into adventurers.</span><span class="lt-link">→ Read more</span></span>Academy Gate</a>.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch1image.jpg">
-        <source src="images/ch1video.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch1video.mp4')">
         <img src="images/ch1image.jpg" alt="Elias and Kip standing before the Academy Gate">
-      </video>
+      </div>
       <div class="media-caption">Elias and Kip before the Academy Gate</div>
     </div>
 
@@ -3186,10 +3207,9 @@
     <p class="dialogue">"What we have come to call — the <em>Golden Cohort</em>!"</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch2image2.png">
-        <source src="images/ch2video2.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch2video2.mp4')">
         <img src="images/ch2image2.png" alt="Archmage Varric Pyre addresses the Great Hall" loading="lazy">
-      </video>
+      </div>
     </div>
 
     <p class="dialogue">"You are our hope," he declared, arms wide enough to embrace the architecture. "Our dreams. Triple sevens! The luckiest of numbers! Fortune smiles upon you this day, and history shall remember you as the brightest generation Tetherpoint Academy has ever produced."</p>
@@ -3263,10 +3283,9 @@
     <p>At the slit window perched the strangest owl I had ever seen — ancient, feathers ragged as an old battle-standard, and its eyes <em>wrong</em>: one pitch black, drinking the light; the other burning gold, like it had seen too much and started keeping some. It studied me with an attention no bird should own.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch2image.png">
-        <source src="images/ch2video.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch2video.mp4')">
         <img src="images/ch2image.png" alt="Elias and the mysterious owl" loading="lazy">
-      </video>
+      </div>
     </div>
 
     <p>We regarded each other for a long moment, the owl and I.</p>
@@ -3465,10 +3484,9 @@
     <p>I hesitated half a second, then shook it. My hand disappeared to the wrist.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch3image.png">
-        <source src="images/ch3video.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch3video.mp4')">
         <img src="images/ch3image.png" alt="Elias meets Borin Grimhall in the detention block">
-      </video>
+      </div>
       <div class="media-caption">Elias meets Borin Grimhall in the detention block</div>
     </div>
 
@@ -3727,10 +3745,9 @@
     <p class="dialogue">"Let us walk together," he chirped, falling in beside me.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch4image2.png">
-        <source src="images/ch4video2.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch4video2.mp4')">
         <img src="images/ch4image2.png" alt="Kip and Elias walk to the mess hall">
-      </video>
+      </div>
       <div class="media-caption">Kip and Elias walk to the mess hall</div>
     </div>
 
@@ -3761,10 +3778,9 @@
     <p>I looked across the hall. My eyes went straight to the lion of The Shield — and to the boy already standing at the center of its corner like he'd been born there, receiving first-years the way a toll collector receives travelers.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch4image.png">
-        <source src="images/ch4video.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch4video.mp4')">
         <img src="images/ch4image.png" alt="Cassian standing at the center of The Shield corner">
-      </video>
+      </div>
       <div class="media-caption">Cassian standing at the center of The Shield corner</div>
     </div>
 
@@ -3940,10 +3956,9 @@
     <p class="dialogue">"Yes, <em>sir</em>!" Kip barked back, with an enthusiasm so total and unironic it hurt to witness.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch5image2.png">
-        <source src="images/ch5video2.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch5video2.mp4')">
         <img src="images/ch5image2.png" alt="Cassian hands Kip the trans-communication crystal">
-      </video>
+      </div>
       <div class="media-caption">Cassian entrusts Kip with the trans-communication crystal</div>
     </div>
 
@@ -3968,10 +3983,9 @@
     <p>The shield-charge caught the lead goblin dead center — a full-body impact that jarred my teeth and sent the creature cartwheeling into the dirt.</p>
 
     <div class="chapter-media">
-      <video autoplay muted loop playsinline poster="images/ch5image.png">
-        <source src="images/ch5video.mp4" type="video/mp4">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'images/ch5video.mp4')">
         <img src="images/ch5image.png" alt="Elias charges into the Rustlefoot Goblin camp">
-      </video>
+      </div>
       <div class="media-caption">Elias charges into the Rustlefoot Goblin camp</div>
     </div>
 
@@ -5797,13 +5811,12 @@
     <p>The elemental erupted.</p>
     <p>The Level 10 monstrosity of pure flame I'd swallowed in the detention block ripped its way out of the pendant with a roar that superheated the damp canyon air. The blast wave caught the two rock-throwing goblins, tossing them backward easily into the dirt. The <span class="dialogue">[Burning]</span> debuff stacked on them instantly, immediately followed by a three-second knock-back <span class="dialogue">[Stun]</span>.</p>
 
-    <figure style="margin:2rem 0;text-align:center">
-      <video autoplay muted loop playsinline preload="metadata" poster="images/elias-fire-elemental.png" style="width:100%;border-radius:10px;border:1px solid rgba(184,154,91,.2);display:block">
-        <source src="https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/elias%20fire%20elemental.mp4" type="video/mp4">
-        <img src="images/elias-fire-elemental.png" alt="Elias unleashes the Protector Fire Elemental against the Snatcher Goblins in the gorge" style="width:100%;border-radius:10px;border:1px solid rgba(184,154,91,.2);display:block">
-      </video>
-      <figcaption style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.1em;color:var(--text-muted);text-align:center;margin-top:0.6rem">Elias unleashes the Protector Fire Elemental against the Snatcher Goblins</figcaption>
-    </figure>
+    <div class="chapter-media">
+      <div class="chapter-video-trigger" onclick="playChapterVideo(this,'https://pub-e93458c58ae541598bbe2630e0c41100.r2.dev/elias%20fire%20elemental.mp4')">
+        <img src="images/elias-fire-elemental.png" alt="Elias unleashes the Protector Fire Elemental against the Snatcher Goblins in the gorge">
+      </div>
+      <div class="media-caption">Elias unleashes the Protector Fire Elemental against the Snatcher Goblins</div>
+    </div>
 
     <p>I snatched the fallen potion out of the mud and downed it. The cool liquid pulled my HP back from the brink to 44%.</p>
     <p>In the center of my vision, the text etched itself into the air like scarred glass.</p>
@@ -8607,6 +8620,31 @@ function beastLightboxClose() {
   vid.pause();
   vid.src = '';
   lb.classList.remove('open');
+}
+
+// Click-to-play for in-chapter videos: swap the poster image for a playing video
+function playChapterVideo(trigger, mp4) {
+  var imgEl = trigger.querySelector('img');
+  var poster = imgEl ? imgEl.getAttribute('src') : '';
+  var v = document.createElement('video');
+  v.setAttribute('controls', '');
+  v.setAttribute('autoplay', '');
+  v.setAttribute('loop', '');
+  v.setAttribute('playsinline', '');
+  if (poster) v.setAttribute('poster', poster);
+  v.style.width = '100%';
+  v.style.display = 'block';
+  v.style.borderRadius = '10px';
+  var source = document.createElement('source');
+  source.src = mp4;
+  source.type = 'video/mp4';
+  v.appendChild(source);
+  if (imgEl) {
+    var fallback = imgEl.cloneNode(true);
+    v.appendChild(fallback);
+  }
+  trigger.parentNode.replaceChild(v, trigger);
+  v.play();
 }
 </script>
 
