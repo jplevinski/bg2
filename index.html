@@ -6245,7 +6245,7 @@
       </div>
 
       <div style="margin-top:2.5rem;text-align:center">
-        <a href="The_Story_of_Glintjaw.pdf" download style="display:inline-block;padding:0.8rem 1.6rem;border:1px solid rgba(184,154,91,.3);border-radius:10px;background:rgba(184,154,91,.08);color:var(--gold);font-family:'Cinzel',serif;font-size:0.9rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.3)'">&#x1F4DC; Download Full Story (PDF)</a>
+        <a href="#" onclick="viewGlintjawBook();return false" style="display:inline-block;padding:0.8rem 1.6rem;border:1px solid rgba(184,154,91,.3);border-radius:10px;background:rgba(184,154,91,.08);color:var(--gold);font-family:'Cinzel',serif;font-size:0.9rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.3)'">&#x1F4DC; View Full Story</a>
       </div>
 
       <div style="margin-top:2.5rem">
@@ -9088,19 +9088,21 @@ function renderEndSummary(chapter, suffix) {
   el.innerHTML = html;
 }
 
-function viewFullBook() {
-  // Dynamically collect all chapter pages in DOM order
+// Collect prose from a set of chapter pages (in DOM order) into print-ready HTML
+function collectBookBody(pages) {
   let body = '';
-  document.querySelectorAll('[id^="page-ch"]').forEach(page => {
+  pages.forEach(page => {
     const textEl = page.querySelector('.chapter-text');
     if (!textEl) return;
     const chapterNum = page.querySelector('.chapter-num');
     const h2 = page.querySelector('h2');
-    const titleText = (chapterNum ? chapterNum.textContent.trim() + ' — ' : '') + (h2 ? h2.textContent.trim() : '');
+    let titleText = (chapterNum ? chapterNum.textContent.trim() + ' — ' : '') + (h2 ? h2.textContent.trim() : '');
+    // Glintjaw chapter labels already carry the book name — drop the redundant prefix
+    titleText = titleText.replace('The Story of Glintjaw — ', '');
 
     const clone = textEl.cloneNode(true);
 
-    // Remove non-prose elements
+    // Remove non-prose elements (character sheets are collapsibles)
     clone.querySelectorAll('.system-msg, .mobile-dashboard, audio, [class*="collapsible"], .chapter-nav, .lore-tip, style, script').forEach(el => el.remove());
 
     // Unwrap lore-term anchors — keep visible text only
@@ -9117,13 +9119,17 @@ function viewFullBook() {
 
     body += `<h2 class="ch-title">${titleText}</h2>\n${clone.innerHTML}\n<div class="ch-break"></div>\n`;
   });
+  return body;
+}
 
+// Open a print-ready book window with shared styling
+function openBookWindow(bookTitle, subtitle, author, body) {
   const win = window.open('', '_blank');
   win.document.write(`<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Born Good — Full Book</title>
+<title>${bookTitle} — Full Book</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -9208,14 +9214,24 @@ function viewFullBook() {
 </style>
 </head>
 <body>
-<h1 class="book-title">Born Good</h1>
-<div class="book-subtitle">A Tetherpoint Academy Story</div>
-<div class="title-author">by Justin Plevinski, PhD</div>
+<h1 class="book-title">${bookTitle}</h1>
+<div class="book-subtitle">${subtitle}</div>
+<div class="title-author">${author}</div>
 <p class="print-hint">To save as PDF: use your browser's Print function (Ctrl+P / ⌘+P) and choose "Save as PDF".</p>
 ${body}
 </body>
 </html>`);
   win.document.close();
+}
+
+function viewFullBook() {
+  const body = collectBookBody(document.querySelectorAll('[id^="page-ch"]'));
+  openBookWindow('Born Good', 'A Tetherpoint Academy Story', 'by Justin Plevinski, PhD', body);
+}
+
+function viewGlintjawBook() {
+  const body = collectBookBody(document.querySelectorAll('[id^="page-glintjaw-ch"]'));
+  openBookWindow('The Story of Glintjaw', 'A Tale of the Old World · Born Good', 'by Justin Plevinski, PhD', body);
 }
 
 function showPage(id) {
