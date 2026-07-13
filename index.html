@@ -7526,6 +7526,20 @@
   </div>
 </div>
 
+<!-- Generic reusable spoiler confirm (used by Timeline entries) -->
+<div id="spoiler-confirm" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:420px;text-align:center" onclick="event.stopPropagation()">
+    <div style="font-size:2rem;margin-bottom:0.8rem">⚠</div>
+    <div style="font-family:'Cinzel',serif;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.12em;margin-bottom:0.6rem">SPOILERS</div>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:1rem;font-size:1.1rem">Spoiler Warning</h3>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.8rem">This entry contains spoilers for the main story. It is best read after the available chapters.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center">
+      <button onclick="document.getElementById('spoiler-confirm').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
+      <button onclick="proceedSpoiler()" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
+    </div>
+  </div>
+</div>
+
 <!-- Lore Overlay: Cult of Luna -->
 <div id="lore-overlay-cult-of-luna" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
@@ -7802,70 +7816,70 @@
 
       <div class="tl-item">
         <div class="tl-item-label">~2,500 years before the Catastrophe</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-lunar-exodus').classList.add('open')">The Lunarian Exodus</span></div>
-        <div class="tl-item-hint">The religious origin myth of the Cult of Luna — beings from Luna are said to have descended to Valerguard and surrendered their immortality to take on human form, disappearing quietly into the mortal population. Five competing accounts survive — none confirmed, none dismissed. <a href="#" onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.add('open');return false">→ Full entry (Spoilers)</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-lunar-exodus')">The Lunarian Exodus</span></div>
+        <div class="tl-item-hint">The religious origin myth of the Cult of Luna — beings from Luna are said to have descended to Valerguard and surrendered their immortality to take on human form, disappearing quietly into the mortal population. Five competing accounts survive — none confirmed, none dismissed. <a href="#" onclick="confirmSpoiler('lore-overlay-lunar-exodus');return false">→ Full entry (Spoilers)</a></div>
       </div>
 
       <div class="tl-item">
         <div class="tl-item-label">~2,000 years before the Catastrophe</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open')">The Cult of Luna</span></div>
-        <div class="tl-item-hint">A civilization within a civilization — priesthood, forge order, warrior caste, and bloodline archive — built around the remnants of ancient Lunar Magic. Most know it only as a dead heresy. <a href="#" onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.add('open');return false">→ Full entry (Spoilers)</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-cult-of-luna')">The Cult of Luna</span></div>
+        <div class="tl-item-hint">A civilization within a civilization — priesthood, forge order, warrior caste, and bloodline archive — built around the remnants of ancient Lunar Magic. Most know it only as a dead heresy. <a href="#" onclick="confirmSpoiler('lore-overlay-cult-of-luna');return false">→ Full entry (Spoilers)</a></div>
       </div>
 
       <div class="tl-item tl-era-divider">THE CATASTROPHE</div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year -3</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open')">The Catastrophe</span></div>
-        <div class="tl-item-hint">A mimic stole a Dungeon Core that served as a vessel for Maelora, the God of Chaos — triggering a 300-megaton arcane detonation that instantly killed one-third of the world's population and shattered civilization. <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-the-catastrophe')">The Catastrophe</span></div>
+        <div class="tl-item-hint">A mimic stole a Dungeon Core that served as a vessel for Maelora, the God of Chaos — triggering a 300-megaton arcane detonation that instantly killed one-third of the world's population and shattered civilization. <a href="#" onclick="confirmSpoiler('lore-overlay-the-catastrophe');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item">
         <div class="tl-item-label">Years -3 to 0</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open')">The Dark Age</span></div>
-        <div class="tl-item-hint">Fractured mana blotted out the sun, destroying agriculture and sending 90% of survivors into famine and collapse. In the wreckage, Catastrophe Crystals emerged — and with them, the world's first Adventurers. <a href="#" onclick="document.getElementById('lore-overlay-the-dark-age').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-the-dark-age')">The Dark Age</span></div>
+        <div class="tl-item-hint">Fractured mana blotted out the sun, destroying agriculture and sending 90% of survivors into famine and collapse. In the wreckage, Catastrophe Crystals emerged — and with them, the world's first Adventurers. <a href="#" onclick="confirmSpoiler('lore-overlay-the-dark-age');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item tl-era-divider">POST-CATASTROPHE</div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year 0</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open')">The Consensus of the Fifteen</span></div>
-        <div class="tl-item-hint">The fifteen most powerful surviving magic-wielders gathered to forge the treaty that established the Four Factions, the Wizards Emporium, and the kingdom of Valerguard — declaring Year 0. <a href="#" onclick="document.getElementById('lore-overlay-consensus-of-fifteen').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-consensus-of-fifteen')">The Consensus of the Fifteen</span></div>
+        <div class="tl-item-hint">The fifteen most powerful surviving magic-wielders gathered to forge the treaty that established the Four Factions, the Wizards Emporium, and the kingdom of Valerguard — declaring Year 0. <a href="#" onclick="confirmSpoiler('lore-overlay-consensus-of-fifteen');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year 2 onward</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open')">The Ecosystem of Chaos</span></div>
-        <div class="tl-item-hint">The Catastrophe's blast cracked dungeon seals worldwide, flooding the surface with monsters never meant to breathe open air. Near The Maw, centuries of ambient magic turned these creatures into strategic, System-aware threats. <a href="#" onclick="document.getElementById('lore-overlay-ecosystem-of-chaos').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-ecosystem-of-chaos')">The Ecosystem of Chaos</span></div>
+        <div class="tl-item-hint">The Catastrophe's blast cracked dungeon seals worldwide, flooding the surface with monsters never meant to breathe open air. Near The Maw, centuries of ambient magic turned these creatures into strategic, System-aware threats. <a href="#" onclick="confirmSpoiler('lore-overlay-ecosystem-of-chaos');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item tl-era-divider">MODERN ERA</div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year 753</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open')">Daemeon Lumina's Discovery</span></div>
-        <div class="tl-item-hint">While studying under The Veil, Daemeon Lumina discovered how to make the Soul Balance visible within the System Interface — and how certain bloodlines could channel power directly from their soul stats. <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false">→ Full entry (Spoilers)</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-daemeon-lumina')">Daemeon Lumina's Discovery</span></div>
+        <div class="tl-item-hint">While studying under The Veil, Daemeon Lumina discovered how to make the Soul Balance visible within the System Interface — and how certain bloodlines could channel power directly from their soul stats. <a href="#" onclick="confirmSpoiler('lore-overlay-daemeon-lumina');return false">→ Full entry (Spoilers)</a></div>
       </div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year 777 — Present Day</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open')">The Golden Cohort</span></div>
-        <div class="tl-item-hint">Exactly 777 years after the Consensus, Tetherpoint Academy opens its gates to Class 777. To the kingdom, a milestone of pride. Beneath the celebration, older systems quietly align. <a href="#" onclick="document.getElementById('lore-overlay-golden-cohort').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-golden-cohort')">The Golden Cohort</span></div>
+        <div class="tl-item-hint">Exactly 777 years after the Consensus, Tetherpoint Academy opens its gates to Class 777. To the kingdom, a milestone of pride. Beneath the celebration, older systems quietly align. <a href="#" onclick="confirmSpoiler('lore-overlay-golden-cohort');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item tl-era-divider">CULTURE &amp; LEGEND</div>
 
       <div class="tl-item">
         <div class="tl-item-label">Year ~1039</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open')">🍺 The Ale Chuggers</span></div>
-        <div class="tl-item-hint">Roughly 77 years after the death of Elias Lumina, a rowdy bardic group crawled out of Mellonwood's seediest tavern to become Valerguard's most controversial minstrel act — known for retelling the Lumina saga in ways that spark bar fights and secret Veil payments. <a href="#" onclick="document.getElementById('lore-overlay-ale-chuggers').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-ale-chuggers')">🍺 The Ale Chuggers</span></div>
+        <div class="tl-item-hint">Roughly 77 years after the death of Elias Lumina, a rowdy bardic group crawled out of Mellonwood's seediest tavern to become Valerguard's most controversial minstrel act — known for retelling the Lumina saga in ways that spark bar fights and secret Veil payments. <a href="#" onclick="confirmSpoiler('lore-overlay-ale-chuggers');return false">→ Full entry</a></div>
       </div>
 
       <div class="tl-item">
         <div class="tl-item-label">Era Unknown</div>
-        <div class="tl-item-row"><span class="tl-item-name" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.add('open')">🌲 Nexus the Elf</span></div>
-        <div class="tl-item-hint">No one knows where Nexus the Elf comes from or how an elf came to wander the Deep Caverns with only a beat maker and a voice that could outpace anyone alive. His tracks keep surfacing in places they shouldn't. <a href="#" onclick="document.getElementById('lore-overlay-nexus-the-elf').classList.add('open');return false">→ Full entry</a></div>
+        <div class="tl-item-row"><span class="tl-item-name" onclick="confirmSpoiler('lore-overlay-nexus-the-elf')">🌲 Nexus the Elf</span></div>
+        <div class="tl-item-hint">No one knows where Nexus the Elf comes from or how an elf came to wander the Deep Caverns with only a beat maker and a voice that could outpace anyone alive. His tracks keep surfacing in places they shouldn't. <a href="#" onclick="confirmSpoiler('lore-overlay-nexus-the-elf');return false">→ Full entry</a></div>
       </div>
 
     </div>
@@ -8601,6 +8615,19 @@ function beastLightboxClose() {
   vid.pause();
   vid.src = '';
   lb.classList.remove('open');
+}
+
+// Generic spoiler gate: show the warning, then open the target overlay on confirm
+var _spoilerTarget = null;
+function confirmSpoiler(targetId) {
+  _spoilerTarget = targetId;
+  document.getElementById('spoiler-confirm').classList.add('open');
+}
+function proceedSpoiler() {
+  var t = _spoilerTarget;
+  document.getElementById('spoiler-confirm').classList.remove('open');
+  _spoilerTarget = null;
+  if (t) { var el = document.getElementById(t); if (el) el.classList.add('open'); }
 }
 </script>
 
