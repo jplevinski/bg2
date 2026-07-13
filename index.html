@@ -2720,11 +2720,11 @@
     <div class="soundtrack-title">Other Perspectives</div>
     <div class="soundtrack-subtitle">Stories told from outside Elias's eyes</div>
     <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem">
-      <a href="#" onclick="showPage('cassian-notes');closePerspOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+      <a href="#" onclick="confirmSpoilerPage('cassian-notes');return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
         <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold);margin-bottom:0.3rem">📋 Cassian's Field Notes</div>
         <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6">Private tactical journal of Cassian Drake — his unfiltered assessments of Cohort 777, written for his eyes only.</div>
       </a>
-      <a href="#" onclick="showPage('glintjaw');closePerspOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+      <a href="#" onclick="confirmSpoilerPage('glintjaw');return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.2rem 1.4rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
         <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold);margin-bottom:0.3rem">📦 The Story of Glintjaw</div>
         <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.6">Eight hundred years before Elias, a worthless little chest changed the world forever. The origin story of Valerguard's most dangerous mimic.</div>
       </a>
@@ -8621,17 +8621,26 @@ function beastLightboxClose() {
   lb.classList.remove('open');
 }
 
-// Generic spoiler gate: show the warning, then open the target overlay on confirm
+// Generic spoiler gate: show the warning, then reveal the target (overlay or page) on confirm
 var _spoilerTarget = null;
+var _spoilerPage = null;
 function confirmSpoiler(targetId) {
   _spoilerTarget = targetId;
+  _spoilerPage = null;
+  document.getElementById('spoiler-confirm').classList.add('open');
+}
+function confirmSpoilerPage(pageId) {
+  _spoilerPage = pageId;
+  _spoilerTarget = null;
   document.getElementById('spoiler-confirm').classList.add('open');
 }
 function proceedSpoiler() {
-  var t = _spoilerTarget;
+  var t = _spoilerTarget, p = _spoilerPage;
   document.getElementById('spoiler-confirm').classList.remove('open');
   _spoilerTarget = null;
-  if (t) { var el = document.getElementById(t); if (el) el.classList.add('open'); }
+  _spoilerPage = null;
+  if (p) { showPage(p); }
+  else if (t) { var el = document.getElementById(t); if (el) el.classList.add('open'); }
 }
 </script>
 
