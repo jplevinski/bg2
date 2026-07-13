@@ -2709,6 +2709,11 @@
         <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Battle Mechanics</div>
         <div style="font-size:0.75rem;color:var(--text-muted)">Combat formulas &amp; systems</div>
       </a>
+      <a href="#" onclick="showPage('armory');closeWorldOverlay();return false" style="display:block;background:rgba(184,154,91,.08);border:1px solid rgba(184,154,91,.2);border-radius:10px;padding:1.1rem 1.2rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.18)';this.style.borderColor='rgba(184,154,91,.45)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.2)'">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem">🛡️</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);margin-bottom:0.2rem">Armory</div>
+        <div style="font-size:0.75rem;color:var(--text-muted)">Weapons, armor &amp; gear</div>
+      </a>
     </div>
   </div>
 </div>
@@ -8299,6 +8304,42 @@
   </section>
 </div>
 
+<!-- ════════════════════ ARMORY ════════════════════ -->
+<style>
+  .gear-jump { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:2.5rem; }
+  .gear-jump a { font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.05em; color:var(--gold); text-decoration:none; padding:0.45rem 1rem; border:1px solid rgba(184,154,91,.3); border-radius:20px; background:rgba(184,154,91,.06); transition:background .2s,border-color .2s; }
+  .gear-jump a:hover { background:rgba(184,154,91,.18); border-color:rgba(184,154,91,.55); }
+  .gear-section { margin-bottom:2.6rem; }
+  .gear-section-title { font-family:'Cinzel',serif; color:var(--gold); font-size:1.05rem; margin-bottom:0.9rem; padding-bottom:0.4rem; border-bottom:1px solid rgba(184,154,91,.18); }
+  .gear-table-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:10px; background:var(--bg-card); }
+  table.gear-table { width:100%; border-collapse:collapse; min-width:560px; font-size:0.85rem; }
+  table.gear-table th { font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-dim); text-align:left; padding:0.7rem 0.9rem; border-bottom:1px solid rgba(184,154,91,.25); white-space:nowrap; }
+  table.gear-table td { padding:0.7rem 0.9rem; border-bottom:1px solid rgba(184,154,91,.08); color:var(--text-muted); vertical-align:top; line-height:1.5; }
+  table.gear-table tr:last-child td { border-bottom:none; }
+  table.gear-table tr:hover td { background:rgba(184,154,91,.05); }
+  table.gear-table td.gear-name { color:var(--text-primary); font-weight:600; white-space:nowrap; }
+  table.gear-table td.gear-mono { font-family:'Courier New',monospace; color:var(--gold); white-space:nowrap; }
+</style>
+<div id="page-armory" class="chapter-page">
+  <div class="chapter-title-block">
+    <div class="chapter-num">The Adventurer's System</div>
+    <h2>Armory</h2>
+  </div>
+
+  <section class="section">
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:1.8rem;max-width:720px;margin-left:auto;margin-right:auto">A reference catalog of the weapons, armor, consumables, and artifacts that appear across Valerguard. <strong style="color:var(--gold)">Weapon Power</strong> is the flat value a weapon contributes to the damage formulas on the <a href="#" onclick="showPage('formulas');return false" style="color:var(--gold-dim);border-bottom:1px dotted var(--gold-dim);text-decoration:none">Battle Mechanics</a> page. Values reflect standard specimens — enchantments and quality tiers may vary.</p>
+
+    <div class="gear-jump">
+      <a href="#gear-weapons">🗡️ Weapons</a>
+      <a href="#gear-armor">🛡️ Armor</a>
+      <a href="#gear-consumables">🧪 Consumables &amp; Bombs</a>
+      <a href="#gear-accessories">🔮 Accessories &amp; Artifacts</a>
+    </div>
+
+    <div id="armory-tables"></div>
+  </section>
+</div>
+
 <!-- ════════════════════ BESTIARY ════════════════════ -->
 <div id="page-bestiary" class="chapter-page">
   <div class="chapter-title-block">
@@ -8652,6 +8693,95 @@ function proceedSpoiler() {
   if (p) { showPage(p); }
   else if (t) { var el = document.getElementById(t); if (el) el.classList.add('open'); }
 }
+
+// ══════════ ARMORY / GEAR COMPENDIUM ══════════
+// Edit these rows freely — the tables re-render from this data.
+const GEAR = {
+  weapons: {
+    id: 'gear-weapons',
+    title: '🗡️ Weapons',
+    headers: ['Weapon', 'Damage Type', 'Weapon Power', 'Governing Stat', 'Notes'],
+    mono: [2],
+    rows: [
+      ["Trainee's Mace", 'Bludgeoned', '4', 'STR', 'Standard Academy issue. Elias\'s primary weapon — a simple iron mace with a leather grip.'],
+      ["Trainee's Shield (Bash)", 'Bludgeoned', '3', 'STR', 'Off-hand shield used offensively. Enables [Block] and [Shield Slam].'],
+      ["Trainee's Bow", 'Piercing', '4', 'AGI', 'Academy-issue shortbow. Kip\'s weapon — pairs with [Sticky Shot] and multishot.'],
+      ["Trainee's Short-Swords", 'Slice / Stab', '4', 'AGI', 'Paired blades for dual-wielding. Telilah\'s kit — built for backstabs and bleed.'],
+      ['Rusted Blade', 'Slice', '2', 'STR', 'Crude Rustlefoot Goblin weapon. Chipped, filthy, and prone to infection.'],
+      ['Rusted Shank', 'Stab', '2', 'AGI', 'Snatcher Goblin sidearm. Works the gaps in armor at close range.'],
+      ['Weighted Snatcher Net', 'Blunt Force', '5', 'AGI', 'Stone-loaded throwing net. Snatcher Goblins drop them from overhangs to pin prey.'],
+      ['Flametongue Mace', 'Bludgeoned + Fire', '6', 'STR', 'Enchant-on-demand weapon. Wreathes the head in flame for bonus Fire damage.'],
+      ['Shield-Class Warhammer', 'Bludgeoned', '7', 'STR', 'Heavier one-hander carried by certified Shield adventurers such as Cassian.'],
+      ['Incubation Mallet', 'Special — Kinetic / Arcane', '∞', 'INT', 'Legendary. Absorbs incoming magic and discharges it as devastating force. Wielded by Glintjaw; forged by the pale folk of the Moon.'],
+    ]
+  },
+  armor: {
+    id: 'gear-armor',
+    title: '🛡️ Armor',
+    headers: ['Armor', 'Slot', 'Defense', 'Notes'],
+    mono: [2],
+    rows: [
+      ['Academy Uniform — Shirt', 'Chest', '0', 'Cream shirt bearing the Tetherpoint crest. Comfortable; offers no protection.'],
+      ['Academy Uniform — Trousers', 'Legs', '0', 'Sturdy dark-gray trousers. Standard first-year issue.'],
+      ['Academy Uniform — Boots', 'Feet', '0', 'Standard leather boots. Stiff until broken in.'],
+      ['Academy Uniform — Cloak', 'Back', '0', 'Charcoal cloak with crest clasp. Keeps out the cold; nothing more.'],
+      ["Trainee's Shield", 'Off-Hand', '+5', 'Battered wooden shield. Grants the [Block] ability and enables [Shield Slam].'],
+      ['Runescribe Shaman\'s Robe', 'Chest', '+6', 'Rune-trimmed silk robe. Minor resistance to elemental magic. Salvaged from a goblin shaman.'],
+      ['Shield-Class Plate', 'Full Set', '+18', 'Heavy certified Shield-faction armor. Excellent mitigation at a steep Agility cost.'],
+    ]
+  },
+  consumables: {
+    id: 'gear-consumables',
+    title: '🧪 Consumables & Bombs',
+    headers: ['Item', 'Type', 'Effect', 'Notes'],
+    rows: [
+      ['Stun Grenade', 'Explosive', 'Applies [Stun] in a small radius', 'Artificer-made. Neutralizes vertical mobility — but can misfire off allies.'],
+      ['Fire Bomb', 'Explosive / Fire', 'AoE Fire damage + [Burning]', 'Markko\'s signature. Excellent against packs; friendly fire is a real risk.'],
+      ['Flashbang', 'Explosive / Light', 'Blinds & staggers enemies', '"Mini-sun" flash. Buys openings for a rogue to slip behind the line.'],
+      ['Healing Potion', 'Consumable', 'Restores HP instantly', 'Brewed by The Grove or an Artificer. The backbone of a healer-light squad.'],
+      ['Haste Potion', 'Consumable', '+Movement & attack speed (temporary)', 'Markko\'s recipe. Doubles a body\'s pace for a short window.'],
+      ['Field Ration Supplement', 'Consumable', 'Restores ~20 HP', 'Crystalline march tablet. Dissolve in water. Tasteless and unsatisfying.'],
+    ]
+  },
+  accessories: {
+    id: 'gear-accessories',
+    title: '🔮 Accessories & Artifacts',
+    headers: ['Item', 'Type', 'Effect', 'Notes'],
+    rows: [
+      ['Luminus Pendant', 'Legacy Artifact', 'Unlocks the Siphon Mage class; +INT/+WIS; stores absorbed elementals', 'A Maw Shard from Uncle Daemeon. Reacts to Lumina blood. Grants [Summon Protector Fire Elemental].'],
+      ['Incubation Mallet', 'Legendary Artifact', 'Absorbs magic; reshapes monster cores', 'Forged by the pale folk of the Moon to break the laws of the world. Glintjaw\'s obsession.'],
+      ['Void-Infused Field Ration Satchel', 'Void Storage', 'Holds weeks of perfectly preserved provisions', 'Confiscated from Cassian. A pocket of nowhere woven by a high-level artificer.'],
+      ['Trans-Communication Crystal', 'Utility', 'Live link between squad and command', 'Voidspace comms device. One per party; the squad lead carries it.'],
+      ['Father\'s Lucky Coin', 'Keepsake', 'No mechanical effect', 'A worn copper coin from Tether. "For when you need reminding where you come from."'],
+    ]
+  }
+};
+
+function renderArmory() {
+  var host = document.getElementById('armory-tables');
+  if (!host) return;
+  var html = '';
+  ['weapons', 'armor', 'consumables', 'accessories'].forEach(function(key) {
+    var cat = GEAR[key];
+    var mono = cat.mono || [];
+    html += '<div class="gear-section" id="' + cat.id + '">';
+    html += '<div class="gear-section-title">' + cat.title + '</div>';
+    html += '<div class="gear-table-wrap"><table class="gear-table"><thead><tr>';
+    cat.headers.forEach(function(h) { html += '<th>' + h + '</th>'; });
+    html += '</tr></thead><tbody>';
+    cat.rows.forEach(function(row) {
+      html += '<tr>';
+      row.forEach(function(cell, i) {
+        var cls = i === 0 ? 'gear-name' : (mono.indexOf(i) !== -1 ? 'gear-mono' : '');
+        html += '<td' + (cls ? ' class="' + cls + '"' : '') + '>' + cell + '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div></div>';
+  });
+  host.innerHTML = html;
+}
+renderArmory();
 </script>
 
 <!-- ════════════════════ SOUNDTRACK OVERLAY ════════════════════ -->
