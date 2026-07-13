@@ -8733,14 +8733,15 @@ const GEAR = {
   consumables: {
     id: 'gear-consumables',
     title: '🧪 Consumables & Bombs',
-    headers: ['Item', 'Type', 'Effect', 'Notes'],
+    headers: ['Item', 'Initial Dmg / Heal', 'Type', 'Effect', 'Notes'],
+    mono: [1],
     rows: [
-      ['Stun Grenade', 'Explosive', 'Applies [Stun] in a small radius', 'Artificer-made. Neutralizes vertical mobility — but can misfire off allies.'],
-      ['Fire Bomb', 'Explosive / Fire', 'AoE Fire damage + [Burning]', 'Markko\'s signature. Excellent against packs; friendly fire is a real risk.'],
-      ['Flashbang', 'Explosive / Light', 'Blinds & staggers enemies', '"Mini-sun" flash. Buys openings for a rogue to slip behind the line.'],
-      ['Healing Potion', 'Consumable', 'Restores HP instantly', 'Brewed by The Grove or an Artificer. The backbone of a healer-light squad.'],
-      ['Haste Potion', 'Consumable', '+Movement & attack speed (temporary)', 'Markko\'s recipe. Doubles a body\'s pace for a short window.'],
-      ['Field Ration Supplement', 'Consumable', 'Restores ~20 HP', 'Crystalline march tablet. Dissolve in water. Tasteless and unsatisfying.'],
+      ['Stun Grenade', '6 dmg', 'Explosive', 'Applies [Stun] in a small radius', 'Artificer-made. Neutralizes vertical mobility — but can misfire off allies.'],
+      ['Fire Bomb', '25 dmg', 'Explosive / Fire', 'AoE Fire damage + [Burning]', 'Markko\'s signature. Excellent against packs; friendly fire is a real risk. Burning deals additional damage over time.'],
+      ['Flashbang', '0 dmg', 'Explosive / Light', 'Blinds & staggers enemies', '"Mini-sun" flash. Pure utility — buys openings for a rogue to slip behind the line.'],
+      ['Healing Potion', '+40 HP', 'Consumable', 'Restores HP instantly', 'Brewed by The Grove or an Artificer. The backbone of a healer-light squad.'],
+      ['Haste Potion', '— (buff)', 'Consumable', '+Movement & attack speed (temporary)', 'Markko\'s recipe. Doubles a body\'s pace for a short window; no HP change.'],
+      ['Field Ration Supplement', '+20 HP', 'Consumable', 'Restores HP out of combat', 'Crystalline march tablet. Dissolve in water. Tasteless and unsatisfying.'],
     ]
   },
   accessories: {
