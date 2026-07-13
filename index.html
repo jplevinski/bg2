@@ -6954,7 +6954,7 @@
         <div class="char-card-body">
           <h3>Elias Lumina</h3>
           <div class="char-role">Protagonist</div>
-          <p>A farm boy from Ravenscroft burdened by a family name that carries secrets no one will explain. Stubborn, principled, and simmering with quiet rage.</p>
+          <p>A farm boy from Ravenscroft burdened by a family name no one will explain. Forged into a rage-fueled tank and secretly a Siphon Mage — now the reluctant leader of Group 3.</p>
           <span class="char-read-more">→ Read More</span>
         </div>
       </div>
@@ -6964,7 +6964,7 @@
         <div class="char-card-body">
           <h3>Kip Krumplnick</h3>
           <div class="char-role">Ally</div>
-          <p>A small, red-haired boy from Tether with an intense stare and ice-cold tactical brilliance. Fiercely loyal to both Cassian and Elias.</p>
+          <p>A small, red-haired archer from Tether with an unblinking stare and ice-cold tactical brilliance. Once Cassian's squad leader — now Elias's strategic right hand.</p>
           <span class="char-read-more">→ Read More</span>
         </div>
       </div>
@@ -6974,7 +6974,7 @@
         <div class="char-card-body">
           <h3>Cassian Drake</h3>
           <div class="char-role">Rival</div>
-          <p>A towering, iron-willed first-year selected as faction leader for The Shield. What Elias sees as cruelty, his field notes reveal as calculated strategy.</p>
+          <p>The towering faction leader of The Shield who engineered Elias's rage as calculated strategy — until he picked a fight with the wrong town guards and landed in a cell.</p>
           <span class="char-read-more">→ Read More</span>
         </div>
       </div>
@@ -7021,7 +7021,7 @@
         <div class="char-card-body">
           <h3>Telilah Arregarde</h3>
           <div class="char-role">Group 3 — Melee DPS</div>
-          <p>An intense dual-wielding swordswoman and twin sister of Tevin. Nervously white-knuckles her short-swords before combat but unleashes rapid, vicious strikes once the fight begins. Assigned to Group 3 during Elias's first adventure.</p>
+          <p>An intense dual-wielding swordswoman. After her twin brother Tevin defected to The Grove, she became the squad's lone melee striker. Terrified of dying — yet still standing in the line as she fought through the Snatcher Goblin ambush at River's Bend.</p>
         </div>
       </div>
 
@@ -7029,8 +7029,8 @@
         <img src="images/tevin_Arregarde.jpg" alt="Tevin Arregarde">
         <div class="char-card-body">
           <h3>Tevin Arregarde</h3>
-          <div class="char-role">Group 3 — Support / Healer</div>
-          <p>Twin brother of Telilah and Group 3's dedicated healer. Prioritizes his sister's safety over his tank's health bar, healing Elias only when ordered to by the squad leader. Blunt, insubordinate, and openly critical of Elias's tanking ability.</p>
+          <div class="char-role">Former Group 3 — Defector to The Grove</div>
+          <p>Twin brother of Telilah and Group 3's original healer, who prioritized his sister over his tank's health bar. After Cassian struck him for a botched heal, he rage-quit and defected to The Grove — leaving the squad without dedicated healing.</p>
         </div>
       </div>
 
@@ -7038,8 +7038,8 @@
         <img src="images/markko-smitty.jpg" alt="Markko Smitty">
         <div class="char-card-body">
           <h3>Markko Smitty</h3>
-          <div class="char-role">Group 3 — Demolitions Enthusiast</div>
-          <p>An eccentric first-year who spent his entire preparation period hoarding unstable explosive reagents instead of learning actual combat techniques. Got knocked unconscious by a stone-throwing goblin before detonating a single charge. Well-meaning but spectacularly useless in his debut.</p>
+          <div class="char-role">Group 3 — Artificer</div>
+          <p>An eccentric first-year who hoards explosive reagents. Now a certified Artificer, he keeps the healer-less squad alive with crafted potions, haste brews, and stun grenades — when he isn't bouncing a bomb off an ally's breastplate.</p>
         </div>
       </div>
 
@@ -8919,58 +8919,65 @@ renderArmory();
 const MAIN_CHARS = {
   elias: {
     name: 'Elias Lumina',
-    role: 'Protagonist — Level 2 Tank',
-    level: 'Level 2 — Tank (The Shield)',
+    role: 'Protagonist — Rage Tank Lv.4 / Siphon Mage Lv.5',
+    level: 'Rage Tank Lv.4 (The Shield) · Siphon Mage Lv.5 (Veil-adjacent)',
     img: 'images/elias-lumina.png',
-    desc: 'Elias Lumina is a farm boy from the remote village of Ravenscroft — the first in generations to attend Tetherpoint Academy. He carries the weight of the Lumina name, a once-great Shield legacy now buried under layers of institutional silence and deliberate erasure. Stubborn, principled, and deeply moral, Elias entered the academy with high Mercy, soaring Hope, and virtually no Resentment. The system had other plans.<br><br>From the moment he spoke his name, Archmage Varric Pyre singled him out with visible hatred, throwing him into detention on his first day. Cassian Drake, the self-appointed faction leader of The Shield, assigned Elias to the tank position — a role that directly contradicts his natural agility and striker instincts. The assignment was deliberate: Cassian\'s field notes reveal he is engineering Elias\'s rage, pushing him toward a Rage-Based Tank archetype that grows more lethal the more damage he absorbs.<br><br>Elias doesn\'t know any of this. All he knows is that the world keeps punching him, and the fire in his chest keeps getting hotter. His Soul Balance is shifting rapidly — Resentment climbing, Hope falling, Mercy eroding. Whether he becomes the weapon Cassian is forging or something else entirely remains to be seen.',
+    desc: 'Elias Lumina is a farm boy from the remote village of Ravenscroft — the first in generations to attend Tetherpoint Academy. He carries the weight of the Lumina name, a once-great Shield legacy buried under institutional silence. He entered with high Mercy and Hope and almost no Resentment. The academy set about changing that.<br><br>Singled out by Archmage Varric and jailed on his first day, forced into the tank role by Cassian Drake, and ground down by a healer who wouldn\'t heal him, Elias cracked open a Rage Subclass mid-battle — becoming a Ravager whose power feeds on the punishment he absorbs. In the detention block, Borin Grimhall pried apart the indoctrination in his head; the Luminus Pendant stirred; and when Varric\'s own summoned elemental struck him, the pendant devoured it and unlocked a forbidden second class: Siphon Mage. He now hides Veil magic inside a Shield-faction body.<br><br>When Cassian got himself thrown in a cell at High Breen, command of Group 3 fell to Elias. He led a bruised, healer-less squad into a Snatcher Goblin ambush at River\'s Bend — and, seconds from death, tore the lock off the pendant and unleashed the stored fire elemental in front of everyone. He walked out of the gorge two levels stronger and one secret poorer. His Soul Balance has swung hard: Conviction and Identity near their peak, Resentment and Connection both climbing, as the farm boy becomes something the world does not yet have a name for.',
     stats: {
-      hp: '150 / 150', mp: '48 / 50',
-      str: 7, agi: 9, vit: 10, int: 9, wis: 10, cha: 8
+      hp: '168 / 168', mp: '204 / 204',
+      str: 17, agi: 17, vit: 19, int: 20, wis: 20, cha: 14
     },
-    soul: { mercy: 80, conviction: 89, resentment: 63, connection: 78, hope: 64, identity: 90 },
+    soul: { mercy: 87, conviction: 96, resentment: 74, connection: 88, hope: 74, identity: 93 },
     abilities: [
       { icon: '🛡️', name: 'Block', type: 'Active — Shield', desc: 'Raise your shield to intercept incoming attacks. Reduces damage based on shield quality and Strength.' },
       { icon: '🔨', name: 'Smash', type: 'Active — Mace', desc: 'A heavy overhead strike that deals bonus damage. Can stagger enemies on critical hits.' },
-      { icon: '👟', name: 'Fast Feet', type: 'Passive — Job Lv.1', desc: 'Increases Dodge Chance by 5% per Job Level. Unlocked upon reaching Level 2.' }
+      { icon: '🧱', name: 'Shield Slam', type: 'Active — Shield', desc: 'Drive a wall of iron into a target, dealing impact damage and knocking it back. Used to peel enemies off allies.' },
+      { icon: '👟', name: 'Fast Feet', type: 'Passive — Job Lv.1', desc: 'Increases Dodge Chance by 5% per Job Level.' },
+      { icon: '🦘', name: 'Rage Jump', type: 'Active — Rage Subclass', desc: 'Leap and crash down, stunning enemies in a radius and applying a speed debuff. Powered by Rage.' },
+      { icon: '🐂', name: 'Charge', type: 'Active — Rage Subclass', desc: 'Rush a target at supersonic speed with a devastating shield impact, ripping aggro away from the backline.' },
+      { icon: '🌀', name: 'Siphon', type: 'Active — Siphon Mage Lv.5', desc: 'Absorb an incoming elemental attack and convert its energy into raw power, healing HP and generating Rage. Scales with Intelligence.' },
+      { icon: '🔥', name: 'Various Spells & Abilities', type: 'Active — Siphon Mage', desc: 'Unleashes power stored within the Luminus Pendant — including the Level 10 fire elemental drawn out at River\'s Bend, which erupts in a blast wave and fights as an aggro-soaking guardian.' }
     ],
     achievements: [
-      { icon: '⚔️', text: '<strong>First Blood</strong> — Participated in the Rustlefoot Goblin culling as Group 3\'s tank. Survived sustained melee combat against dagger-wielders despite inadequate healing support.' },
-      { icon: '📈', text: '<strong>Level 2</strong> — Leveled up during his first combat encounter, gaining +50 HP, +2 Vitality, +2 Agility, +1 Strength, and unlocking the Fast Feet passive.' },
-      { icon: '🔒', text: '<strong>Legacy Access: Restricted</strong> — A cryptic message briefly appeared on his status screen in faint silver letters before vanishing. No other student has this feature.' },
-      { icon: '🔮', text: '<strong>Luminus Pendant</strong> — Received a dormant Maw Shard pendant from Uncle Daemeon. Will only awaken if Elias joins The Veil.' },
-      { icon: '🏰', text: '<strong>Detention Survivor</strong> — Sent to the detention block beneath Tetherpoint on his first day by Archmage Varric. Met Borin Grimhall, who hinted at deeper truths about the Lumina name.' }
+      { icon: '⚡', text: '<strong>Dual-Class Anomaly</strong> — Holds a Rage Tank primary (Lv.4) and a Siphon Mage secondary (Lv.5) — a combination unheard of at his level, unlocked through the Luminus Pendant.' },
+      { icon: '🦘', text: '<strong>Rage Subclass (Ravager)</strong> — Cracked open a Rage bar mid-battle to save Kip during the Rustlefoot culling, gaining Rage Jump, Charge, and Shield Slam.' },
+      { icon: '🌀', text: '<strong>Siphon Mage</strong> — The pendant devoured Varric\'s summoned elemental, unlocking a Veil-adjacent second class and a dormant MP pool. Legacy Access: GRANTED.' },
+      { icon: '🎖️', text: '<strong>Field Command</strong> — Took provisional command of Group 3 after Cassian\'s arrest, planning the Snatcher Goblin cull with Kip.' },
+      { icon: '🔥', text: '<strong>The Unleashing</strong> — On the brink of death in the River\'s Bend gorge, summoned the stored fire elemental in the open, exposing his hidden power to the entire squad.' },
+      { icon: '🏰', text: '<strong>Detention & Indoctrination</strong> — Jailed repeatedly beneath Tetherpoint; Borin Grimhall dismantled the conditioning that tied him to The Shield.' }
     ]
   },
   kip: {
     name: 'Kip Krumplnick',
-    role: 'Ally — Group 3 Squad Leader',
-    level: 'Level 2 — Archer (The Shield)',
+    role: 'Ally — Group 3 Strategist',
+    level: 'Level 4 — Archer (The Shield)',
     img: 'images/kip.png',
-    desc: 'Kip Krumplnick is a small, red-haired boy from the capital city of Tether with an oddly literal way of seeing the world and an intense, unblinking stare that unsettles most people around him. His flat, monotone delivery and eccentric mannerisms make the other commoners uneasy — but beneath that peculiar exterior lies an ice-cold tactical brilliance that even Cassian Drake privately considers a strategic asset.<br><br>Kip is a skilled archer with pinpoint precision, capable of threading arrows through eye sockets mid-combat. Cassian selected him as Group 3\'s squad leader during the Rustlefoot Goblin culling — a position that gave Kip direct command over Elias, the twins, and Markko. His battlefield calls were textbook: isolating threats, routing skirmishers, and managing engagement flow with clinical efficiency.<br><br>What makes Kip truly unusual is his split loyalty. He is fiercely, genuinely loyal to Cassian — viewing his harsh discipline as necessary and just. Yet he is simultaneously Elias\'s friend, showing a raw, intense loyalty that never wavers. He navigates their mutual hostility without choosing a side, a balancing act that grows more precarious with every chapter. Cassian\'s field notes indicate he is actively developing Kip\'s command confidence, keeping him on the leash as squad leader to force assertiveness under pressure.',
+    desc: 'Kip Krumplnick is a small, red-haired boy from the capital city of Tether with an oddly literal way of seeing the world and an intense, unblinking stare that unsettles most people around him. His flat, monotone delivery and eccentric mannerisms make the other commoners uneasy — but beneath that peculiar exterior lies an ice-cold tactical brilliance that even Cassian Drake privately considers a strategic asset.<br><br>Kip is a skilled archer with pinpoint precision, capable of threading arrows through eye sockets mid-combat. He first served as Group 3\'s squad leader during the Rustlefoot culling, calling textbook engagements with clinical efficiency. Cassian later "recalibrated" him — hammering the chain of command into him until he would relay orders without reverting to his own math — a correction Kip absorbed without losing his analytical edge.<br><br>His loyalty was always split: fiercely devoted to Cassian\'s discipline, yet unshakably Elias\'s friend. When Cassian was jailed at High Breen, that balance resolved on its own. Kip became the strategic spine of the squad, drawing up the plan to cull the Snatcher Goblins with only four bodies and holding the backline through the River\'s Bend ambush — coughing blood and still reading the field. He calculates; Elias commands. For the first time, both of them seem to prefer it that way.',
     stats: {
-      hp: '120 / 120', mp: '55 / 55',
-      str: 5, agi: 12, vit: 6, int: 9, wis: 7, cha: 4
+      hp: '150 / 150', mp: '70 / 70',
+      str: 6, agi: 15, vit: 8, int: 11, wis: 8, cha: 5
     },
     soul: null,
     abilities: [
       { icon: '🏹', name: 'Precision Shot', type: 'Active — Bow', desc: 'A carefully aimed arrow with increased accuracy and critical hit chance against stationary or staggered targets.' },
       { icon: '🎯', name: 'Volley', type: 'Active — Bow', desc: 'Rapid consecutive shots that suppress enemy movement. Effective against fleeing or low-HP targets.' },
-      { icon: '🏹', name: 'Multi-Shot', type: 'Active — Bow, Job Lv.1', desc: 'Fires multiple arrows in a single draw, splitting damage across up to three targets in a cone. Reduced accuracy per additional target but ideal for crowd control and suppressing grouped enemies.' }
+      { icon: '🏹', name: 'Multi-Shot', type: 'Active — Bow, Job Lv.1', desc: 'Fires multiple arrows in a single draw, splitting damage across up to three targets in a cone. Ideal for crowd control.' },
+      { icon: '🕸️', name: 'Sticky Shot', type: 'Active — Bow', desc: 'A snaring arrow that applies [Slow], pinning skirmishers and grounding high-mobility targets like Snatcher Goblins.' }
     ],
     achievements: [
-      { icon: '📈', text: '<strong>Level 2</strong> — Leveled up during the Rustlefoot Goblin culling, gaining +20 HP, +5 MP, +2 Agility, +1 Vitality, +1 Intelligence, and unlocking the Multi-Shot ability.' },
-      { icon: '⚔️', text: '<strong>Squad Leader</strong> — Selected by Cassian Drake to lead Group 3 during the Rustlefoot Goblin culling. Issued precise tactical commands under live combat conditions.' },
-      { icon: '💀', text: '<strong>Killing Blow</strong> — Landed a perfect arrow through the eye socket of a staggered Rustlefoot Goblin, instantly depleting its remaining 50 HP.' },
-      { icon: '🔗', text: '<strong>Trans-Com Crystal Bearer</strong> — Entrusted with a trans-communication crystal, providing Cassian with a direct visual data-stream and teleportation anchor to Group 3\'s location.' },
-      { icon: '🧠', text: '<strong>Tactical Prodigy</strong> — Diagnosed battlefield threats in real-time: pinning dagger-wielders, routing stone-throwers, and coordinating the full squad with monotone precision.' }
+      { icon: '🧠', text: '<strong>The Gorge Plan</strong> — With Cassian jailed, drew up the four-man strategy that carried Group 3 through the Snatcher Goblin ambush at River\'s Bend.' },
+      { icon: '🎯', text: '<strong>Recalibrated</strong> — Absorbed Cassian\'s harsh chain-of-command correction without losing his analytical edge, emerging as the squad\'s tactical spine.' },
+      { icon: '⚔️', text: '<strong>Squad Leader</strong> — Led Group 3 through the Rustlefoot Goblin culling, issuing precise commands under live combat conditions.' },
+      { icon: '💀', text: '<strong>Killing Blow</strong> — Landed a perfect arrow through the eye socket of a staggered Rustlefoot Goblin, instantly depleting its remaining HP.' },
+      { icon: '🩸', text: '<strong>Held the Line</strong> — Kept commanding the backline at River\'s Bend even while bleeding out below 40% HP, refusing to break formation.' }
     ]
   },
   cassian: {
     name: 'Cassian Drake',
-    role: 'Rival — Shield Faction Leader',
+    role: 'Rival — Shield Faction Leader (Detained)',
     level: 'Level 3 — Commander (The Shield)',
     img: 'images/cassian.png',
-    desc: 'Cassian Drake is a towering, iron-willed first-year from the capital city of Tether, selected as faction leader for The Shield during the Faction Tryouts — his insignia materializing in golden light on his uniform. He commands with absolute authority, demands total compliance, and punishes hesitation without mercy. To Elias and most of the cohort, he is a bully — a brute who uses his size and position to dominate others.<br><br>His private field notes tell a very different story. Cassian is a calculating strategist who views every interaction as a training exercise. He identified Elias as a "volatile, high-potential" asset from the moment he stepped through the Academy Gate, flagging his instinctive leadership qualities and the deep reservoir of rage simmering beneath the surface. The tank assignment, the deliberate humiliation, the constant pressure — all of it is engineered. Cassian is systematically stoking Elias\'s anger to forge him into a Rage-Based Tank archetype, one that grows more lethal the more blood it spills.<br><br>His assessment of Kip is equally calculated: he considers Kip a "strategic asset" with absolute tactical brilliance, and is deliberately keeping him in high-pressure squad leadership to force confidence development. Cassian doesn\'t see people — he sees raw material to be shaped. Whether his methods produce soldiers or enemies remains the central tension of his character. He is being actively groomed for institutional command by the academy hierarchy, and his field notes suggest he is fully aware of the Lumina legacy.',
+    desc: 'Cassian Drake is a towering, iron-willed first-year from the capital city of Tether, selected as faction leader for The Shield during the Faction Tryouts — his insignia materializing in golden light on his uniform. He commands with absolute authority, demands total compliance, and punishes hesitation without mercy. To Elias and most of the cohort, he is a bully — a brute who uses his size and position to dominate others.<br><br>His private field notes tell a very different story. Cassian is a calculating strategist who treats every interaction as a training exercise. He flagged Elias as a "volatile, high-potential" asset from the moment he stepped through the Academy Gate and set about engineering his rage into a Rage-Based Tank — the tank assignment, the humiliation, the constant pressure all deliberate. As his plan matured he shifted toward a dual-tank "hammer and anvil" strategy, applying a disciplinary restriction band to force Elias\'s compliance before a high-level crucible he negotiated with Archmage Pyre.<br><br>It backfired. Elias shattered the band with a hidden skill, and when Cassian tried to reassert dominance by force in the streets of High Breen, Elias baited a strike that fractured Cassian\'s hand and got him hauled off by the town constabulary. Now he sits in a holding cell for three days while the squad he built marches on without him — his authority fractured, and his assessment of Elias downgraded from prodigy to "fatal liability." Whether his methods produced a soldier or an enemy is no longer an open question.',
     stats: {
       hp: '220 / 220', mp: '60 / 60',
       str: 14, agi: 8, vit: 13, int: 10, wis: 9, cha: 12
@@ -8989,7 +8996,9 @@ const MAIN_CHARS = {
       { icon: '📈', text: '<strong>Level 3 — Field Promotion</strong> — Leveled up after commanding the full Shield cohort through the first round of Rustlefoot Goblin culling. The System recognized his oversight of all six squads and rewarded the Rally ability.' },
       { icon: '📋', text: '<strong>Field Commander</strong> — Organized thirty Shield trainees into standard five-man adventuring cells, designed a semi-circle strategic formation, and maintained real-time oversight of all squads via trans-communication crystals.' },
       { icon: '📓', text: '<strong>Field Notes</strong> — Maintains a private tactical journal documenting detailed psychological profiles and development plans for every trainee he considers strategically valuable.' },
-      { icon: '🧠', text: '<strong>The Lumina Factor</strong> — Aware of the Lumina legacy and its historical significance to The Shield. Deliberately engineering Elias\'s development based on this knowledge.' }
+      { icon: '🧠', text: '<strong>The Lumina Factor</strong> — Aware of the Lumina legacy and its historical significance to The Shield. Deliberately engineered Elias\'s development based on this knowledge.' },
+      { icon: '⛓️', text: '<strong>Behind Bars</strong> — Picked a fight with the High Breen town guard and was arrested. Held three days pending a magistrate, losing operational control of Group 3 to Elias.' },
+      { icon: '📉', text: '<strong>Tactical Collapse</strong> — His dual-tank restriction-band gambit failed when Elias broke free and fractured his hand. His final assessment reclassifies Elias from prodigy to "fatal liability."' }
     ]
   }
 };
