@@ -5811,7 +5811,7 @@
 
     <p>I snatched the fallen potion out of the mud and downed it. The cool liquid pulled my HP back from the brink to 44%.</p>
     <p>In the center of my vision, the text etched itself into the air like scarred glass.</p>
-    <div class="system-msg">Your Conviction was your top Soul Stat. Guarding proclivity unleashed.<br>Spell learned: Summon Protector Fire Elemental</div>
+    <div class="system-msg">Your Conviction was your top Soul Stat. Guarding proclivity unleashed.<br>Spell learned: various spells and abilities</div>
     <p>For a second, nobody breathed. The squad just stared at the towering pillar of fire wearing a jagged, ember-toothed grin. But the shock broke fast. Kip loosed a volley. Telilah darted forward. With a literal elemental soaking up the aggro and radiating heat, we butchered the last two Snatchers in seconds.</p>
     <div class="system-msg">Level up! You are now a Level 4 Rage Tank.<br>+3 Strength, +2 Vitality, +2 Agility, +1 Intelligence, +1 Wisdom, +1 Charisma</div>
     <div class="system-msg">Level up! You are now a Level 5 Siphon Mage.<br>+4 Intelligence, +2 Wisdom, +1 Charisma</div>
@@ -8749,7 +8749,7 @@ const GEAR = {
     title: '🔮 Accessories & Artifacts',
     headers: ['Item', 'Type', 'Effect', 'Notes'],
     rows: [
-      ['Luminus Pendant', 'Legacy Artifact', 'Unlocks the Siphon Mage class; +INT/+WIS; stores absorbed elementals', 'A Maw Shard from Uncle Daemeon. Reacts to Lumina blood. Grants [Summon Protector Fire Elemental].'],
+      ['Luminus Pendant', 'Legacy Artifact', 'Unlocks the Siphon Mage class; +INT/+WIS; stores absorbed elementals', 'A Maw Shard from Uncle Daemeon. Reacts to Lumina blood. Grants [various spells and abilities].'],
       ['Incubation Mallet', 'Legendary Artifact', 'Absorbs magic; reshapes monster cores', 'Forged by the pale folk of the Moon to break the laws of the world. Glintjaw\'s obsession.'],
       ['Void-Infused Field Ration Satchel', 'Void Storage', 'Holds weeks of perfectly preserved provisions', 'Confiscated from Cassian. A pocket of nowhere woven by a high-level artificer.'],
       ['Trans-Communication Crystal', 'Utility', 'Live link between squad and command', 'Voidspace comms device. One per party; the squad lead carries it.'],
@@ -9169,7 +9169,7 @@ const ABILITIES = {
     { icon: '🦘', name: 'Rage Jump', type: 'Active — Rage Subclass', desc: 'Channel fury into a powerful leap toward a target. Deals impact damage on landing and briefly staggers nearby enemies.' },
     { icon: '🐂', name: 'Charge', type: 'Active — Rage Subclass', desc: 'Rush forward in a straight line, slamming into the first enemy hit. Deals bonus damage based on distance traveled and can knock targets back.' },
     { icon: '🌀', name: 'Siphon', type: 'Active — Siphon Mage Lv.5', desc: 'Absorb an incoming elemental attack and convert its energy into raw power. Heals HP and generates Rage based on damage absorbed. Effectiveness scales with Intelligence.' },
-    { icon: '🔥', name: 'Summon Protector Fire Elemental', type: 'Active — Siphon Mage (New)', desc: 'Unleash the Level 10 fire elemental stored within the Luminus Pendant. Erupts in a blast wave that applies [Burning] and a knock-back [Stun], then fights as an aggro-soaking guardian radiating heat. Unlocked when Conviction became the top Soul Stat — a guarding proclivity made manifest.' },
+    { icon: '🔥', name: 'various spells and abilities', type: 'Active — Siphon Mage (New)', desc: 'Unleash the Level 10 fire elemental stored within the Luminus Pendant. Erupts in a blast wave that applies [Burning] and a knock-back [Stun], then fights as an aggro-soaking guardian radiating heat. Unlocked when Conviction became the top Soul Stat — a guarding proclivity made manifest.' },
   ],
 };
 
@@ -9842,7 +9842,7 @@ const INVENTORY = {
       { icon: '🥾', name: 'Academy Uniform — Boots', type: 'Armor — Feet', desc: 'Two long marches and a running battle down a rock face. They have earned their retirement.', stats: 'No stat bonuses' },
       { icon: '🧥', name: 'Academy Uniform — Cloak', type: 'Armor — Back', desc: 'Singed further by the elemental\'s eruption. Smells of ash and burnt goblin.', stats: 'No stat bonuses' },
       { icon: '🎒', name: 'Canvas Satchel', type: 'Accessory — Bag', desc: 'Rode out the ambush strapped tight to his back.', stats: 'No stat bonuses' },
-      { icon: '🔥', name: 'Luminus Pendant', type: 'Accessory — Neck (Unleashed)', desc: 'The lock is off. In front of the whole squad, Elias opened the door and let the Level 10 fire elemental out. It knows his voice now — and it calls him master. There is no putting this secret back.', stats: 'Legacy Access: GRANTED | Siphon Mage Lv.5 | Grants [Summon Protector Fire Elemental] | +INT, +WIS per level' },
+      { icon: '🔥', name: 'Luminus Pendant', type: 'Accessory — Neck (Unleashed)', desc: 'The lock is off. In front of the whole squad, Elias opened the door and let the Level 10 fire elemental out. It knows his voice now — and it calls him master. There is no putting this secret back.', stats: 'Legacy Access: GRANTED | Siphon Mage Lv.5 | Grants [various spells and abilities] | +INT, +WIS per level' },
       { icon: '🛡️', name: 'Trainee\'s Shield', type: 'Off-Hand — Shield', desc: 'Dented deeper. Took a stun grenade to the breastplate and a barrage of thrown stone. Still on his arm.', stats: '+5 Defense | Gains [Block] Ability' },
       { icon: '🔨', name: 'Trainee\'s Mace', type: 'Weapon — One-Handed', desc: 'Caved in a rock-thrower\'s skull mid-Rage Jump. Goblin ichor dried into the leather grip.', stats: '+2 Attack, +3 Defense | Gains [Smash] Ability' },
     ],
@@ -10027,7 +10027,7 @@ const SOUL_REASONS = {
     ch11: 'Held his ground against a physical assault and sold the lie about the pendant without flinching',
     ch12: 'Pocketed the crystal and chose the concert — protocol bent, but no principle broken.',
     ch13: 'Stepped into the mud and made the call himself. Took the command, told Varric "I won\'t let you down," and owned the doomed mission rather than ducking it.',
-    ch14: 'Named his top Soul Stat. To save his squad he tore the lock off the pendant and unleashed forbidden Veil magic in the open — a guarding proclivity made manifest. Spell learned: Summon Protector Fire Elemental.',
+    ch14: 'Named his top Soul Stat. To save his squad he tore the lock off the pendant and unleashed forbidden Veil magic in the open — a guarding proclivity made manifest. Spell learned: various spells and abilities.',
   },
   Resentment: {
     ch2: 'Targeted unfairly by Archmage Varric',
