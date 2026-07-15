@@ -9417,15 +9417,15 @@ renderArmory();
 const MAIN_CHARS = {
   elias: {
     name: 'Elias Lumina',
-    role: 'Protagonist — Rage Tank Lv.4 / Siphon Mage Lv.5',
-    level: 'Rage Tank Lv.4 (The Shield) · Siphon Mage Lv.5 (Veil-adjacent)',
+    role: 'Protagonist — Rage Tank Lv.5 / Siphon Mage Lv.7',
+    level: 'Rage Tank Lv.5 (The Shield) · Siphon Mage Lv.7 (Veil-adjacent)',
     img: 'images/elias-lumina.png',
     desc: 'Elias Lumina is a farm boy from the remote village of Ravenscroft — the first in generations to attend Tetherpoint Academy. He carries the weight of the Lumina name, a once-great Shield legacy buried under institutional silence. He entered with high Mercy and Hope and almost no Resentment. The academy set about changing that.<br><br>Singled out by Archmage Varric and jailed on his first day, forced into the tank role by Cassian Drake, and ground down by a healer who wouldn\'t heal him, Elias cracked open a Rage Subclass mid-battle — becoming a Ravager whose power feeds on the punishment he absorbs. In the detention block, Borin Grimhall pried apart the indoctrination in his head; the Luminus Pendant stirred; and when Varric\'s own summoned elemental struck him, the pendant devoured it and unlocked a forbidden second class: Siphon Mage. He now hides Veil magic inside a Shield-faction body.<br><br>When Cassian got himself thrown in a cell at High Breen, command of Group 3 fell to Elias. He led a bruised, healer-less squad into a Snatcher Goblin ambush at River\'s Bend — and, seconds from death, tore the lock off the pendant and unleashed the stored fire elemental in front of everyone. He walked out of the gorge two levels stronger and one secret poorer. His Soul Balance has swung hard: Conviction and Identity near their peak, Resentment and Connection both climbing, as the farm boy becomes something the world does not yet have a name for.',
     stats: {
-      hp: '168 / 168', mp: '204 / 204',
-      str: 17, agi: 17, vit: 19, int: 20, wis: 20, cha: 14
+      hp: '198 / 198', mp: '270 / 270',
+      str: 22, agi: 21, vit: 23, int: 32, wis: 26, cha: 17
     },
-    soul: { mercy: 87, conviction: 96, resentment: 74, connection: 88, hope: 74, identity: 93 },
+    soul: { mercy: 78, conviction: 91, resentment: 85, connection: 66, hope: 68, identity: 96 },
     abilities: [
       { icon: '🛡️', name: 'Block', type: 'Active — Shield', desc: 'Raise your shield to intercept incoming attacks. Reduces damage based on shield quality and Strength.' },
       { icon: '🔨', name: 'Smash', type: 'Active — Mace', desc: 'A heavy overhead strike that deals bonus damage. Can stagger enemies on critical hits.' },
@@ -9586,12 +9586,12 @@ document.addEventListener('keydown', function(e) {
 
 const STATS = {
   core: [
-    { name: 'Strength', ch1: 6, ch2: 6, ch3: 6, ch4: 6, ch5: 7, ch6: 10, ch7: 10, ch8: 10, ch9: 14, ch10: 14, ch11: 14, ch12: 14, ch13: 14, ch14: 17, ch15: 20, ch16: 20, max: 20 },
-    { name: 'Agility', ch1: 7, ch2: 7, ch3: 7, ch4: 7, ch5: 9, ch6: 11, ch7: 11, ch8: 11, ch9: 15, ch10: 15, ch11: 15, ch12: 15, ch13: 15, ch14: 17, ch15: 20, ch16: 20, max: 20 },
-    { name: 'Vitality', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 10, ch6: 13, ch7: 13, ch8: 13, ch9: 17, ch10: 17, ch11: 17, ch12: 17, ch13: 17, ch14: 19, ch15: 20, ch16: 20, max: 20 },
-    { name: 'Intelligence', ch1: 9, ch2: 9, ch3: 9, ch4: 9, ch5: 9, ch6: 9, ch7: 9, ch8: 9, ch9: 20, ch10: 20, ch11: 20, ch12: 20, ch13: 20, ch14: 20, ch15: 20, ch16: 20, max: 20 },
-    { name: 'Wisdom', ch1: 10, ch2: 10, ch3: 10, ch4: 10, ch5: 10, ch6: 10, ch7: 10, ch8: 10, ch9: 18, ch10: 18, ch11: 18, ch12: 18, ch13: 18, ch14: 20, ch15: 20, ch16: 20, max: 20 },
-    { name: 'Charisma', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 8, ch6: 8, ch7: 8, ch8: 8, ch9: 12, ch10: 12, ch11: 12, ch12: 12, ch13: 12, ch14: 14, ch15: 16, ch16: 17, max: 20 },
+    { name: 'Strength', ch1: 6, ch2: 6, ch3: 6, ch4: 6, ch5: 7, ch6: 10, ch7: 10, ch8: 10, ch9: 14, ch10: 14, ch11: 14, ch12: 14, ch13: 14, ch14: 17, ch15: 21, ch16: 22, max: 40 },
+    { name: 'Agility', ch1: 7, ch2: 7, ch3: 7, ch4: 7, ch5: 9, ch6: 11, ch7: 11, ch8: 11, ch9: 15, ch10: 15, ch11: 15, ch12: 15, ch13: 15, ch14: 17, ch15: 20, ch16: 21, max: 40 },
+    { name: 'Vitality', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 10, ch6: 13, ch7: 13, ch8: 13, ch9: 17, ch10: 17, ch11: 17, ch12: 17, ch13: 17, ch14: 19, ch15: 22, ch16: 23, max: 40 },
+    { name: 'Intelligence', ch1: 9, ch2: 9, ch3: 9, ch4: 9, ch5: 9, ch6: 9, ch7: 9, ch8: 9, ch9: 20, ch10: 20, ch11: 20, ch12: 20, ch13: 20, ch14: 25, ch15: 29, ch16: 32, max: 40 },
+    { name: 'Wisdom', ch1: 10, ch2: 10, ch3: 10, ch4: 10, ch5: 10, ch6: 10, ch7: 10, ch8: 10, ch9: 18, ch10: 18, ch11: 18, ch12: 18, ch13: 18, ch14: 21, ch15: 24, ch16: 26, max: 40 },
+    { name: 'Charisma', ch1: 8, ch2: 8, ch3: 8, ch4: 8, ch5: 8, ch6: 8, ch7: 8, ch8: 8, ch9: 12, ch10: 12, ch11: 12, ch12: 12, ch13: 12, ch14: 14, ch15: 16, ch16: 17, max: 40 },
   ],
   soul: [
     { name: 'Mercy', ch1: 94, ch2: 88, ch3: 88, ch4: 82, ch5: 80, ch6: 72, ch7: 65, ch8: 62, ch9: 81, ch10: 83, ch11: 82, ch12: 85, ch13: 86, ch14: 87, ch15: 83, ch16: 78, max: 100 },
@@ -9756,7 +9756,7 @@ function renderStats(chapter, suffix) {
     if (!el) return;
     el.innerHTML = STATS[type].map(s => {
       const val = s['ch' + chapter];
-      const pct = (val / s.max) * 100;
+      const pct = Math.min((val / s.max) * 100, 100);
       return `<div class="stat-item">
         <div class="stat-label">${s.name}</div>
         <div class="stat-value">${val}</div>
