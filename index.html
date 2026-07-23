@@ -8632,13 +8632,23 @@
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-          <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-daemeon-lumina').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="display:flex;align-items:center;gap:0.6rem">
                 <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">Daemeon Lumina's Discovery</span>
                 <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:var(--text-muted);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:0.15rem 0.45rem">SPOILERS</span>
               </div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Year 753 · The Soul Balance made visible</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" onclick="document.getElementById('spoiler-confirm-third-trial').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Anomaly of the Third Trial</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:#c0392b;background:rgba(192,57,43,.12);border:1px solid rgba(192,57,43,.3);border-radius:4px;padding:0.15rem 0.45rem">⚠ SPOILERS</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Tetherpoint Academy · Daemeon Lumina and the Chaos Shard</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
@@ -8779,6 +8789,20 @@
     <div style="display:flex;gap:0.8rem;justify-content:center">
       <button onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
       <button onclick="document.getElementById('spoiler-confirm-cult-of-luna').classList.remove('open');document.getElementById('lore-overlay-cult-of-luna').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- Spoiler confirm: The Anomaly of the Third Trial -->
+<div id="spoiler-confirm-third-trial" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:420px;text-align:center" onclick="event.stopPropagation()">
+    <div style="font-size:2rem;margin-bottom:0.8rem">⚠</div>
+    <div style="font-family:'Cinzel',serif;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.12em;margin-bottom:0.6rem">SPOILERS</div>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:1rem;font-size:1.1rem">The Anomaly of the Third Trial</h3>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.8rem">This entry contains spoilers for the main story.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center">
+      <button onclick="document.getElementById('spoiler-confirm-third-trial').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
+      <button onclick="document.getElementById('spoiler-confirm-third-trial').classList.remove('open');document.getElementById('lore-overlay-third-trial').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
     </div>
   </div>
 </div>
@@ -9075,6 +9099,42 @@
       <p>The implications were staggering. If emotions could be measured, they could be manipulated. If the Soul Bar could be channeled, it could be weaponized.</p>
       <div class="lore-callout"><h4>The Official Version</h4><p>The public story is that The Veil corrupted Daemeon Lumina and that he nearly destroyed Valerguard. His name became poison — spoken only in whispers, scrubbed from family histories, and used as a cautionary tale about the dangers of forbidden research.</p></div>
       <p style="font-style:italic;color:var(--text-muted)">The truth, as always, is more complicated.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Anomaly of the Third Trial -->
+<div id="lore-overlay-third-trial" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-third-trial').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — TETHERPOINT ACADEMY · SPOILERS</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Anomaly of the Third Trial</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem">Daemeon Lumina and the Chaos Shard</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>To understand the shifting tides of power within Valerguard, one must look closely at the foundational myths of Tetherpoint Academy. Among the most closely guarded and fiercely debated of these historical accounts is the saga of Daemeon Lumina during his first-year Trials — a sequence of events that fundamentally altered our understanding of bloodline magic, the Moon Folk, and the true nature of Chaos.</p>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Crucible of the Nexus</h3>
+      <p>For generations, the curriculum at Tetherpoint Academy has required all first-year students to endure "The Trials." The first two trials are designed to test endurance and basic tactical acumen, but it is the Third Trial that truly separates the mundane from the legendary.</p>
+      <p>During the Third Trial, students are deployed to the treacherous regions bordering the Nexus. The objective is elegantly simple but highly lethal: navigate a territory overrun by high-tier, hyper-aggressive monsters, locate resonant crystal shards, and harvest them to awaken or augment their latent magical abilities. Most students return with standard elemental shards — minor fragments of fire, wind, or earth that neatly align with their chosen factions.</p>
+      <p>Daemeon Lumina, however, did not find a standard shard.</p>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Shard of Maelora</h3>
+      <p>At the time of his Third Trial, Daemeon was a proud initiate of The Flame faction. Historical records indicate he was a formidable combatant, driven by the ambition and competitive spirit typical of his chosen banner. Yet, deep within the Nexus territory, his path diverged from standard Flame doctrine.</p>
+      <p>Daemeon uncovered an artifact that, to the naked eye of his party members, appeared to be nothing more than a dull, inert stone. But as Daemeon approached, the object reacted violently to his presence. The dull rock fractured and shifted, glowing with a swirling, volatile dark purple energy.</p>
+      <p>When Daemeon picked up the shard, it resonated with his core, thrumming with a power entirely alien to The Flame. Curious, he attempted to pass the crystal to his squadmates. The moment it left his skin and touched theirs, the swirling purple light died, and the shard instantly reverted to a heavy, lifeless rock. It was exclusively reactive to him.</p>
+      <div class="lore-callout"><h4>The Chaos Shard</h4><p>What Daemeon had recovered was not a standard elemental crystal, but a Chaos Shard — a microscopic, blasted fragment of the legendary Mallet of Maelora.</p></div>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Varric Hypothesis</h3>
+      <p>Unsure of what he possessed, Daemeon smuggled the shard back through the iron gates of Tetherpoint Academy. He sought the counsel of a young, highly studious instructor known then simply as Mage Varric.</p>
+      <p>Long before he became an Archmage, Varric was a brilliant, dangerously curious scholar of The Flame who refused to be constrained by traditional academic dogma. When presented with the shifting purple stone, Varric recognized that it defied standard elemental categorization. He proposed a radical hypothesis: the shard was not dormant; it was locked, and its key was genetic. It operated strictly according to bloodline.</p>
+      <p>Operating in secret, Varric and Daemeon began testing the limits of the Chaos Shard. Their collaboration yielded terrifying and unprecedented results:</p>
+      <ul style="margin:0 0 1.2rem 1.4rem;padding:0;color:var(--text)">
+        <li style="margin-bottom:0.5rem"><strong style="color:var(--text-primary)">Magic Siphoning:</strong> The shard granted Daemeon the unique capacity to absorb and consume incoming magical energy, a trait utterly foreign to the aggressive output of The Flame.</li>
+        <li style="margin-bottom:0.5rem"><strong style="color:var(--text-primary)">The Veil Awakening:</strong> The shard forcefully unlocked a secondary, forbidden class for Daemeon, aligning him with the shadow and soul-manipulation arts of The Veil.</li>
+        <li><strong style="color:var(--text-primary)">The Lunar Connection:</strong> The resonance proved that the Lumina bloodline carried ancient genetic markers tying them directly to the mythology of the Moon Folk (Lunarians). This connection was deeper and fundamentally different from the standard magic wielded by ordinary members of The Veil, bridging the gap between ancient Lunar magic and pure, unadulterated Chaos.</li>
+      </ul>
+      <p>By unlocking the shard, Daemeon Lumina and Mage Varric did not just discover a new spell; they unearthed a buried truth about the architecture of magic itself, setting Daemeon on a path that would forever alter his legacy.</p>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(184,154,91,.12);font-size:0.78rem;color:var(--text-muted)">
+        <strong style="color:var(--text-primary)">Associated Figures:</strong> Daemeon Lumina, Mage (later Archmage) Varric Pyre<br>
+        <strong style="color:var(--text-primary)">Associated Artifact:</strong> A Chaos Shard, fragment of the Mallet of Maelora
+      </div>
     </div>
   </div>
 </div>
