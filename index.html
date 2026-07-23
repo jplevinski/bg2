@@ -8565,10 +8565,20 @@
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
-          <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+          <a href="#" onclick="document.getElementById('lore-overlay-the-catastrophe').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;border-bottom:1px solid rgba(184,154,91,.06);text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
             <div>
               <div style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Catastrophe</div>
               <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Cataclysm · Year -3 · The event that ended the old world</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:0.8rem">→</span>
+          </a>
+          <a href="#" onclick="document.getElementById('spoiler-confirm-nitamus-maelora').classList.add('open');return false" style="display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;text-decoration:none;transition:background .15s" onmouseover="this.style.background='rgba(184,154,91,.06)'" onmouseout="this.style.background=''">
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem">
+                <span style="font-family:'Cinzel',serif;font-size:0.95rem;color:var(--gold)">The Metaphysics of the Hammer</span>
+                <span style="font-size:0.65rem;font-family:'Cinzel',serif;letter-spacing:0.06em;color:var(--text-muted);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:0.15rem 0.45rem">SPOILERS</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">Divine Theology · Nitamus, Maelora, and the War for Order</div>
             </div>
             <span style="color:var(--text-muted);font-size:0.8rem">→</span>
           </a>
@@ -8666,6 +8676,20 @@
     <div style="display:flex;gap:0.8rem;justify-content:center">
       <button onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
       <button onclick="document.getElementById('spoiler-confirm-lunar-exodus').classList.remove('open');document.getElementById('lore-overlay-lunar-exodus').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- Spoiler confirm: The Metaphysics of the Hammer -->
+<div id="spoiler-confirm-nitamus-maelora" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:420px;text-align:center" onclick="event.stopPropagation()">
+    <div style="font-size:2rem;margin-bottom:0.8rem">☽</div>
+    <div style="font-family:'Cinzel',serif;color:var(--text-muted);font-size:0.75rem;letter-spacing:0.12em;margin-bottom:0.6rem">SPOILERS</div>
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:1rem;font-size:1.1rem">The Metaphysics of the Hammer</h3>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1.8rem">This entry contains spoilers for the main story.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center">
+      <button onclick="document.getElementById('spoiler-confirm-nitamus-maelora').classList.remove('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.25);border-radius:8px;background:transparent;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.borderColor='rgba(184,154,91,.25)'">Go Back</button>
+      <button onclick="document.getElementById('spoiler-confirm-nitamus-maelora').classList.remove('open');document.getElementById('lore-overlay-nitamus-maelora').classList.add('open')" style="padding:0.55rem 1.3rem;border:1px solid rgba(184,154,91,.4);border-radius:8px;background:rgba(184,154,91,.12);color:var(--gold);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:background .15s,border-color .15s" onmouseover="this.style.background='rgba(184,154,91,.22)'" onmouseout="this.style.background='rgba(184,154,91,.12)'">I Understand — Continue</button>
     </div>
   </div>
 </div>
@@ -8892,6 +8916,42 @@
       <div class="lore-callout"><h4>The Toll</h4><p>One-third of the population of modern-day Valerguard was instantly eradicated by the shockwave, thermal radiation, and mana-storms that followed.</p></div>
       <div class="lore-callout"><h4>The Maw of Chaos</h4><p>The blast instantly vaporized the geographic, cultural, and political capital of the ancient world. The massive crater left behind was swallowed by the ocean, forming The Maw — the churning, black aquatic scar that bounds modern Valerguard.</p></div>
       <div class="lore-callout"><h4>System Defiance Core Rating</h4><p>Mimics are the only creatures assigned a System Defiance Core Rating — a classification that exists outside the standard hierarchy entirely. Because a mimic's nature is to absorb and lock away physical anchors of the world, the System literally cannot calculate their threat ceiling. Any mimic in the modern era represents an existential structural glitch capable of collapsing the current Containment Architecture.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Lore Overlay: The Metaphysics of the Hammer -->
+<div id="lore-overlay-nitamus-maelora" class="soundtrack-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="soundtrack-panel" style="max-width:760px" onclick="event.stopPropagation()">
+    <button class="soundtrack-close" onclick="document.getElementById('lore-overlay-nitamus-maelora').classList.remove('open')">✕</button>
+    <div style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:0.4rem">LORE ENTRY — DIVINE THEOLOGY · SPOILERS</div>
+    <h2 style="font-family:'Cinzel',serif;color:var(--gold);margin-bottom:0.2rem;font-size:1.5rem">The Metaphysics of the Hammer</h2>
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:2rem">Nitamus, Maelora, and the War for Order</div>
+    <div style="font-size:0.88rem;line-height:1.8;color:var(--text)">
+      <p>To understand the theology and structural history of Valerguard, one must look past the polished marble of the capital and down into the soot and stone of the working class. Here, we find the absolute reverence for Nitamus, the God of Forge and Anvil.</p>
+      <p>He is not a deity of abstract philosophy; he is a god of physical exertion. Worshipped primarily by blacksmiths and miners, Nitamus represents the grueling, deliberate act of taking raw, untamed chaos and physically molding it into rigid order.</p>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Architect of Containment</h3>
+      <p>The world of Valerguard is naturally volatile, but it is Nitamus who forged its boundaries. According to the foundational lore, the systematic regulation of the world's dangers is entirely his design:</p>
+      <ul style="margin:0 0 1.2rem 1.4rem;padding:0;color:var(--text)">
+        <li style="margin-bottom:0.5rem">Nitamus is the divine smith who originally crafted the Dungeon cores and magic crystals.</li>
+        <li style="margin-bottom:0.5rem">Through these creations, he engineered a system where monsters were strictly confined to Dungeons rather than roaming unchecked.</li>
+        <li>He imposed a hard limitation on mortal power, making it an absolute requirement that magic users rely on crystals to channel their abilities.</li>
+      </ul>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Rivalry and the Mallet</h3>
+      <p>A perfectly ordered system is anathema to Maelora, the Deity of Chaos. For a divine being to whom boredom is treated as a cosmic pathogen, Nitamus's predictable, regulated world was intolerable.</p>
+      <p>A fierce rivalry developed between the two deities. Maelora required a method to violently reintroduce chaos into Nitamus's perfect system, leading her to commission a weapon. Maelora had gifted the Lunarians human life in Valerguard, and in turn, the Lunarians forged the Mallet of Maelora for her.</p>
+      <ul style="margin:0 0 1.2rem 1.4rem;padding:0;color:var(--text)">
+        <li style="margin-bottom:0.5rem">The Mallet was not a simple bludgeon, but a divine core-shaping instrument.</li>
+        <li style="margin-bottom:0.5rem">It was designed as a tool capable of fundamentally altering monster cores, magical vessels, and living magic.</li>
+        <li>When wielded by Maelora, this instrument was transformed into a devastating tool of both creation and chaos.</li>
+      </ul>
+      <h3 style="font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;margin:1.8rem 0 0.6rem;border-bottom:1px solid rgba(184,154,91,.15);padding-bottom:0.4rem">The Failed Usurpation</h3>
+      <p>Maelora's ambitions extended beyond mere vandalism; she intended to completely overthrow the God of the Forge. She formulated a plot to usurp Nitamus and replace him with the very Lunarian who had forged the Mallet.</p>
+      <p>To accomplish this, Maelora intended to imprison Nitamus inside the Mallet. However, executing this divine imprisonment would have required highly specific Lunar magic and the construction of a Moonforging trap. The plot ultimately collapsed because Maelora could not convince the Lunarian smith to craft the trap, nor could she persuade them to assume Nitamus's mantle as the new god.</p>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(184,154,91,.12);font-size:0.78rem;color:var(--text-muted)">
+        <strong style="color:var(--text-primary)">Associated Deities:</strong> Nitamus (God of Forge and Anvil), Maelora (God of Chaos)<br>
+        <strong style="color:var(--text-primary)">Associated Artifact:</strong> The Mallet of Maelora, forged by the Lunarians
+      </div>
     </div>
   </div>
 </div>
