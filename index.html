@@ -8662,6 +8662,10 @@
         </div>
 
       </div>
+
+      <div style="margin-top:2.5rem;text-align:center">
+        <a href="#" onclick="viewFullLore();return false" style="display:inline-block;padding:0.8rem 1.6rem;border:1px solid rgba(184,154,91,.3);border-radius:10px;background:rgba(184,154,91,.08);color:var(--gold);font-family:'Cinzel',serif;font-size:0.9rem;text-decoration:none;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(184,154,91,.15)';this.style.borderColor='rgba(184,154,91,.5)'" onmouseout="this.style.background='rgba(184,154,91,.08)';this.style.borderColor='rgba(184,154,91,.3)'">&#x1F4DC; View Full Lore Compendium</a>
+      </div>
     </div>
   </section>
 </div>
@@ -10749,6 +10753,37 @@ function openBookWindow(bookTitle, subtitle, author, body) {
   }
   .ch-break:last-child { display: none; }
   a { color: inherit; text-decoration: none; }
+  .lore-entry-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 8pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 0.5in;
+  }
+  .lore-entry-subtitle {
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.25in;
+    text-indent: 0;
+  }
+  ul { margin: 0 0 0.8em 1.4em; }
+  li { margin-bottom: 0.4em; text-indent: 0; }
+  .lore-callout {
+    border-left: 3px solid #bbb;
+    padding: 0.15in 0.25in;
+    margin: 0.3in 0;
+    background: #f7f7f7;
+    page-break-inside: avoid;
+  }
+  .lore-callout h4 { font-family: 'Cinzel', serif; font-size: 10.5pt; margin-bottom: 0.08in; }
+  .lore-callout p { text-indent: 0; margin-bottom: 0; }
+  .lore-faction-grid { display: block; margin: 0.3in 0; }
+  .lore-faction-item { margin-bottom: 0.25in; }
+  .lore-faction-item h4 { font-family: 'Cinzel', serif; font-size: 11pt; margin-bottom: 0.05in; }
+  .lore-faction-subtitle { font-style: italic; color: #666; font-size: 9pt; margin-bottom: 0.05in; }
+  .lore-faction-item p { text-indent: 0; }
   @media print {
     .print-hint { display: none; }
     .ch-break { page-break-after: always; border: none; margin: 0; }
@@ -10774,6 +10809,33 @@ function viewFullBook() {
 function viewGlintjawBook() {
   const body = collectBookBody(document.querySelectorAll('[id^="page-glintjaw-ch"]'));
   openBookWindow('The Story of Glintjaw', 'A Tale of the Old World · Born Good', 'by J.S. Plevinski, Ph.D.', body);
+}
+
+function collectLoreBody(overlays) {
+  let body = '';
+  overlays.forEach(ov => {
+    const panel = ov.querySelector('.soundtrack-panel');
+    if (!panel) return;
+    const h2 = panel.querySelector('h2');
+    const contentDiv = panel.querySelector('h2 + div + div');
+    if (!h2 || !contentDiv) return;
+    const eyebrowDiv = h2.previousElementSibling;
+    const subtitleDiv = h2.nextElementSibling;
+    const eyebrow = eyebrowDiv ? eyebrowDiv.textContent.trim() : '';
+    const subtitle = subtitleDiv ? subtitleDiv.textContent.trim() : '';
+
+    const clone = contentDiv.cloneNode(true);
+    clone.querySelectorAll('style, script').forEach(el => el.remove());
+    clone.querySelectorAll('.chapter-media img').forEach(img => img.setAttribute('onclick', ''));
+
+    body += `<div class="lore-entry-eyebrow">${eyebrow}</div><h2 class="ch-title">${h2.textContent.trim()}</h2><div class="lore-entry-subtitle">${subtitle}</div>\n${clone.innerHTML}\n<div class="ch-break"></div>\n`;
+  });
+  return body;
+}
+
+function viewFullLore() {
+  const body = collectLoreBody(document.querySelectorAll('[id^="lore-overlay-"]'));
+  openBookWindow('Valerguard — Deep Lore', 'The Complete Lore Compendium', 'by J.S. Plevinski, Ph.D.', body);
 }
 
 function showPage(id) {
