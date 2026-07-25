@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Born Good — Local Editor</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #1a1a1a; color: #e8e0d0;
+  }
+  .topbar {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding: 0.6rem 1rem;
+    background: #111; border-bottom: 1px solid #333;
+    height: 52px; flex-shrink: 0;
+  }
+  .topbar h1 {
+    font-size: 0.95rem; margin: 0; color: #b89a5b; font-weight: 600;
+    white-space: nowrap;
+  }
+  .topbar .spacer { flex: 1; }
+  .btn {
+    background: #2a2a2a; color: #e8e0d0; border: 1px solid #444;
+    border-radius: 6px; padding: 0.45rem 0.9rem; font-size: 0.8rem;
+    cursor: pointer; transition: background .15s, border-color .15s;
+  }
+  .btn:hover { background: #3a3a3a; border-color: #b89a5b; }
+  .btn.primary { background: #b89a5b; color: #111; border-color: #b89a5b; font-weight: 600; }
+  .btn.primary:hover { background: #cbae70; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  #file-input { display: none; }
+  .status {
+    font-size: 0.75rem; color: #888; white-space: nowrap;
+  }
+  .status.dirty { color: #cba135; }
+  .status.saved { color: #6ba86b; }
+  .main {
+    display: flex; height: calc(100% - 52px);
+  }
+  .pane {
+    flex: 1; min-width: 0; display: flex; flex-direction: column;
+    border-right: 1px solid #333;
+  }
+  .pane:last-child { border-right: none; }
+  .pane-header {
+    padding: 0.4rem 0.8rem; font-size: 0.7rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #888; background: #151515;
+    border-bottom: 1px solid #333; flex-shrink: 0;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .find-bar {
+    display: flex; gap: 0.4rem; align-items: center; flex: 1;
+  }
+  .find-bar input {
+    background: #222; border: 1px solid #444; color: #e8e0d0;
+    border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;
+    flex: 1; min-width: 0;
+  }
+  .find-bar button {
+    background: #2a2a2a; color: #ccc; border: 1px solid #444;
+    border-radius: 4px; padding: 0.25rem 0.6rem; font-size: 0.72rem; cursor: pointer;
+  }
+  .find-bar button:hover { border-color: #b89a5b; }
+  #match-count { font-size: 0.7rem; color: #777; white-space: nowrap; }
+  textarea#source {
+    flex: 1; width: 100%; border: none; outline: none; resize: none;
+    background: #1e1e1e; color: #d8d0bd; font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.8rem; line-height: 1.5; padding: 1rem; tab-size: 2;
+  }
+  iframe#preview {
+    flex: 1; width: 100%; border: none; background: #fff;
+  }
+  .empty-state {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 1rem; color: #777; text-align: center; padding: 2rem;
+  }
+  .empty-state p { max-width: 400px; font-size: 0.85rem; line-height: 1.6; margin: 0; }
+  mark.hl { background: #b89a5b; color: #111; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Born Good — Local Editor</h1>
+  <input type="file" id="file-input" accept=".html">
+  <button class="btn" id="open-btn">Open index.html</button>
+  <button class="btn primary" id="save-btn" disabled>Download Edited File</button>
+  <span class="spacer"></span>
+  <span class="status" id="status-text">No file loaded</span>
+</div>
+
+<div class="main" id="main-empty">
+  <div class="empty-state">
+    <div style="font-size:2rem">📝</div>
+    <p>This is a local-only editing tool. It never sends your file anywhere — everything happens in your browser.</p>
+    <p>Click <strong>Open index.html</strong>, edit the source on the left, watch the live preview update on the right, then <strong>Download Edited File</strong> and replace your local <code>index.html</code> (and commit/push as usual).</p>
+  </div>
+</div>
+
+<div class="main" id="main-editor" style="display:none">
+  <div class="pane">
+    <div class="pane-header">
+      <span style="flex-shrink:0">Source</span>
+      <div class="find-bar">
+        <input type="text" id="find-input" placeholder="Find...">
+        <input type="text" id="replace-input" placeholder="Replace with...">
+        <button id="replace-all-btn">Replace All</button>
+      </div>
+      <span id="match-count"></span>
+    </div>
+    <textarea id="source" spellcheck="false"></textarea>
+  </div>
+  <div class="pane">
+    <div class="pane-header">Live Preview</div>
+    <iframe id="preview"></iframe>
+  </div>
+</div>
+
+<script>
+let originalFilename = 'index.html';
+let debounceTimer = null;
+
+const fileInput = document.getElementById('file-input');
+const openBtn = document.getElementById('open-btn');
+const saveBtn = document.getElementById('save-btn');
+const statusText = document.getElementById('status-text');
+const source = document.getElementById('source');
+const preview = document.getElementById('preview');
+const mainEmpty = document.getElementById('main-empty');
+const mainEditor = document.getElementById('main-editor');
+const findInput = document.getElementById('find-input');
+const replaceInput = document.getElementById('replace-input');
+const replaceAllBtn = document.getElementById('replace-all-btn');
+const matchCount = document.getElementById('match-count');
+
+openBtn.addEventListener('click', () => fileInput.click());
+
+fileInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  originalFilename = file.name || 'index.html';
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    source.value = ev.target.result;
+    mainEmpty.style.display = 'none';
+    mainEditor.style.display = 'flex';
+    saveBtn.disabled = false;
+    updatePreview();
+    setStatus('Loaded ' + originalFilename, 'saved');
+  };
+  reader.readAsText(file);
+});
+
+source.addEventListener('input', () => {
+  setStatus('Unsaved changes', 'dirty');
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(updatePreview, 400);
+  updateMatchCount();
+});
+
+function updatePreview() {
+  preview.srcdoc = source.value;
+}
+
+function setStatus(text, cls) {
+  statusText.textContent = text;
+  statusText.className = 'status' + (cls ? ' ' + cls : '');
+}
+
+saveBtn.addEventListener('click', () => {
+  const blob = new Blob([source.value], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = originalFilename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  setStatus('Downloaded ' + originalFilename, 'saved');
+});
+
+function updateMatchCount() {
+  const term = findInput.value;
+  if (!term) { matchCount.textContent = ''; return; }
+  const count = source.value.split(term).length - 1;
+  matchCount.textContent = count + (count === 1 ? ' match' : ' matches');
+}
+
+findInput.addEventListener('input', updateMatchCount);
+
+replaceAllBtn.addEventListener('click', () => {
+  const find = findInput.value;
+  if (!find) return;
+  const replace = replaceInput.value;
+  source.value = source.value.split(find).join(replace);
+  setStatus('Unsaved changes', 'dirty');
+  updatePreview();
+  updateMatchCount();
+});
+
+window.addEventListener('beforeunload', (e) => {
+  if (statusText.classList.contains('dirty')) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
+</script>
+
+</body>
+</html>
