@@ -69,8 +69,33 @@ Follow this exact checklist, in order, for every new chapter:
     `renderEndSummary` (×1).
 11. Add `SOUL_REASONS` tooltip entries for all six soul stats
     (Mercy, Conviction, Resentment, Connection, Hope, Identity).
-12. Verify before committing (see below).
-13. Commit and push to both the working branch and `main` (see below).
+12. Update character profiles (`MAIN_CHARS` on the Characters page) — see
+    "Character ability tracking" below.
+13. Verify before committing (see below).
+14. Commit and push to both the working branch and `main` (see below).
+
+## Character ability tracking
+
+Whenever new chapter material is added or edited — main story, Glintjaw,
+or any other POV — automatically do this without being asked:
+
+- Read the new material for any spell, ability, skill, or notable power
+  used or newly acquired by a named character, not just Elias.
+- For any character with an existing profile in `MAIN_CHARS` (currently
+  Elias, Kip, Cassian — check for new ones as the roster grows), add
+  newly revealed abilities to that character's `abilities` array. Match
+  the existing entry format: `{ icon, name, type, desc }`, description
+  written for the character sheet (third person / descriptive, not
+  Elias's first-person chapter voice).
+- If an ability already exists on the sheet but has visibly leveled up,
+  changed scope, or gained a new use, update its `desc` rather than
+  duplicating the entry.
+- Keep Elias's `MAIN_CHARS.elias.abilities` in sync with the latest
+  chapter's `ABILITIES` entry (same skills, sheet-appropriate phrasing)
+  every time `ABILITIES` is extended per the chapter checklist above.
+- If a character who gains a notable ability doesn't have a `MAIN_CHARS`
+  profile yet, flag it rather than silently skipping — don't invent a
+  full profile unprompted, but do surface that one may be warranted.
 
 ## Verification (required before every commit)
 
