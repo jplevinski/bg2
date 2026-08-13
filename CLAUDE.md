@@ -93,9 +93,23 @@ or any other POV — automatically do this without being asked:
 - Keep Elias's `MAIN_CHARS.elias.abilities` in sync with the latest
   chapter's `ABILITIES` entry (same skills, sheet-appropriate phrasing)
   every time `ABILITIES` is extended per the chapter checklist above.
-- If a character who gains a notable ability doesn't have a `MAIN_CHARS`
-  profile yet, flag it rather than silently skipping — don't invent a
-  full profile unprompted, but do surface that one may be warranted.
+- **Create a new `MAIN_CHARS` profile automatically whenever a new named
+  character is introduced** — do not wait to be asked. Build the full
+  profile in the same shape as the existing entries (`name`, `role`,
+  `level`, `img`, `desc`, `stats`, `soul`, `abilities`, `achievements`),
+  populated from what the chapter actually reveals (leave fields like
+  `soul` as `null` if the story hasn't shown that character's Soul
+  Balance). Add the matching `char-card` entry to the Characters page
+  (Main/Major/Minor tier, whichever fits) and wire it to
+  `openCharOverlay('id')` so the new profile is actually reachable.
+  Use a placeholder `img` path following the existing `images/name.png`
+  convention and flag to the user that the portrait still needs to be
+  supplied — don't skip creating the profile just because artwork isn't
+  available yet.
+- This applies retroactively too: if a character was introduced in
+  earlier material and never got a profile (e.g. Silas), create one the
+  next time you touch character data, rather than only handling it going
+  forward.
 
 ## Verification (required before every commit)
 

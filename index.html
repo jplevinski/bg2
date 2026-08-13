@@ -8383,6 +8383,16 @@
         </div>
       </div>
 
+      <div class="char-card clickable" onclick="openCharOverlay('silas')">
+        <img src="images/silas.png" alt="Silas">
+        <div class="char-card-body">
+          <h3>Silas</h3>
+          <div class="char-role">Ally — Group 3 Dusk Assassin</div>
+          <p>A Veil assassin who survived the entire Culling without being noticed. Won a coin flip for the last slot in Group 3 and immediately made clear he takes hits for no one.</p>
+          <span class="char-read-more">→ Read More</span>
+        </div>
+      </div>
+
     </div>
 
     <div class="stats-section-title" style="text-align:center;font-size:0.85rem;margin:2.5rem 0 1rem">Major Characters</div>
@@ -10567,6 +10577,28 @@ const MAIN_CHARS = {
       { icon: '🧠', text: '<strong>The Lumina Factor</strong> — Aware of the Lumina legacy and its historical significance to The Shield. Deliberately engineered Elias\'s development based on this knowledge.' },
       { icon: '⛓️', text: '<strong>Behind Bars</strong> — Picked a fight with the High Breen town guard and was arrested. Held three days pending a magistrate, losing operational control of Group 3 to Elias.' },
       { icon: '📉', text: '<strong>Tactical Collapse</strong> — His dual-tank restriction-band gambit failed when Elias broke free and fractured his hand. His final assessment reclassifies Elias from prodigy to "fatal liability."' }
+    ]
+  },
+  silas: {
+    name: 'Silas',
+    role: 'Ally — Group 3 Dusk Assassin',
+    level: 'Level 5 — Dusk Assassin (The Veil)',
+    img: 'images/silas.png',
+    desc: 'Silas is a Veil assassin who survived the entire Culling without a single classmate registering he was there. He wields twin blackened daggers and a cloak that seems to eat the ambient light around him — the definition of a lurker, and an odd fit for a Shield-heavy squad trying out for The Shield in the first place.<br><br>When Telilah defected and left Group 3 short a fifth member, Kip\'s spreadsheet narrowed the field to Silas and a Grove toxicologist. Elias, unable to choose on the merits, let a coin flip decide — and Silas joined a squad that already distrusted what he was. He made his terms plain immediately: he takes hits for no one, and he expects the same restraint in return.<br><br>He caught the scent of Veil magic on Elias in the courtyard and has said, more than once, that he wants a front-row seat to watch the farm boy play with forbidden fire. Abrasive, dryly amused, and dangerous, Silas trades death threats with Cassian like other people trade small talk — and somehow, that counts as the closest thing to bonding either of them does. During the swamp deployment for The Trials, he ended a fight before the tactics call even finished, dropping a twenty-two-foot swamp serpent solo without spending a point of MP.',
+    stats: {
+      hp: '140 / 140', mp: '50 / 50',
+      str: 9, agi: 24, vit: 8, int: 6, wis: 5, cha: 6
+    },
+    soul: null,
+    abilities: [
+      { icon: '🌑', name: 'Shadow Meld', type: 'Active — Veil, Job Skill', desc: 'Sinks directly into darkness during active combat, becoming untargetable for ten seconds while retaining full offensive capability. Ten-minute cooldown.' },
+      { icon: '🗡️', name: 'Shadow Blade Dance', type: 'Active — Veil, Job Skill', desc: 'Spikes attack speed and critical hit chance in direct proportion to his Agility stat for fifteen seconds. Twenty-minute cooldown; devastating when stacked with Shadow Meld.' },
+      { icon: '🩸', name: 'Shadow Strike', type: 'Passive — Veil', desc: 'Coats his blades in shadow force, chunking away a target\'s HP and MP simultaneously on hit.' }
+    ],
+    achievements: [
+      { icon: '🎲', text: '<strong>Coin-Flip Recruit</strong> — Won the last slot in Group 3 over Ruka the Venom-Weaver on a coin toss, after Kip\'s spreadsheet couldn\'t break the tie.' },
+      { icon: '🐍', text: '<strong>Clean Kill</strong> — Dropped a twenty-two-foot swamp serpent solo, mid-tactics-briefing, before Kip could finish assigning roles. Zero MP spent.' },
+      { icon: '⚔️', text: '<strong>Mutual Threats</strong> — Traded death threats with Cassian Drake at first introduction and somehow walked away on better terms for it.' }
     ]
   }
 };
